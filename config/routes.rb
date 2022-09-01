@@ -7,5 +7,18 @@ Rails.application.routes.draw do
 
   resources :trips do
     resources :companions, only: %i[show new create]
+    end
+  
+  resources :trips do
+    resources :flights
   end
+
+  resources :trips do
+    resources :accommodations
+  end
+
+  resources :trips do
+    resources :companions, only: %i[show]
+  end
+  
 end
