@@ -50,6 +50,29 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_060806) do
     t.index ["trip_id"], name: "index_companions_on_trip_id"
   end
 
+  create_table "flights", force: :cascade do |t|
+    t.string "place_name"
+    t.string "iata_code"
+    t.integer "amount"
+    t.string "outbound_origin_display_code"
+    t.string "outbound_destination_display_code"
+    t.datetime "outbound_departure", precision: nil
+    t.datetime "outbound_arrival", precision: nil
+    t.string "outbound_carrier_name"
+    t.string "inbound_origin_display_code"
+    t.string "inbound_destination_display_code"
+    t.datetime "inbound_depature", precision: nil
+    t.datetime "inbound_arrival", precision: nil
+    t.string "inbound_carrier_name"
+    t.integer "api_flight_id"
+    t.boolean "booked", default: false
+    t.boolean "selected", default: false
+    t.bigint "trip_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["trip_id"], name: "index_flights_on_trip_id"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "chat_id", null: false
@@ -88,6 +111,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_060806) do
 
   add_foreign_key "accommodations", "trips"
   add_foreign_key "companions", "trips"
+  add_foreign_key "flights", "trips"
   add_foreign_key "messages", "chats"
   add_foreign_key "messages", "users"
   add_foreign_key "trips", "users"
