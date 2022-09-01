@@ -11,32 +11,30 @@ User.destroy_all
 Companion.destroy_all
 Trip.destroy_all
 
-#must we destroy the join tables?
+
 Flight.destroy_all
-Hotel.destroy_all
+Accommodation.destroy_all
 
-Activity.destroy_all
-Restaurant.destroy_all
-Attraction.destroy_all
-
+#Activity.destroy_all
+#Restaurant.destroy_all
+#Attraction.destroy_all
 
 puts "Creating New Seeds"
 
 puts "Creating users"
 
-3.times do
   user1 = User.create!(
     name: "Delvin",
     phone: "781646738",
     email: "delvin44@email.com",
-    password: "password123",
+    password: "password123"
   )
 
   puts "Creating trips"
   trip1 = Trip.create!(
     user: user1,
-    start_date: 2022-08-30,
-    end_date: 2022-09-12,
+    start_date: 20220830,
+    end_date: 20220912,
     location: "bangkok",
     budget: 5000,
     total_cost: 4000,
@@ -44,18 +42,16 @@ puts "Creating users"
     longitude: 100.5018,
     currency: "SGD"
   )
-end
+  puts "trip id:#{trip1.id} created"
 
 puts "Creating Companions"
 
-2.times do
-    Companion.create!(
+  Companion.create!(
     name: "Julien",
     age: 30,
     type: "friends",
     trip: trip1
   )
-end
 
 # Flights, Hotels, Activities
 
