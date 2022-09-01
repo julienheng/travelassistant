@@ -11,36 +11,48 @@
 
       <div class="createtrip-flight d-none" data-create-trip-target="flight">
         <h2>Where are you flying to?</h2>
-        <%= f.input :location %>
+        <%= f.input :origin %>
+        <%= f.input :destination %>
       </div>
 
       <div class="createtrip-flighttype d-none" data-create-trip-target="type">
         <h2>Would you like a return flight?</h2>
-        <button type="button" class="btn btn-primary">Yes</button>
-        <button type="button" class="btn btn-secondary">No</button>
+        <button type="button" class="btn btn-primary" data-create-trip-target="rtflight" data-action="click->create-trip#select">Yes</button>
+        <button type="button" class="btn btn-secondary" data-create-trip-target="owflight" data-action="click->create-trip#select">No</button>
       </div>
 
-      <div class="createtrip-flightdate d-none" data-create-trip-target="date">
+
+      <div class="createtrip-flightdate d-none" data-create-trip-target="rtdate">
         <h2>Please enter the dates</h2>
-        <%= f.input :start_date, inline_label: 'Outbound' %>
-        <%= f.input :end_date, inline_label: 'Inbound' %>
+        <%= f.input :start_date, :label => "Departure", as: :date, html5: true %>
+        <%= f.input :end_date, :label => "Returning", as: :date, html5: true %>
       </div>
 
+      <div class="createtrip-oneway d-none" data-create-trip-target="owdate">
+        <h2>Please select your departure date</h2>
+        <%= f.input :start_date, :label => "Departure", as: :date, html5: true %>
+      </div>
 
        <div class="createtrip-companion d-none" data-create-trip-target="companion">
+        <h3>Number of traveller</h3>
+        <%= f.input :pax %>
+
         <%= f.simple_fields_for :@companion do |m| %>
-          <h3>Number of traveller</h3>
-
-
+          <h3>Type of traveller</h3>
+          <%= m.input :type, :label => "Select", :collection => ["Solo","Couple", "Family", "Friends"], :selected => "" %>
+          <%= m.input :name %>
+          <%= m.input :age %>
+          <%= m.input :name %>
+          <%= m.input :age %>
           <%= m.input :name %>
           <%= m.input :age %>
         <% end %>
        </div>
 
 
-      <div class="submit-button">
-        <%= f.submit "Submit", data: { create_trip_target: "submit", action: "submit->create-trip#send" }, class: "btn btn-primary d-none" %>
-      </div>
+       <div class="submit-button">
+         <%= f.submit "Submit", data: { create_trip_target: "submit", action: "submit->create-trip#send" }, class: "btn btn-primary d-none" %>
+       </div>
 
     <% end %>
 
