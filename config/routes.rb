@@ -8,6 +8,14 @@ Rails.application.routes.draw do
   get '/trips/new', to: 'trips#new_third', as: 'new_third'
 
   resources :trips do
+    resources :flights
+  end
+
+  resources :trips do
+    resources :accommodations
+  end
+
+  resources :trips do
     resources :companions, only: %i[show]
   end
 end

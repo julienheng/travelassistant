@@ -25,8 +25,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_060806) do
     t.string "hero_image"
     t.string "value"
     t.string "description"
-    t.boolean "booked", default: false
-    t.boolean "selected", default: false
+    t.boolean "booked"
+    t.boolean "selected"
     t.bigint "trip_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -65,8 +65,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_060806) do
     t.datetime "inbound_arrival", precision: nil
     t.string "inbound_carrier_name"
     t.integer "api_flight_id"
-    t.boolean "booked", default: false
-    t.boolean "selected", default: false
+    t.boolean "booked"
+    t.boolean "selected"
     t.bigint "trip_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
