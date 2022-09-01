@@ -1,0 +1,30 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 250px 0;
+
+}
+
+
+.banner_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+
+  }
+
+  .btn-success {
+    margin-top: 50px;
+    background-color: #0f0d0d;
+    color: white;
+    border-color: #FD5754;
+    display: flex;
+    width: 150px;
+    height: 20px;
+    border-radius: 10px;
+
+
+  }

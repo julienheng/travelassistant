@@ -1,76 +1,31 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.pexels.com/photos/5857863/pexels-photo-5857863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
   <div class="container">
-    <h1>Howliday </h1>
-    <p>Plan your Holiday trip with ease</p>
-    <a class="btn btn-flat" href="#">Plan Vacation</a>
+    <div class="banner_title">Howliday </div>
+    <div class="banner_title">Plan your Holiday trip with ease</div>
+    <a class="btn btn-success d-grid gap-2 col-6 mx-auto" href="#">Plan Vacation</a>
   </div>
 </div>
 
 <%# -----Traveller experience---- %>
+<%= 4.times do %>
+  <div class="row px-1 mt-4 rounded px-4 each_card_container py-4 mx-3">
+    <div class="col-6">
+      <%= image_tag "male_avatar", width:"100%"%>
+    </div>
+    <div class="col-6">
+      <div class="d-flex">
+        <div class="each_card_container_testimonial">
+          <i>This is a testimonial, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</i>
+        </div>
+      </div>
+      <button class="btn btn-primary w-100 h-3 "  type="submit">View iternary</button>
+      </div>
+    </div>
+  </div>
+<% end %>
 
-<div class="wrapper">
-  <h1>Past Travellers iternary experience</h1>
-  <div class="cols">
-			<div class="col" ontouchstart="this.classList.toggle('hover');">
-				<div class="container">
-					<div class="front" style="background-image: url(https://images.pexels.com/photos/3225528/pexels-photo-3225528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)">
-						<div class="inner">
-							<p>Traveller 1</p>
-              <span>Italy</span>
-						</div>
-					</div>
-					<div class="back">
-						<div class="inner">
-						  <p>This is a trip review</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col" ontouchstart="this.classList.toggle('hover');">
-				<div class="container">
-					<div class="front" style="url(https://images.pexels.com/photos/6185777/pexels-photo-6185777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2/)">
-						<div class="inner">
-							<p>Traveller 2</p>
-              <span>Greece</span>
-						</div>
-					</div>
-					<div class="back">
-						<div class="inner">
-							<p>This is a trip review.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col" ontouchstart="this.classList.toggle('hover');">
-				<div class="container">
-					<div class="front" style="background-image: url(https://images.pexels.com/photos/3889742/pexels-photo-3889742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2/)">
-						<div class="inner">
-							<p>Traveller 4</p>
-              <span>Europe</span>
-						</div>
-					</div>
-					<div class="back">
-						<div class="inner">
-							<p>This is a trip review.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col" ontouchstart="this.classList.toggle('hover');">
-				<div class="container">
-					<div class="front" style="background-image: url(https://images.pexels.com/photos/2914152/pexels-photo-2914152.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2/)">
-						<div class="inner">
-							<p>Traveller 4</p>
-              <span>India</span>
-						</div>
-					</div>
-					<div class="back">
-						<div class="inner">
-							<p>This is a trip review.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
- </div>
+
+
+
+
  <%# -----End Traveller experience---- %>
