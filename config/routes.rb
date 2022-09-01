@@ -4,10 +4,8 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :trips
-  get '/trips/new', to: 'trips#new_second', as: 'new_second'
-  get '/trips/new', to: 'trips#new_third', as: 'new_third'
 
   resources :trips do
-    resources :companions, only: %i[show]
+    resources :companions, only: %i[show new create]
   end
 end
