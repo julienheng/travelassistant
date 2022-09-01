@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_01_070552) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_01_070437) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,14 +19,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_070552) do
     t.string "hotel_id"
     t.string "name"
     t.string "price"
-    t.float "coordinates"
+    t.float "latitude"
+    t.float "longitude"
     t.string "cheapest_partner"
     t.integer "stars"
     t.string "hero_image"
     t.string "value"
     t.string "description"
-    t.boolean "booked"
-    t.boolean "selected"
+    t.boolean "booked", default: false
+    t.boolean "selected", default: false
     t.bigint "trip_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -43,7 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_070552) do
   create_table "companions", force: :cascade do |t|
     t.string "name"
     t.integer "age"
-    t.string "type"
+    t.string "category"
     t.bigint "trip_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -61,12 +62,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_070552) do
     t.string "outbound_carrier_name"
     t.string "inbound_origin_display_code"
     t.string "inbound_destination_display_code"
-    t.datetime "inbound_depature", precision: nil
+    t.datetime "inbound_departure", precision: nil
     t.datetime "inbound_arrival", precision: nil
     t.string "inbound_carrier_name"
     t.integer "api_flight_id"
-    t.boolean "booked"
-    t.boolean "selected"
+    t.boolean "booked", default: false
+    t.boolean "selected", default: false
     t.bigint "trip_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

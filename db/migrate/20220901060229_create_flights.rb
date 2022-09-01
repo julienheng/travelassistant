@@ -11,12 +11,12 @@ class CreateFlights < ActiveRecord::Migration[7.0]
       t.string :outbound_carrier_name
       t.string :inbound_origin_display_code
       t.string :inbound_destination_display_code
-      t.timestamp :inbound_depature
+      t.timestamp :inbound_departure
       t.timestamp :inbound_arrival
       t.string :inbound_carrier_name
       t.integer :api_flight_id
-      t.boolean :booked
-      t.boolean :selected
+      t.boolean :booked, default: false
+      t.boolean :selected, default: false
       t.references :trip, null: false, foreign_key: true
 
       t.timestamps

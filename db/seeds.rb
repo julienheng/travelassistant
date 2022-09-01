@@ -49,7 +49,7 @@ puts "Creating Companions"
   Companion.create!(
     name: "Julien",
     age: 30,
-    type: "friends",
+    category: "friends",
     trip: trip1
   )
 
@@ -57,7 +57,6 @@ puts "Creating Companions"
 
 puts "Creating flights! (2 API calls)"
 Flight.create!(
-  flight: ,
   place_name: "London",
   iata_code: "LON",
   amount: 659.37,
@@ -77,14 +76,14 @@ Flight.create!(
   trip: trip1
 )
 
-puts "Creating hotels!"
-Hotel.create!(
-  hotel: ,
+puts "Creating accomodations!"
+Accommodation.create!(
   entity_id: "27544008",
   hotel_id: "178868522",
   name: "Ramada by Wyndham London North M1",
   price: "$227",
-  coordinates: [-0.263784, 51.629313],
+  latitude: -0.263784,
+  longitude: 51.629313,
   cheapest_partner: "Agoda",
   stars: 4,
   hero_image: "https://d2xf5gjipzd8cd.cloudfront.net/available/678584481/678584481_WxH.jpg",
