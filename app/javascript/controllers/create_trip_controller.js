@@ -24,11 +24,11 @@ export default class extends Controller {
     }
     // else if(!this.typeTarget.className.includes("d-none")) {
     // }
-    else if(!this.owdateTarget.className.includes("d-none"))
+    else if(!this.typeTarget.className.includes("d-none"))
     {
+
       this.companionTarget.classList.toggle("d-none")
-      this.owdateTarget.classList.toggle("d-none")
-      // this.rtdateTarget.classList.toggle("d-none") ||
+
     }
     else if(!this.companionTarget.className.includes("d-none")){
        this.submitTarget.classList.toggle("d-none")
@@ -36,7 +36,7 @@ export default class extends Controller {
     }
   }
   select(e) {
-    if(this.owflightTarget.classList) {
+    if(this.owflightTarget) {
         this.owdateTarget.classList.toggle("d-none")
     }
     else (this.rtflightTarget)
