@@ -14,7 +14,7 @@ class TripsController < ApplicationController
     @trip.user = current_user
     if @trip.save
       raise
-      redirect_to trip_path(@trip)
+      redirect_to generate_page_path
     else
       render :new, status: :unprocessable_entity
     end
