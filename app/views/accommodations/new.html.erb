@@ -1,0 +1,34 @@
+<div class="acc-body">
+  <div class="acc-header">
+    <h1><strong>We have found some cosy places for you</strong></h1>
+  </div>
+
+  <div class="acc-content d-flex">
+    <div class="acc-container text-center">
+      <p>This is all more the cool features<p>
+      <%# https://account.mapbox.com/access-tokens/ %>
+      <%# map %>
+      <%# price, rating, stars, neighboorhood,   %>
+    </div>
+
+    <div class="acc-hotels">
+      <div class="card-hotel d-flex">
+        <img src="https://d2xf5gjipzd8cd.cloudfront.net/available/678584481/678584481_WxH.jpg" alt="Ramada" class="acc-image">
+        <div class="hotel-cards">
+          <% @accommodations.each do |accommodation| %>
+            <div class="hotel-card">
+              <h4><strong><%= @accommodation.name %></strong></h4>
+              <h5><%= @accommodation.price %></h5>
+              <p><%= @accommodation.stars %>-Star Hotel</p>
+              <hr>
+              <p>Description: <%= @accommodation.description.capitalize %></p>
+              <p>Partner: <%= @accommodation.cheapest_partner %></p>
+              <p>Rating: <%= @accommodation.value %>/10</p>
+            </div>
+          <% end %>
+          <button type="button" class="btn btn-warning">Select</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
