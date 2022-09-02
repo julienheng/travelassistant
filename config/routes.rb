@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :accommodations
   end
 
+
   resources :trips do
     resources :companions, only: %i[show]
   end

@@ -14,9 +14,9 @@ Trip.destroy_all
 Flight.destroy_all
 Accommodation.destroy_all
 
-#Activity.destroy_all
-#Restaurant.destroy_all
-#Attraction.destroy_all
+# Activity.destroy_all
+# Restaurant.destroy_all
+Attraction.destroy_all
 
 puts "Creating New Seeds"
 
@@ -97,17 +97,20 @@ Accommodation.create!(
   trip: trip1
 )
 
-puts "Creating activities"
+puts "Creating attractions"
+3.times do
+  attraction1 = Attraction.create!(
+  name: "Gardens by the Bay",
+  address: "18 Marina Gardens Drive Bayfront Plaza, Singapore 018953 Singapore",
+  category_name: "Sights & Landmarks",
+  price: "$14.69",
+  rating: "4.5",
+  booked: true,
+  selected: true,
+  trip: trip1,
+  )
+end
 
-#puts "Creating attractions"
-#attraction1 = Attraction.create!(
-  #attraction: ,
-  #name: ,
-  #address: ,
-  #category: ,
-  #price: ,
-  #rating: ,
-#)
 
 #puts "Creating restaurants (3 API calls)"
 #restaurant1 = Restaurant.create!(
