@@ -37,6 +37,9 @@ class PagesController < ApplicationController
     redirect_to new_trip_flight_path(1)
   end
 
+  def dashboard
+  end
+
   private
 
   def find_flight

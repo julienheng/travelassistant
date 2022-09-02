@@ -1,47 +1,25 @@
 .acc-header {
   width: 100%;
-  height: 400px;
+  height: 200px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-image: image-url("hotel.jpg");
+  background-image: image-url("hotelone.jpeg");
   background-size: cover;
+
   h1 {
     color: white;
     font-weight: bold;
   }
 }
 
-.acc-content {
-  justify-content: space-around;
-  margin-top: 50px;
-}
-
-//--------map--------//
-.acc-container {
-  width: 380px;
-  height: 500px;
-  border: 1px solid black;
-  margin-right: 20px;
-}
-
-//--------------hotels--------//
-
-.acc-hotels {
-  width: 880px;
-  height: 320px;
-  border: 1px solid black;
-  box-shadow: 0 0 8px 0 #7c7c7c;
-}
-
-.acc-image {
-  width: 340px;
-  height: 320px;
-  position: absolute;
-}
-
 .hotel-cards {
-  width: 480px;
-  margin-left: 40%;
+  width: 100%;
   padding: 12px;
+  border: 2px solid red;
+  box-shadow: 0 0 8px 0 #7c7c7c;
+  background-color: white;
+  margin-top: 20px;
+  border-radius: 20px;
+  // display: flex;
 }

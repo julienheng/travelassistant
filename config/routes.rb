@@ -5,11 +5,13 @@ Rails.application.routes.draw do
 
   resources :trips do
     resources :companions, only: %i[show]
-    get :activites
+    resources :activites
     resources :flights
     resources :accommodations
   end
 
+  get "pages/", to: "pages#generate", as: :generate_page
+  get "pages/dashboard", to: "pages#dashboard", as: :dashboard_page
   get "loading/", to: "pages#loading", as: :loading_page
   get "trip-generate/", to: "pages#generate", as: :generate_page
 end
