@@ -1,34 +1,26 @@
-<div class="acc-body">
-  <div class="acc-header">
-    <h1><strong>We have found some cosy places for you</strong></h1>
-  </div>
+<div class="acc-header text-center">
+  <h1><strong>We have found some cosy places for you</strong></h1>
+</div>
 
-  <div class="acc-content d-flex">
-    <div class="acc-container text-center">
-      <p>This is all more the cool features<p>
-      <%# https://account.mapbox.com/access-tokens/ %>
-      <%# map %>
-      <%# price, rating, stars, neighboorhood,   %>
+<div class="acc-content container">
+  <!-- carousel for hotels -->
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Slider contents -->
+    <div class="carousel-inner">
+      <% @accommodations.each_with_index do |accommodation, index| %>
+        <%= render 'accommodation', accommodation: accommodation, index: index %>
+      <% end %>
     </div>
 
-    <div class="acc-hotels">
-      <div class="card-hotel d-flex">
-        <img src="https://d2xf5gjipzd8cd.cloudfront.net/available/678584481/678584481_WxH.jpg" alt="Ramada" class="acc-image">
-        <div class="hotel-cards">
-          <% @accommodations.each do |accommodation| %>
-            <div class="hotel-card">
-              <h4><strong><%= @accommodation.name %></strong></h4>
-              <h5><%= @accommodation.price %></h5>
-              <p><%= @accommodation.stars %>-Star Hotel</p>
-              <hr>
-              <p>Description: <%= @accommodation.description.capitalize %></p>
-              <p>Partner: <%= @accommodation.cheapest_partner %></p>
-              <p>Rating: <%= @accommodation.value %>/10</p>
-            </div>
-          <% end %>
-          <button type="button" class="btn btn-warning">Select</button>
-        </div>
-      </div>
-    </div>
+    <!-- Slider controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </div>

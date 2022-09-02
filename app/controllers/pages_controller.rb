@@ -25,6 +25,9 @@ class PagesController < ApplicationController
     @flight = flights
   end
 
+  def dashboard
+  end
+
   private
 
   def find_flight

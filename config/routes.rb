@@ -17,10 +17,16 @@ Rails.application.routes.draw do
     resources :accommodations
   end
 
+  resources :trips do
+    resources :activities
+  end
+
 
   resources :trips do
     resources :companions, only: %i[show]
   end
 
+
   get "pages/", to: "pages#generate", as: :generate_page
+  get "pages/dashboard", to: "pages#dashboard", as: :dashboard_page
 end
