@@ -1,29 +1,52 @@
+<!-- Slider main container -->
+<%# <div data-controller="carousel" class="swiper-container">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide">Slide 1</div>
+    <div class="swiper-slide">Slide 2</div>
+    <div class="swiper-slide">Slide 3</div>
+  </div>
+</div> %>
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.pexels.com/photos/5857863/pexels-photo-5857863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
   <div class="container">
     <div class="banner_title">Howliday </div>
     <div class="banner_title">Plan your Holiday trip with ease</div>
-    <a class="btn btn-success d-grid gap-2 col-6 mx-auto" href="#">Plan Vacation</a>
+    <%# <a class="btn btn-success d-grid gap-2 col-6 mx-auto" href="#">Plan Vacation</a> %>
+    <div class="d-flex justify-content-center mt-3">
+      <%= link_to "Plan Vacation", "#", class: "btn btn-traveller btn-lg" %>
+    </div>
   </div>
 </div>
 
 <%# -----Traveller experience---- %>
-<%= 4.times do %>
-  <div class="row px-1 mt-4 rounded px-4 each_card_container py-4 mx-3">
-    <div class="col-6">
-      <%= image_tag "male_avatar", width:"100%"%>
-    </div>
-    <div class="col-6">
-      <div class="d-flex">
-        <div class="each_card_container_testimonial">
-          <i>This is a testimonial, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</i>
-        </div>
-      </div>
-      <button class="btn btn-primary w-100 h-3 "  type="submit">View iternary</button>
-      </div>
-    </div>
-  </div>
-<% end %>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 
+  <!-- slider indicators -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+
+  <!-- Slider contents -->
+  <div class="carousel-inner">
+    <% 3.times do |index| %>
+      <%= render 'testimonial', index: index %>
+    <% end %>
+  </div>
+
+  <!-- Slider controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
 
 
