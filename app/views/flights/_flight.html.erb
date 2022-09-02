@@ -1,0 +1,26 @@
+<div class="carousel-item <%= 'active' if index.zero? %>">
+  <div class="flight-cards row px-1 mt-4 mx-0 rounded">
+      <%= image_tag "Singapore_Airlines_Logo_2", width:"100%" %>
+      <div class="flight-card text-center">
+        <h5 class="card-title"><%= session[:trip_data]["flights"]["flight1"][0] %></h5>
+        <p class="card-text">Departure</p>
+        <div class="depart-time text-center">
+          0330 <i class="arrow right"></i><i class="arrow right"></i><i class="arrow right"></i> 1100
+        </div>
+        <div class="depart-location text-center">
+          SIN      direct     INC
+        </div>
+        <p class="card-text">Arrival</p>
+        <div class="depart-time text-center">
+          1530 <i class="arrow right"></i><i class="arrow right"></i><i class="arrow right"></i> 0000
+        </div>
+        <div class="depart-location text-center">
+          INC      direct     SIN
+        </div>
+        <p class="card-text">Estimated Price: </p>
+        <div class="text-center">
+          <a href="#" class="btn btn-primary">Select</a>
+        </div>
+      </div>
+    </div>
+</div>

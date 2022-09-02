@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_01_104428) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_02_034450) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -62,6 +62,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_104428) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "attractions", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "rating"
+    t.string "category_name"
+    t.string "price"
+    t.boolean "booked"
+    t.boolean "selected"
+    t.bigint "trip_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["trip_id"], name: "index_attractions_on_trip_id"
+  end
+
   create_table "chats", force: :cascade do |t|
     t.string "name"
     t.string "location"
@@ -111,6 +125,26 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_104428) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "restaurants", force: :cascade do |t|
+    t.string "name"
+    t.string "street"
+    t.string "postal_code"
+    t.integer "price_range"
+    t.string "longtitude"
+    t.string "latitude"
+    t.string "currencies_accepted"
+    t.float "rating_value"
+    t.string "main_photo_src"
+    t.integer "city_id"
+    t.string "google_place_id"
+    t.boolean "booked"
+    t.boolean "selected"
+    t.bigint "trip_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["trip_id"], name: "index_restaurants_on_trip_id"
+  end
+
   create_table "trips", force: :cascade do |t|
     t.integer "start_date"
     t.integer "end_date"
@@ -144,9 +178,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_104428) do
   add_foreign_key "accommodations", "trips"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "attractions", "trips"
   add_foreign_key "companions", "trips"
   add_foreign_key "flights", "trips"
   add_foreign_key "messages", "chats"
   add_foreign_key "messages", "users"
+  add_foreign_key "restaurants", "trips"
   add_foreign_key "trips", "users"
 end
