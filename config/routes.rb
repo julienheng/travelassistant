@@ -4,11 +4,10 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :trips do
-    resources :companions, only: %i[show new create]
-    resources :flights
-    resources :accommodations
     resources :companions, only: %i[show]
     get :activites
+    resources :flights
+    resources :accommodations
   end
 
   get "loading/", to: "pages#loading", as: :loading_page

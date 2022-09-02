@@ -14,9 +14,9 @@ Trip.destroy_all
 Flight.destroy_all
 Accommodation.destroy_all
 
-#Activity.destroy_all
-#Restaurant.destroy_all
-#Attraction.destroy_all
+# Activity.destroy_all
+# Restaurant.destroy_all
+Attraction.destroy_all
 
 puts "Creating New Seeds"
 
@@ -97,31 +97,40 @@ Accommodation.create!(
   trip: trip1
 )
 
-puts "Creating activities"
-
-#puts "Creating attractions"
-#attraction1 = Attraction.create!(
-  #attraction: ,
-  #name: ,
-  #address: ,
-  #category: ,
-  #price: ,
-  #rating: ,
-#)
-
-#puts "Creating restaurants (3 API calls)"
-#restaurant1 = Restaurant.create!(
-  #google_place_id: ,
-  #id_city: ,
-  #name: ,
-  #street: ,
-  #postalCode: ,
-  #longitude: ,
-  #latitude: ,
-  #priceRange: ,
-  #ratingValue: ,
-  #currenciesAccepted: ,
-#)
+puts "Creating attractions (3 API calls)"
+3.times do
+  attraction1 = Attraction.create!(
+  name: "Gardens by the Bay",
+  address: "18 Marina Gardens Drive Bayfront Plaza, Singapore 018953 Singapore",
+  category_name: "Sights & Landmarks",
+  price: "$14.69",
+  rating: "4.5",
+  booked: true,
+  selected: true,
+  trip: trip1,
+  )
 end
 
+
+puts "Creating restaurants (3 API calls)"
+3.times do
+  restaurant1 = Restaurant.create!(
+    google_place_id: "ChIJ53USP0nBhkcRjQ50xhPN_zw",
+    city_id: 348156,
+    name: "Misoya Milano",
+    street: "Via Solferino, 41",
+    postal_code: "20121",
+    longtitude: "9.18867",
+    latitude: "45.4796256",
+    price_range: 25,
+    rating_value: 4.5,
+    currencies_accepted: "EUR",
+    main_photo_src: "https://res.cloudinary.com/tf-lab/image/upload/restaurant/f5cdff1f-3cc7-4fba-b2ac-44c95ede85e4/b41c40e3-984e-4048-a197-5c3124b30c88.jpg",
+    booked: true,
+    selected: true,
+    trip: trip1,
+  )
+end
+
+end
 puts "Seeds created!"
