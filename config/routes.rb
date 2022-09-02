@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :trips do
     resources :companions, only: %i[show new create]
     end
-  
+
   resources :trips do
     resources :flights
   end
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :trips do
-    resources :companions, only: %i[show]
+    resources :companions, only: %i[create show]
   end
-  
+
 end
