@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import CreateTripController from "./create_trip_controller"
+application.register("create-trip", CreateTripController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
