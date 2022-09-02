@@ -39,6 +39,9 @@ class TripsController < ApplicationController
     redirect_to trips_path, status: :see_other
   end
 
+  def activities
+  end
+
   private
 
   def trip_params

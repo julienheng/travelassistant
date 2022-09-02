@@ -26,17 +26,27 @@
   justify-content: flex-end;
 }
 
-.btn-primary {
-  margin-top: 5px;
+// .btn-primary {
+//   margin-top: 5px;
+//   background-color:#FD5754;
+//   height: 2.5rem;
+//   color: white;
+//   border-color: #FD5754;
+//   border-radius: 5px;
+// }
+
+.btn-traveller {
   background-color:#FD5754;
-  width: 100px;
   height: 2.5rem;
   color: white;
   border-color: #FD5754;
-  border-radius: 5px;
+  margin: 0 auto;
+
+  &:hover {
+    color: white;
+    background-color:#da4240;
+  }
 }
-
-
 
 
   // -----start of popup----

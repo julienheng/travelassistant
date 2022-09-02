@@ -3,30 +3,15 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  resources :trips
-
   resources :trips do
-    resources :companions, only: %i[show new create]
-  end
-
-  resources :trips do
+    resources :companions, only: %i[show]
+    resources :activites
     resources :flights
-  end
-
-  resources :trips do
     resources :accommodations
   end
 
-  resources :trips do
-    resources :activities
-  end
-
-
-  resources :trips do
-    resources :companions, only: %i[show]
-  end
-
-
   get "pages/", to: "pages#generate", as: :generate_page
   get "pages/dashboard", to: "pages#dashboard", as: :dashboard_page
+  get "loading/", to: "pages#loading", as: :loading_page
+  get "trip-generate/", to: "pages#generate", as: :generate_page
 end

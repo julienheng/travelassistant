@@ -1,6 +1,7 @@
 class FlightsController < ApplicationController
   def new
     @flight = Flight.new
+    @flights = Flight.all
   end
 
   def create
