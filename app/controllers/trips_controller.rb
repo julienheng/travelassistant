@@ -1,28 +1,20 @@
 class TripsController < ApplicationController
-
   def index
     @trips = Trip.all
+    @companions = Companion.all
   end
 
   def new
-    @trip = Trip.new
-  end
-
-  def new_second
-    @trip = Trip.new
-    if @trip.present?
-      redirect_to new_second_path(@trip)
-    end
-  end
-
-  def new_third
+    @companion = Companion.new
     @trip = Trip.new
   end
 
   def create
     @trip = Trip.new(trip_params)
+    @trip.user = current_user
     if @trip.save
-      redirect_to root_path
+      raise
+      redirect_to generate_page_path
     else
       render :new, status: :unprocessable_entity
     end
