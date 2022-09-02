@@ -5,6 +5,10 @@ ruby "3.1.2"
 
 gem "cloudinary"
 
+gem "excon"
+
+gem "faker"
+
 gem "pundit"
 
 gem 'wicked'

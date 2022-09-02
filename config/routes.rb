@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   resources :trips do
     resources :companions, only: %i[show new create]
-    end
-  
+  end
+
   resources :trips do
     resources :flights
   end
@@ -20,5 +20,6 @@ Rails.application.routes.draw do
   resources :trips do
     resources :companions, only: %i[show]
   end
-  
+
+  get "pages/", to: "pages#generate", as: :generate_page
 end

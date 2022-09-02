@@ -11,7 +11,6 @@ User.destroy_all
 Companion.destroy_all
 Trip.destroy_all
 
-
 Flight.destroy_all
 Accommodation.destroy_all
 
@@ -23,14 +22,15 @@ puts "Creating New Seeds"
 
 puts "Creating users"
 
+3.times do |index|
   user1 = User.create!(
-    name: "Delvin",
-    phone: "781646738",
-    email: "delvin44@email.com",
+    name: Faker::Name.unique.name,
+    phone: Faker::PhoneNumber.phone_number_with_country_code,
+    email: "email#{index}@email.com",
     password: "password123"
   )
 
-  puts "Creating trips"
+  puts "Creating trips for #{user1.name}"
   trip1 = Trip.create!(
     user: user1,
     start_date: 20220830,
@@ -42,16 +42,19 @@ puts "Creating users"
     longitude: 100.5018,
     currency: "SGD"
   )
+
   puts "trip id:#{trip1.id} created"
 
-puts "Creating Companions"
+  puts "Creating Companions for #{user1.name}"
 
-  Companion.create!(
-    name: "Julien",
-    age: 30,
-    category: "friends",
-    trip: trip1
-  )
+  rand(1..3).times do
+    Companion.create!(
+      name: "Julien",
+      age: 30,
+      category: "friends",
+      trip: trip1
+    )
+  end
 
 # Flights, Hotels, Activities
 
@@ -119,5 +122,6 @@ puts "Creating activities"
   #ratingValue: ,
   #currenciesAccepted: ,
 #)
+end
 
 puts "Seeds created!"
