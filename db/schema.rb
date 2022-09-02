@@ -86,7 +86,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_034450) do
   create_table "companions", force: :cascade do |t|
     t.string "name"
     t.integer "age"
-    t.string "category"
+    t.string "type"
     t.bigint "trip_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -148,7 +148,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_034450) do
   create_table "trips", force: :cascade do |t|
     t.integer "start_date"
     t.integer "end_date"
-    t.string "location"
+    t.string "origin"
     t.float "budget"
     t.float "total_cost"
     t.float "latitude"
@@ -158,6 +158,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_034450) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "pax"
+    t.string "destination"
     t.index ["user_id"], name: "index_trips_on_user_id"
   end
 

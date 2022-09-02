@@ -5,9 +5,10 @@ class Trip < ApplicationRecord
   has_many :attractions, dependent: :destroy
   has_many :restaurants, dependent: :destroy
   has_many :accommodations, dependent: :destroy
-  validates :start_date, :end_date, :latitude, :longitude, presence: true
-  validates :location, :budget, :total_cost, :currency, presence: true
 
+  validates :start_date, :end_date, presence: true
+  validates :origin, :destination, :budget, presence: true
+  
   has_one_attached :photo
   accepts_nested_attributes_for :companions
 end

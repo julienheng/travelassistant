@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :trips do
-    resources :companions, only: %i[show]
+    resources :companions, only: %i[show new create]
     resources :activites
     resources :flights
     resources :accommodations

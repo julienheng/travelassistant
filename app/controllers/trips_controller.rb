@@ -13,7 +13,6 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
     @trip.user = current_user
     if @trip.save
-      raise
       redirect_to generate_page_path
     else
       render :new, status: :unprocessable_entity
@@ -45,6 +44,8 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:start_date, :end_date, :location, :budget, :total_cost, :latitude, :longitude, :currency)
+    params.require(:trip).permit(:start_date, :end_date, :origin, :destination,
+                                 :budget, :total_cost, :latitude,
+                                 :longitude, :currency, :pax)
   end
 end
