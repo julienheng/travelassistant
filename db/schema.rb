@@ -86,7 +86,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_034450) do
   create_table "companions", force: :cascade do |t|
     t.string "name"
     t.integer "age"
-    t.string "type"
+    t.string "category"
     t.bigint "trip_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

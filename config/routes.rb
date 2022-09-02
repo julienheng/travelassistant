@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :accommodations
   end
 
-  get "pages/", to: "pages#generate", as: :generate_page
+  #get "pages/", to: "pages#generate", as: :generate_page
   get "pages/dashboard", to: "pages#dashboard", as: :dashboard_page
   get "loading/", to: "pages#loading", as: :loading_page
   get "trip-generate/", to: "pages#generate", as: :generate_page
