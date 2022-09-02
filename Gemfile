@@ -11,6 +11,9 @@ gem "faker"
 
 gem "pundit"
 
+gem "bootstrap"
+
+
 gem 'wicked'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

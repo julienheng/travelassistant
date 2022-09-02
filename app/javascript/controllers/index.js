@@ -3,6 +3,7 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from "./application"
+import Carousel from "stimulus-carousel"
 
 import CreateTripController from "./create_trip_controller"
 application.register("create-trip", CreateTripController)
@@ -10,4 +11,4 @@ application.register("create-trip", CreateTripController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-localStorage.setItem("id",@flight.data.id)
+application.register("carousel",Carousel);
