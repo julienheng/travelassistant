@@ -11,26 +11,26 @@ User.destroy_all
 Companion.destroy_all
 Trip.destroy_all
 
-
 Flight.destroy_all
 Accommodation.destroy_all
 
-#Activity.destroy_all
-#Restaurant.destroy_all
-#Attraction.destroy_all
+# Activity.destroy_all
+# Restaurant.destroy_all
+Attraction.destroy_all
 
 puts "Creating New Seeds"
 
 puts "Creating users"
 
+3.times do |index|
   user1 = User.create!(
-    name: "Delvin",
-    phone: "781646738",
-    email: "delvin44@email.com",
+    name: Faker::Name.unique.name,
+    phone: Faker::PhoneNumber.phone_number_with_country_code,
+    email: "email#{index}@email.com",
     password: "password123"
   )
 
-  puts "Creating trips"
+  puts "Creating trips for #{user1.name}"
   trip1 = Trip.create!(
     user: user1,
     start_date: 20220830,
@@ -42,16 +42,19 @@ puts "Creating users"
     longitude: 100.5018,
     currency: "SGD"
   )
+
   puts "trip id:#{trip1.id} created"
 
-puts "Creating Companions"
+  puts "Creating Companions for #{user1.name}"
 
-  Companion.create!(
-    name: "Julien",
-    age: 30,
-    category: "friends",
-    trip: trip1
-  )
+  rand(1..3).times do
+    Companion.create!(
+      name: "Julien",
+      age: 30,
+      category: "friends",
+      trip: trip1
+    )
+  end
 
 # Flights, Hotels, Activities
 
@@ -94,30 +97,40 @@ Accommodation.create!(
   trip: trip1
 )
 
-puts "Creating activities"
+puts "Creating attractions (3 API calls)"
+3.times do
+  attraction1 = Attraction.create!(
+  name: "Gardens by the Bay",
+  address: "18 Marina Gardens Drive Bayfront Plaza, Singapore 018953 Singapore",
+  category_name: "Sights & Landmarks",
+  price: "$14.69",
+  rating: "4.5",
+  booked: true,
+  selected: true,
+  trip: trip1,
+  )
+end
 
-#puts "Creating attractions"
-#attraction1 = Attraction.create!(
-  #attraction: ,
-  #name: ,
-  #address: ,
-  #category: ,
-  #price: ,
-  #rating: ,
-#)
 
-#puts "Creating restaurants (3 API calls)"
-#restaurant1 = Restaurant.create!(
-  #google_place_id: ,
-  #id_city: ,
-  #name: ,
-  #street: ,
-  #postalCode: ,
-  #longitude: ,
-  #latitude: ,
-  #priceRange: ,
-  #ratingValue: ,
-  #currenciesAccepted: ,
-#)
+puts "Creating restaurants (3 API calls)"
+3.times do
+  restaurant1 = Restaurant.create!(
+    google_place_id: "ChIJ53USP0nBhkcRjQ50xhPN_zw",
+    city_id: 348156,
+    name: "Misoya Milano",
+    street: "Via Solferino, 41",
+    postal_code: "20121",
+    longtitude: "9.18867",
+    latitude: "45.4796256",
+    price_range: 25,
+    rating_value: 4.5,
+    currencies_accepted: "EUR",
+    main_photo_src: "https://res.cloudinary.com/tf-lab/image/upload/restaurant/f5cdff1f-3cc7-4fba-b2ac-44c95ede85e4/b41c40e3-984e-4048-a197-5c3124b30c88.jpg",
+    booked: true,
+    selected: true,
+    trip: trip1,
+  )
+end
 
+end
 puts "Seeds created!"

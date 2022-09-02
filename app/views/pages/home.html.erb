@@ -1,76 +1,54 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);">
+<!-- Slider main container -->
+<%# <div data-controller="carousel" class="swiper-container">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide">Slide 1</div>
+    <div class="swiper-slide">Slide 2</div>
+    <div class="swiper-slide">Slide 3</div>
+  </div>
+</div> %>
+
+<div class="banner banner-home-bg" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.pexels.com/photos/5857863/pexels-photo-5857863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
   <div class="container">
-    <h1>Howliday </h1>
-    <p>Plan your Holiday trip with ease</p>
-    <a class="btn btn-flat" href="#">Plan Vacation</a>
+    <div class="banner_title">Howliday </div>
+    <div class="banner_title">Plan your Holiday trip with ease</div>
+    <%# <a class="btn btn-success d-grid gap-2 col-6 mx-auto" href="#">Plan Vacation</a> %>
+    <div class="d-flex justify-content-center mt-3">
+      <%= link_to "Plan Vacation", "#", class: "btn btn-traveller btn-lg" %>
+    </div>
   </div>
 </div>
 
 <%# -----Traveller experience---- %>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 
-<div class="wrapper">
-  <h1>Past Travellers iternary experience</h1>
-  <div class="cols">
-			<div class="col" ontouchstart="this.classList.toggle('hover');">
-				<div class="container">
-					<div class="front" style="background-image: url(https://images.pexels.com/photos/3225528/pexels-photo-3225528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)">
-						<div class="inner">
-							<p>Traveller 1</p>
-              <span>Italy</span>
-						</div>
-					</div>
-					<div class="back">
-						<div class="inner">
-						  <p>This is a trip review</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col" ontouchstart="this.classList.toggle('hover');">
-				<div class="container">
-					<div class="front" style="url(https://images.pexels.com/photos/6185777/pexels-photo-6185777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2/)">
-						<div class="inner">
-							<p>Traveller 2</p>
-              <span>Greece</span>
-						</div>
-					</div>
-					<div class="back">
-						<div class="inner">
-							<p>This is a trip review.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col" ontouchstart="this.classList.toggle('hover');">
-				<div class="container">
-					<div class="front" style="background-image: url(https://images.pexels.com/photos/3889742/pexels-photo-3889742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2/)">
-						<div class="inner">
-							<p>Traveller 4</p>
-              <span>Europe</span>
-						</div>
-					</div>
-					<div class="back">
-						<div class="inner">
-							<p>This is a trip review.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col" ontouchstart="this.classList.toggle('hover');">
-				<div class="container">
-					<div class="front" style="background-image: url(https://images.pexels.com/photos/2914152/pexels-photo-2914152.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2/)">
-						<div class="inner">
-							<p>Traveller 4</p>
-              <span>India</span>
-						</div>
-					</div>
-					<div class="back">
-						<div class="inner">
-							<p>This is a trip review.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
- </div>
- <%# -----Traveller experience---- %>
+  <!-- slider indicators -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+
+  <!-- Slider contents -->
+  <div class="carousel-inner">
+    <% 3.times do |index| %>
+      <%= render 'testimonial', index: index %>
+    <% end %>
+  </div>
+
+  <!-- Slider controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+
+ <%# -----End Traveller experience---- %>

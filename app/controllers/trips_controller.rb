@@ -13,7 +13,7 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
     @trip.user = current_user
     if @trip.save
-      redirect_to trip_path(@trip)
+      redirect_to generate_page_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -36,6 +36,9 @@ class TripsController < ApplicationController
   def destroy
     @trip = Trip.destroy
     redirect_to trips_path, status: :see_other
+  end
+
+  def activities
   end
 
   private
