@@ -1,9 +1,28 @@
-<div class="flights-container">
+<div class="text-center">
   <h2>Here are some flights we found</h2>
+</div>
 
-  <div class="flights-card">
-
+<div class="acc-content container">
+  <!-- carousel for flights -->
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <!-- Slider contents -->
+    <div class="carousel-inner">
+      <% @flights.each_with_index do |flight, index| %>
+        <%= render 'flight', flight: flight, index: index %>
+      <% end %>
+    </div>
+    <!-- Slider controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
+</div>
 
-  <button type="button" class="btn btn-danger">View Accomodations</button>
+<div class="text-center">
+  <button type="button" class="btn btn-danger">View Accommodations</button>
 </div>

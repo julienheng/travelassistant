@@ -9,3 +9,5 @@ application.register("create-trip", CreateTripController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+localStorage.setItem("id",@flight.data.id)
