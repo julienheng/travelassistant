@@ -2,6 +2,7 @@ class FlightsController < ApplicationController
   def new
     @flight = Flight.new
     @flights = Flight.all
+    @trip = Trip.find(params[:trip_id])
   end
 
   def create
