@@ -59,7 +59,7 @@ export default class extends Controller {
 
       case 'flight':
         this.clearActive()
-        this.backTarget.classList.add('d-none')
+        this.backTarget.classList.remove('d-none')
         this.budgetTarget.classList.add('active')
         this.nextTarget.classList.remove('d-none')
         this.submitTarget.classList.add('d-none')
@@ -95,9 +95,9 @@ export default class extends Controller {
     if (this.currentStepValue = 'rtflight') {
       this.clearActive()
       this.backTarget.classList.remove('d-none')
+      this.rtdateTarget.classList.add('active')
       this.submitTarget.classList.remove('d-none')
       this.nextTarget.classList.add('d-none')
-      this.rtdateTarget.classList.add('active')
       this.currentStepValue = 'rtdate'
       //this.flightStepValue= "yes"
     }

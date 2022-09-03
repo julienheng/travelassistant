@@ -1,7 +1,6 @@
 .trip-step {
-  border: 1px solid red;
   position: absolute;
-  height: 350px;
+  height: 400px;
   width: 500px;
   left: 10%;
   margin-left: -50px;
@@ -34,23 +33,58 @@
 
 }
 
-.main-buttons {
-  position: absolute;
-  border: 1px solid blue;
-  width:fit-content;
-  left: 40%;
-  margin-left: -50px;
-  top: 70%;
-  margin-top: -50px;
-
-  .next-button {
-    margin-left: 20px;
-    width: 100px;
-    height: 40px;
-  }
+.createtrip-flighttype {
   .back-button {
-    width: 100px;
-    height: 40px;
+    margin-top: 50px;
+    width: 110px;
+    border: 1px solid #FE5754;
+    color: #FE5754;
+
+    &:hover {
+    background-color: #FE5754;
+    color: white
+    }
+  }
+
+  .rtflight-button {
+    background-color: #FE5754;
+    color: white;
+  }
+}
+
+.main-buttons {
+  .next-button {
+    margin-left: 15px;
+    width: 110px;
+    border: 1px solid #FE5754;
+    color: #FE5754;
+
+   &:hover {
+    background-color: #FE5754;
+    color: white
+  }
+  }
+
+  .back-home-button, .back-button {
+    margin-right: 15px;
+    width: 110px;
+    color:#FE5754;
+    border: 1px solid #FE5754;
+
+    &:hover {
+      background-color: #FE5754;
+      color: white
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+      color: #FE5754;
+
+      &:hover {
+        color: white
+      }
+    }
   }
 }
 
@@ -77,6 +111,31 @@
     border-radius: 50rem;
     width: 150px;
     height: 50px;
+    margin: 0 15px;
+  }
+}
+
+.submit-button {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+
+  .submit {
+    border-radius: 50rem;
+    width: 150px;
+    height: 50px;
+    margin-bottom: 20px;
+    background-color: #FE5754;
+    color: white;
+    border: none;
+  }
+
+  .back-button {
+    width: 110px;
+    color:#FE5754;
+    border: 1px solid #FE5754;
     margin: 0 15px;
   }
 }
