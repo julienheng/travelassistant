@@ -1,0 +1,17 @@
+<div class="createtrip-companion" data-create-trip-target="companion">
+  <h3 class="text-center">Traveller Details</h3>
+
+  <%= simple_form_for(@companion) do |f| %>
+
+    <%= f.input :pax, :label => "Number", input_html: { data: { action: "change->create-trip#addTravellerFields", create_trip_target: "inputField"  }, class: "traveller-input", :value => "" } %>
+      <h3>Type</h3>
+    <%= f.input :type, :label => "Select", :collection => ["Solo","Couple", "Family", "Friends"], :selected => "" %>
+
+    <div class="traveller-detail">
+      <%= f.input :name %>
+      <%= f.input :age %>
+      <%= f.submit %>
+    </div>
+
+  <% end %>
+</div>

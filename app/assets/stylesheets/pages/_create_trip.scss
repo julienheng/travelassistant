@@ -1,18 +1,56 @@
 .trip-step {
+  border: 1px solid red;
   position: absolute;
-  width: 300px;
-  height: 50%;
-  left: 100px;
-  top: 50px;
+  height: 350px;
+  width: 500px;
+  left: 10%;
+  margin-left: -50px;
+  top: 20%;
+  margin-top: -50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   transform: scale(1.5);
   opacity: 0;
   pointer-events: none;
   transition: 300ms;
 
+  input {
+    width: 250px;
+    height: 50px;
+    border-radius: 50rem;
+    margin-bottom: 20px;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 30px
+  }
+
   &.active{
     transform: scale(1);
     opacity: 1;
     pointer-events: all;
+  }
+
+}
+
+.main-buttons {
+  position: absolute;
+  border: 1px solid blue;
+  width:fit-content;
+  left: 40%;
+  margin-left: -50px;
+  top: 70%;
+  margin-top: -50px;
+
+  .next-button {
+    margin-left: 20px;
+    width: 100px;
+    height: 40px;
+  }
+  .back-button {
+    width: 100px;
+    height: 40px;
   }
 }
 
@@ -26,57 +64,24 @@
   margin: 0 auto;
   width: 500px;
   height: 100%;
+  position: relative;
+}
+
+.flight-buttons {
   display: flex;
   justify-content: center;
-  position: relative;
+  align-items: space-around;
+  margin-top: 20px;
 
-}
-
-
-.createtrip-budget {
-  margin: 20px auto;
-  background-color: red;
-}
-
-.createtrip-flight {
-  margin: 20px auto;
-  background-color:blue;
-
-}
-
-.createtrip-companion {
-  margin: 20px auto;
-  background-color: green;
-}
-
-.createtrip-flighttype {
-  margin: 20px auto;
-  background-color: yellow;
-}
-
-.createtrip-flightdate {
-  background-color: palevioletred;
-  margin: 20px auto;
-}
-
-.createtrip-oneway {
-  background-color: brown;
-  margin: 20px auto;
-}
-
-.btn.btn-warning {
-  width: 50px;
-  height: 50px;
-  left: 100px;
+  button {
+    border-radius: 50rem;
+    width: 150px;
+    height: 50px;
+    margin: 0 15px;
+  }
 }
 
 .traveller-detail {
   display: flex;
   justify-content: space-between;
-}
-
-.main-buttons {
-  display: flex;
-  flex-direction: row
-
 }
