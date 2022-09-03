@@ -5,19 +5,19 @@
         <h5 class="card-title"><%#= session[:trip_data]["flights"]["flight1"][0] %></h5>
         <p class="card-text">Departure</p>
         <div class="depart-time text-center">
-          0330 <i class="arrow right"></i><i class="arrow right"></i><i class="arrow right"></i> 1100
+          <%= session[:trip_data]["flights"]["outbound_departure"] %> <i class="arrow right"></i><i class="arrow right"></i><i class="arrow right"></i> <%= session[:trip_data]["flights"]["outbound_arrival"] %>
         </div>
         <div class="depart-location text-center">
-          SIN      direct     INC
+          <%= session[:trip_data]["flights"]["outbound_origin_display_code"] %>   direct     <%= session[:trip_data]["flights"]["outbound_destination_display_code"] %>
         </div>
         <p class="card-text">Arrival</p>
         <div class="depart-time text-center">
-          1530 <i class="arrow right"></i><i class="arrow right"></i><i class="arrow right"></i> 0000
+          <%= session[:trip_data]["flights"]["inbound_departure"] %> <i class="arrow right"></i><i class="arrow right"></i><i class="arrow right"></i> <%= session[:trip_data]["flights"]["inbound_arrival"] %>
         </div>
         <div class="depart-location text-center">
-          INC      direct     SIN
+          <%= session[:trip_data]["flights"]["inbound_origin_display_code"] %>      direct     <%= session[:trip_data]["flights"]["inbound_destination_display_code"] %>
         </div>
-        <p class="card-text">Estimated Price: </p>
+        <p class="card-text">Estimated Price: $<%= session[:trip_data]["flights"]["amount"] %></p>
         <div class="text-center">
           <a href="#" class="btn btn-primary">Select</a>
         </div>
