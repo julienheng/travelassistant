@@ -91,6 +91,66 @@ class PagesController < ApplicationController
   end
 
   def find_accomms
+    #search place API to get entity ID
+    #url = URI("https://skyscanner50.p.rapidapi.com/api/v1/searchPlace?query=london")
+
+    #http = Net::HTTP.new(url.host, url.port)
+    #http.use_ssl = true
+    #http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    #request = Net::HTTP::Get.new(url)
+    #request["X-RapidAPI-Key"] = 'ac49dd4730msh08ae8f552f388afp1aadd1jsn9b400b1d9b91'
+    #request["X-RapidAPI-Host"] = 'skyscanner50.p.rapidapi.com'
+
+    #response = http.request(request)
+    #user_place_data = response.read_body
+    #user_place_data_json = JSON.parse(user_place_data)
+    #user_place_data_json = user_place_data_json["data"].first
+    #entityid = ?
+
+    #search hotel API
+    #url = URI("https://skyscanner50.p.rapidapi.com/api/v1/searchHotel?entityId=%3CREQUIRED%3E&checkin=%3CREQUIRED%3E&checkout=%3CREQUIRED%3E&waitTime=2000&currency=USD&countryCode=US&market=en-US")
+
+    #http = Net::HTTP.new(url.host, url.port)
+    #http.use_ssl = true
+    #http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    #request = Net::HTTP::Get.new(url)
+    #request["X-RapidAPI-Key"] = 'ac49dd4730msh08ae8f552f388afp1aadd1jsn9b400b1d9b91'
+    #request["X-RapidAPI-Host"] = 'skyscanner50.p.rapidapi.com'
+
+    #response = http.request(request)
+    #user_accomms_data = response.read_body
+    #user_accomms_data_json = JSON.parse(user_accomms_data)
+    #user_accomms_data = user_accomms_data_json["data"].first
+
+    #user_accomms_data = {
+    #  entity_id: ,
+    #  hotel_id: ,
+    #  name: ,
+    #  price: ,
+    #  latitude: ,
+    #  longitude: ,
+    #  cheapest_partner: ,
+    #  stars: ,
+    #  hero_image: ,
+    #  value: ,
+    #  description: ,
+    #}
+
+    #user_accomms_data = {
+      #entity_id: ,
+      #hotel_id: ,
+      #name: ,
+      #price: ,
+      #latitude: ,
+      #longitude: ,
+      #cheapest_partner: ,
+      #stars: ,
+      #hero_image: ,
+      #value: ,
+      #description: ,
+    #}
   end
 
   def find_restaurants
