@@ -1,16 +1,18 @@
 <div class="createtrip-companion" data-create-trip-target="companion">
   <h3 class="text-center">Traveller Details</h3>
 
-  <%= simple_form_for(@companion) do |f| %>
+  <%= simple_form_for([@trip, @companion]) do |f| %>
 
-    <%= f.input :pax, :label => "Number", input_html: { data: { action: "change->create-trip#addTravellerFields", create_trip_target: "inputField"  }, class: "traveller-input", :value => "" } %>
-      <h3>Type</h3>
-    <%= f.input :type, :label => "Select", :collection => ["Solo","Couple", "Family", "Friends"], :selected => "" %>
+    <%= f.input :pax, :label => "Number", input_html: { data: { action: "change->create-trip#addTravellerFields", create_trip_target: "inputField"  }, class: "traveller-input rounded-pill", :value => "" } %>
+    <%= f.input :type, :label => "Select", :collection => ["Solo","Couple", "Family", "Friends"], :selected => "" , input_html: { class: "type-input rounded-pill" } %>
 
-    <div class="traveller-detail">
-      <%= f.input :name %>
-      <%= f.input :age %>
-      <%= f.submit %>
+    <div class="traveller-detail d-flex justify-content-between">
+      <%= f.input :name, input_html: { class: "name-input rounded-pill" } %>
+      <%= f.input :age, input_html: { class: "age-input rounded-pill" } %>
+    </div>
+
+    <div class="com-submit-button d-flex justify-content-center">
+      <%= f.submit "Submit", class: "companion-submit btn btn-outline"  %>
     </div>
 
   <% end %>
