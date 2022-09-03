@@ -24,5 +24,7 @@
 </div>
 
 <div class="text-center">
-  <button type="button" class="btn btn-danger">View Accommodations</button>
+  <button class="btn btn-danger">
+    <%= link_to "View Accommodations", new_trip_accommodation_path(@trip) %>
+  </button>
 </div>
