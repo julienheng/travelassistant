@@ -1,6 +1,7 @@
 require 'uri'
 require 'net/http'
 require 'openssl'
+require 'json'
 
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
@@ -29,11 +30,9 @@ class PagesController < ApplicationController
       }
     }
     session[:trip_data] = @data
-
-    unless @flights
+    unless @data
       flash[:alert] = 'Flight not found'
     end
-
     redirect_to new_trip_flight_path(1)
   end
 
@@ -43,23 +42,52 @@ class PagesController < ApplicationController
   private
 
   def find_flight
-    # url = URI("https://skyscanner50.p.rapidapi.com/api/v1/searchFlights?origin=SIN&destination=LHR&date=2022-09-30&returnDate=2022-10-30&adults=1&currency=USD&countryCode=US&market=en-US")
+    #url = URI("https://skyscanner50.p.rapidapi.com/api/v1/searchFlights?origin=LHR&destination=SIN&date=2022-09-30&returnDate=2022-10-30&adults=1&currency=USD&countryCode=US&market=en-US")
 
-    # http = Net::HTTP.new(url.host, url.port)
-    # http.use_ssl = true
-    # http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    #http = Net::HTTP.new(url.host, url.port)
+    #http.use_ssl = true
+    #http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-    # request = Net::HTTP::Get.new(url)
-    # request["X-RapidAPI-Key"] = 'ac49dd4730msh08ae8f552f388afp1aadd1jsn9b400b1d9b91'
-    # request["X-RapidAPI-Host"] = 'skyscanner50.p.rapidapi.com'
+    #request = Net::HTTP::Get.new(url)
+    #request["X-RapidAPI-Key"] = 'ac49dd4730msh08ae8f552f388afp1aadd1jsn9b400b1d9b91'
+    #request["X-RapidAPI-Host"] = 'skyscanner50.p.rapidapi.com'
 
-    # response = http.request(request)
-    # response.read_body
+    #response = http.request(request)
+    #user_flights_data = response.read_body
 
-    response = {
-      flight1: [1, 2, 3]
+    #user_flights_data_json = JSON.parse(user_flights_data)
+    #user_flight_data_json = user_flights_data_json["data"].first
+
+    #user_flight_data = {
+      #amount: user_flight_data_json["price"]["amount"],
+      #outbound_origin_display_code: user_flight_data_json["legs"][0]["origin"]["display_code"],
+      #outbound_destination_display_code: user_flight_data_json["legs"][0]["destination"]["display_code"],
+      #outbound_departure: user_flight_data_json["legs"][0]["departure"],
+      #outbound_arrival: user_flight_data_json["legs"][0]["arrival"],
+      #outbound_carrier_name: user_flight_data_json["legs"][0]["carriers"][0]["name"],
+      #inbound_origin_display_code: user_flight_data_json["legs"][1]["origin"]["display_code"],
+      #inbound_destination_display_code: user_flight_data_json["legs"][1]["destination"]["display_code"],
+      #inbound_departure: user_flight_data_json["legs"][1]["departure"],
+      #inbound_arrival: user_flight_data_json["legs"][1]["arrival"],
+      #inbound_carrier_name: user_flight_data_json["legs"][1]["carriers"][0]["name"],
+      #api_flight_id: user_flight_data_json["id"]
+    #}
+
+    user_flight_data = {
+      amount: 932.89,
+      outbound_origin_display_code: "SIN",
+      outbound_destination_display_code: "LHR",
+      outbound_departure: "2022-09-30T17:15:00",
+      outbound_arrival: "2022-10-01T05:55:00",
+      outbound_carrier_name: "Malaysia Airlines",
+      inbound_origin_display_code: "LHR",
+      inbound_destination_display_code: "SIN",
+      inbound_departure: "2022-10-30T10:25:00",
+      inbound_arrival: "2022-10-31T10:20:00",
+      inbound_carrier_name: "Malaysia Airlines",
+      api_flight_id: "16292-2209301715--32080-1-13554-2210010555|13554-2210301025--32080-1-16292-2210311020"
     }
-    response
+
   end
 
   def find_accomms
