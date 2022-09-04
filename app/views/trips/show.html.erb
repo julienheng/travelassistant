@@ -4,10 +4,83 @@
   </div>
   <h1>You have chosen</h1>
 <%# ---------start of flight details section---------   %>
-    <div class = "show-flight-detail">
-      <h2>Flight</h2>
+    <div class = "show-flight-container">
+      <div class = "show-flight-detail">
+        <div class = "outbound_flight_details">
+          <h3>Outbound Flight</h3>
+          <%= Flight.first.outbound_carrier_name  %> <br>
+          <%= Flight.first.outbound_origin_display_code %> - <%= Flight.first.outbound_destination_display_code  %><br>
+          <p>Departure Time:<%= Flight.first.outbound_departure %></p>
+          <p>Arrival Time:<%= Flight.first.outbound_arrival %></p>
+          <h3>Departure</h3>
+          <p>This show departure details</p>
 
+          <h3>Arrival</h3>
+          <p>This show arrival details</p>
+        </div>
 
+        <div class = "inbound">
+          <h3>Inbound Flight</h3>
+            <%= Flight.first.inbound_carrier_name  %>
+          <br>
+              <%= Flight.first.inbound_origin_display_code %> - <%= Flight.first.outbound_destination_display_code  %>
+          <br>
+          <p>Departure Time:<%= Flight.first.inbound_departure %></p>
+          <p>Arrival Time:<%= Flight.first.inbound_arrival %></p>
+          <h3>Departure</h3>
+          <p>This show departure details</p>
+          <h3>Arrival</h3>
+          <p>This show arrival details</p>
+        </div>
+      </div>
+            <div class="show-flight-price">
+              <p>Estimating $200</p>
+                <div class="show-flight-price-button">
+                  <p>Make Payment</p>
+                  <input type="checkbox">
+                  <label for="payment_made"> Tick if payment made</label><br>
+                </div>
+            </div>
     </div>
 <%# ---------end of flight details section---------   %>
+<%# ---------start of accomodation details section---------   %>
+            <div class = "show-accomodation-container">
+              <div class="show-accomodation">
+               <h3>Accomodation</h3>
+                <p>Hotel Name: <%= Accommodation.first.name %></p>
+              </div>
+                <div class="show-accomodation-price">
+                  <p>Estimating <%= Accommodation.first.price %></p>
+                    <div class="show-accomodation-price-button">
+                      <p>Make Payment</p>
+                      <input type="checkbox">
+                      <label for="payment_made"> Tick if payment made</label><br>
+                    </div>
+                </div>
+            </div>
+<%# ---------end of accomodation details section---------   %>
+<%# ---------start of activity details section---------   %>
+              <div class="show-activity-container">
+              <%# -------accomodation---- %>
+                <div class="show-activity">
+                  <h3>Attraction</h3>
+                  <p>Place: <%= Attraction.first.name %></p>
+                  <p>Address: <%= Attraction.first.address %></p>
+                </div>
+                 <%# -------restaurant---- %>
+                  <div class = "show-restaurant">
+                    <h3>Restaurant</h3>
+                    <p>Name: <%= Restaurant.first.name %></p>
+                    <p>Address: <%= Restaurant.first.street %></p>
+                    <p>Price range: USD <%= Restaurant.first.price_range %></p>
+                  </div>
+                  <%# -------price---- %>
+                     <div class="show-activity-price">
+                      <p>Estimating <%= Accommodation.first.price %></p>
+                        <div class="show-activity-price-button">
+                          <p>Make Payment</p>
+                          <input type="checkbox">
+                          <label for="payment_made"> Tick if payment made</label><br>
+                    </div>
+              </div>
 </div>
