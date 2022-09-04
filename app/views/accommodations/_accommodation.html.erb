@@ -1,16 +1,13 @@
 <div class="carousel-item <%= 'active' if index.zero? %>">
   <div class="hotel-cards row px-1 mt-4 mx-0">
-    <%# <div class="col-6"> %>
       <%= image_tag "hotel.jpg", width:"100%" %>
-    <%# </div> %>
-    <%# <div class="col-8"> %>
       <div class="hotel-card text-center">
-        <h4><strong><%= accommodation.name %></strong></h4>
-        <p><%= accommodation.price %></p>
-        <p><%= accommodation.stars %>-Star Hotel</p>
+        <h4 class="acc-name mt-2"><strong><%= accommodation.name %></strong></h4>
+        <p><%= accommodation.price %> | <%= accommodation.stars %>-Star Hotel</p>
         <p>Description: <%= accommodation.description.capitalize %></p>
         <p>Partner: <%= accommodation.cheapest_partner %></p>
         <p>Rating: <%= accommodation.value %>/10</p>
+        <button type="button" class="btn btn-warning">Select</button>
       </div>
     </div>
   </div>

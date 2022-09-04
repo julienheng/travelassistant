@@ -41,6 +41,9 @@ class PagesController < ApplicationController
   def dashboard
   end
 
+  def activities
+  end
+
   private
 
   def find_flight

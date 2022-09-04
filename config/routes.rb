@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :activites
     resources :flights
     resources :accommodations
+    resources :attractions
+    resources :restaurants
   end
 
   #get "pages/", to: "pages#generate", as: :generate_page

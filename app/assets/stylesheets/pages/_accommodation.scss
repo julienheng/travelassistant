@@ -4,11 +4,12 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-image: image-url("hotelone.jpeg");
-  background-size: cover;
+  margin-top: 20px;
+  // background-image: image-url("hotelone.jpeg");
+  // background-size: cover;
 
   h1 {
-    color: white;
+    color: black;
     font-weight: bold;
   }
 }
@@ -16,10 +17,9 @@
 .hotel-cards {
   width: 100%;
   padding: 12px;
-  border: 2px solid red;
+  border: solid #fd5754 5px;
   box-shadow: 0 0 8px 0 #7c7c7c;
   background-color: white;
-  margin-top: 20px;
   border-radius: 20px;
-  // display: flex;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
