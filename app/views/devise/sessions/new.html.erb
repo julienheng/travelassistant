@@ -1,9 +1,15 @@
-<body id='signin-page'>
-    <div class="background">
-        <div class="shape"></div>
-        <div class="shape"></div>
+<body id="signin-page">
+    <div class="background-session">
+        <div class="shape-session"></div>
+        <div class="shape-session"></div>
     </div>
-    <form>
+    <form class="form-session">
+        <div class="img-session d-flex justify-content-center">
+          <%= link_to root_path, class: "navbar-brand" do %>
+            <%= image_tag "logo_side.png", width: 125, :class => "img_preview rounded" %>
+          <% end %>
+        </div>
+
         <h2 class="text-center">Log in</h2>
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
           <div class="form-inputs">
@@ -21,11 +27,12 @@
             <%= f.button :submit, "Log in", class: "button-submit-session" %>
           </div>
 
-          <div class="social">
+          <div class="social-icons">
             <a href="" class="go"><i class="fab fa-google fa-2x"></i></a>
             <a href="" class="fb"><i class="fab fa-facebook fa-2x"></i></a>
             <a href="https://github.com/julienheng" class="git"><i class="fa-brands fa-github fa-2x"></i></a>
           </div>
+
           <div class='link-render'>
             <%= render "devise/shared/links" %>
           </div>

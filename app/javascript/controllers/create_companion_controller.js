@@ -5,7 +5,8 @@ export default class extends Controller {
   static targets = ["inputfield"]
 
   connect() {
-    console.log("Controller 1");
+    console.log("Controller 2");
+    console.log(this.inputfieldTarget)
   }
 
   addTravellerFields() {
