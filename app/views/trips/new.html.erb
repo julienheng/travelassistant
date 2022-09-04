@@ -1,51 +1,70 @@
 <div class="newtrip-container">
-  <%= link_to "Back", root_path %>
-
   <div class="newtrip-second-container" data-controller="create-trip" data-create-trip-current-step-value="budget" >
-    <%= simple_form_for((@trip), data: { create_trip_target: "form", action: "submit->create-trip#send"}) do |f| %>
 
+    <%= simple_form_for((@trip), data: { create_trip_target: "form" }) do |f| %>
+
+      <%# --------- BUDGET ---------   %>
       <div class="trip-step createtrip-budget active" data-create-trip-target="budget" >
-        <h2 class="text-center">What's your total budget?</h1>
-        <%= f.input :budget %>
+        <h2 class="text-center fs-1">What's your ideal budget?</h1>
+        <%= f.input :budget, :label => 'Amount', class: "fs-3" %>
+
+        <div class="main-buttons d-flex">
+          <div class="back-home-button btn btn-outline rounded-pill"><%= link_to "Back", root_path %></div>
+          <button type="button" class="next-button btn btn-outline rounded-pill" data-create-trip-target="next" data-action="click->create-trip#next">Next</button>
+        </div>
       </div>
 
+      <%# --------- FLIGHT ---------   %>
       <div class="trip-step createtrip-flight" data-create-trip-target="flight">
-        <h2 class="text-center">Where are you flying to?</h2>
+        <h2 class="text-center fs-1">Where are you heading to?</h2>
         <%= f.input :origin %>
         <%= f.input :destination %>
+
+        <div class="main-buttons d-flex">
+          <%= render "trips/createtrip_button"%>
+          <button type="button" class="next-button btn btn-outline rounded-pill" data-create-trip-target="next" data-action="click->create-trip#next">Next</button>
+        </div>
       </div>
 
+      <%# --------- TYPE OF FLIGHT ---------   %>
       <div class="trip-step createtrip-flighttype" data-create-trip-target="type">
-        <h2 class="text-center">Would you like a return flight?</h2>
-        <button type="button" class="btn btn-primary" data-create-trip-target="rtflight" data-action="click->create-trip#flightYes" data-create-trip-flight-step-value="yes">Yes</button>
-        <button type="button" class="btn btn-secondary" data-create-trip-target="owflight" data-action="click->create-trip#flightNo">No</button>
+        <h2 class="text-center fs-1">Would you like a return flight?</h2>
+
+        <div class="flight-buttons">
+          <button type="button" class="rtflight-button1 btn btn" data-bs-toggle="button" data-create-trip-target="rtflight" data-action="click->create-trip#flightYes" data-create-trip-flight-step-value="yes">
+            <span class="span1">Round Trip</span>
+          </button>
+          <button type="button" class="rtflight-button2 btn btn" data-bs-toggle="button" data-create-trip-target="owflight" data-action="click->create-trip#flightNo">
+            <span class="span2">One Way</span>
+          </button>
+        </div>
+
+        <%= render "trips/createtrip_button"%>
       </div>
 
+      <%# ---------RT DATES---------   %>
       <div class="trip-step createtrip-flightdate" data-create-trip-target="rtdate">
-        <h2 class="text-center">Please enter the dates</h2>
-        <%= f.input :start_date, :label => "Departure", as: :date, html5: true %>
-        <%= f.input :end_date, :label => "Returning", as: :date, html5: true %>
+        <h2 class="text-center fs-1">Select your dates</h2>
+        <%= f.input :start_date, :label => "Depart", as: :date, html5: true %>
+        <%= f.input :end_date, :label => "Return", as: :date, html5: true %>
+
+        <div class="submit-button">
+          <%= render "trips/createtrip_button"%>
+          <%= f.submit "Submit",  data: { create_trip_target: "submit" } , class: "submit-trip btn btn"  %>
+        </div>
       </div>
 
+      <%# ---------ONE WAY DATE ---------   %>
       <div class="trip-step createtrip-oneway" data-create-trip-target="owdate">
-        <h2 class="text-center">Please select your departure date</h2>
+        <h2 class="text-center">Select your departure date</h2>
         <%= f.input :start_date, :label => "Departure", as: :date, html5: true %>
-      </div>
 
-      <div class="trip-step createtrip-companion" data-create-trip-target="companion">
-        <%= render 'trip_companions', f: f %>
-      </div>
-
-      <div class="submit-button">
-        <%= f.submit "Submit",  data: { create_trip_target: "submit", action: "submit->create-trip#send" } , class: "btn btn-primary d-none"  %>
+        <div class="submit-button">
+          <%= render "trips/createtrip_button"%>
+          <%= f.submit "Submit",  data: { create_trip_target: "submit"} , class: "submit-trip btn btn-white btn-animated"  %>
+        </div>
       </div>
 
     <% end %>
-
-    <div class="main-buttons">
-      <button type="button" class="btn btn-warning" data-create-trip-target="back" data-action="click->create-trip#back">Back</button>
-      <button type="button" class="btn btn-warning" data-create-trip-target="next" data-action="click->create-trip#next">Next</button>
-    </div>
   </div>
-
 </div>

@@ -1,82 +1,250 @@
 .trip-step {
   position: absolute;
-  width: 300px;
-  height: 50%;
-  left: 100px;
-  top: 50px;
+  height: 400px;
+  width: 500px;
+  left: 10%;
+  margin-left: -50px;
+  top: 20%;
+  margin-top: -50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   transform: scale(1.5);
   opacity: 0;
   pointer-events: none;
   transition: 300ms;
+
+  input {
+    width: 250px;
+    height: 50px;
+    border-radius: 50rem;
+    margin-bottom: 20px;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 30px
+  }
 
   &.active{
     transform: scale(1);
     opacity: 1;
     pointer-events: all;
   }
+
+}
+
+.createtrip-flighttype {
+  .back-button {
+    margin-top: 50px;
+    width: 110px;
+    border: 1px solid #FE5754;
+    color: #FE5754;
+
+    &:hover {
+    background-color: #FE5754;
+    color: white
+    }
+  }
+
+  .rtflight-button1, .rtflight-button2 {
+    background-color: #FE5754;
+    color: white;
+    border-radius: 50rem;
+    width: 150px;
+    height: 50px;
+    margin: 0 15px;
+  }
+}
+
+.main-buttons {
+  .next-button {
+    margin-left: 15px;
+    width: 110px;
+    border: 1px solid #FE5754;
+    color: #FE5754;
+
+   &:hover {
+    background-color: #FE5754;
+    color: white
+  }
+  }
+
+  .back-home-button, .back-button {
+    margin-right: 15px;
+    width: 110px;
+    color:#FE5754;
+    border: 1px solid #FE5754;
+
+    &:hover {
+      background-color: #FE5754;
+      color: white
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+      color: #FE5754;
+
+      &:hover {
+        color: white
+      }
+    }
+  }
 }
 
 .newtrip-container {
   width: 100vw;
   height: 100vh;
+  background-color: #949494;
 }
 
 .newtrip-second-container {
-  border: 1px solid black;
+  background-color: whitesmoke;
   margin: 0 auto;
   width: 500px;
   height: 100%;
+  position: relative;
+}
+
+// -------- FLIGHT TYPE ------- //
+
+.flight-buttons {
   display: flex;
   justify-content: center;
-  position: relative;
-
+  align-items: space-around;
+  margin-top: 20px;
 }
 
+.rtflight-button1,
+.rtflight-button2 {
+  cursor: pointer;
+  transition: all 0.5s;
 
-.createtrip-budget {
-  margin: 20px auto;
-  background-color: red;
+  .span1, .span2 {
+    cursor: pointer;
+    transition: 0.5s;
+    display: inline-block;
+    position: relative;
+  }
 }
 
-.createtrip-flight {
-  margin: 20px auto;
-  background-color:blue;
-
+.rtflight-button1 .span1:after,
+.rtflight-button2 .span2:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 5;
+  right: -30px;
+  transition: 0.5s;
 }
 
-.createtrip-companion {
-  margin: 20px auto;
-  background-color: green;
+.rtflight-button1:hover .span1,
+.rtflight-button2:hover .span2 {
+  padding-right: 25px;
 }
 
-.createtrip-flighttype {
-  margin: 20px auto;
-  background-color: yellow;
+.rtflight-button1:hover,
+.rtflight-button2:hover {
+
+  .span1:after,
+  .span2:after {
+    opacity: 1;
+    right: 10px;
+  }
 }
 
-.createtrip-flightdate {
-  background-color: palevioletred;
-  margin: 20px auto;
-}
+// ------ SUBMIT BUTTON ---- //
 
-.createtrip-oneway {
-  background-color: brown;
-  margin: 20px auto;
-}
-
-.btn.btn-warning {
-  width: 50px;
-  height: 50px;
-  left: 100px;
-}
-
-.traveller-detail {
+.submit-button {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+
+  .back-button {
+    width: 110px;
+    color:#FE5754;
+    border: 1px solid #FE5754;
+    margin: 0 15px;
+  }
+
+  .submit-trip {
+    background-color: #FE5754;
+    color: white;
+    border: none;
+    width: 150px;
+    height: 50px;
+
+    // &:hover {
+    //   color: white;
+    //   background-color: green;
+    // }
+  }
+
 }
 
-.main-buttons {
-  display: flex;
-  flex-direction: row
+.submit-trip:link
+.submit-trip:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: absolute;
+}
 
+.submit-trip:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.submit-trip:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+    background-color: black;
+    color: black;
+}
+
+.submit-trip::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #FE5754;
+}
+
+.submit-trip:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom 5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }
