@@ -7,7 +7,7 @@
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <!-- Slider contents -->
     <div class="carousel-inner">
-      <% @flights.each_with_index do |flight, index| %>
+      <% session[:trip_data]["flights"].each_with_index do |flight, index| %>
         <%= render 'flight', flight: flight, index: index %>
       <% end %>
     </div>
