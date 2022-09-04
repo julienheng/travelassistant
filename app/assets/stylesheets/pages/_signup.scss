@@ -103,33 +103,24 @@ input{
 
 .social-icons {
   margin-top: 30px;
-  display: flex;
-}
+//   display: flex;
+//   justify-content: space-evenly;
+ }
 .social-icons a{
   width: 80px;
-  margin: 0 auto;
   color: #eaf0fb;
   text-align: center;
 }
-.social-icons .fb{
-  margin-left: 25px;
-}
 
 .fa-google:hover, .fa-facebook:hover, .fa-github:hover {
-  color: #FE5754,
-}
-.social-icons .git {
-  margin-left: 25px;
-}
-.social-icons i{
-  margin-right: 4px;
+  color: #682504,
 }
 
 .signup-link {
   text-align: center;
   margin-top: 20px;
   :hover {
-    color: #FE5754,;
+    color: #FE5754;
   }
 
 }
@@ -138,10 +129,11 @@ input{
 
 .form-actions-signup {
   .signup-submit-button {
-    width: 100%;
+    width: 150px;
     background-color: #FE5754;
     color: white;
     padding: 0 0;
+    margin-top:20px;
     font-size: 18px;
     font-weight: 600;
     border-radius: 30px;

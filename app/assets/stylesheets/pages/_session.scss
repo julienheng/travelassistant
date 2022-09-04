@@ -22,8 +22,8 @@ body#signin-page{
 }
 .shape-session:first-child{
   background: linear-gradient(
+    #FE5754,
   #FE5754,
-  #FE5754
 );
   left: -80px;
   top: -90px;
@@ -129,7 +129,7 @@ input{
   text-align: center;
   margin-top: 20px;
   :hover {
-    color: #FE5754,;
+    color: #FE5754;
   }
 
 }
@@ -138,7 +138,7 @@ input{
 
 .form-actions {
   .button-submit-session {
-    width: 100%;
+    width: 150px;
     background-color: #FE5754;
     color: white;
     padding: 0 0;
