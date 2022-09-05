@@ -29,10 +29,9 @@ class CompanionsController < ApplicationController
     @companion = Companion.new
 
     respond_to do |format|
-      format.text { render partial: "companions/add_field", locals: {trip: @trip, companion: @companion}, formats: [:html] }
+      format.text { render partial: "companions/add_field", locals: { trip: @trip, companion: @companion }, formats: [:html] }
     end
   end
-
 
   private
 
