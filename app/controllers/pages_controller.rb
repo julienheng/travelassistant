@@ -10,12 +10,6 @@ class PagesController < ApplicationController
     #raise
   end
 
-  def new
-    if current_page?(new_trip_path)
-      render 'trips/new_second'
-    end
-  end
-
   def loading; end
 
   def generate
