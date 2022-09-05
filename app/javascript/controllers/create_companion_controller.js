@@ -2,18 +2,26 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
 
-  static targets = ["inputfield"]
+  static targets = ["inputfield", "wrapper"]
+  static values = {
+    trip: String
+  }
 
   connect() {
     console.log("Controller 2");
     console.log(this.inputfieldTarget)
+    console.log(this.tripValue);
   }
 
-  addTravellerFields() {
-    const tag = `<div class="traveller-detail d-flex justify-content-between">
-    <%= f.input :name, input_html: { class: "name-input rounded-pill" } %>
-    <%= f.input :age, input_html: { class: "age-input rounded-pill" } %>
-  </div>`
-    this.inputfieldTarget.insertAdjacentHTML("beforeend", tag);
+  addTravellerFields(e) {
+
+    e.preventDefault()
+
+    fetch(`/trips/${this.tripValue}/add-companion`, { headers: {'Accept': 'text/plain'} })
+      .then(res => res.text())
+      .then(data => {
+        this.wrapperTarget.insertAdjacentHTML('beforeend', data)
+      })
+
   }
 }

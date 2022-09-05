@@ -1,24 +1,13 @@
-<div class="createtrip-companion-container" data-controller="create-companion">
+<div class="createtrip-companion-container" data-controller="create-companion"  data-create-companion-trip-value="<%= @trip.id %>">
   <h3 class="text-center">Traveller Details</h3>
 
-  <%= simple_form_for([@trip, @companion]) do |f| %>
+  <div data-create-companion-target="wrapper">
+    <%= render 'add_field', trip: @trip, companion: @companion %>
+  </div>
 
-    <%# <%= f.input :pax, :label => "Number", input_html: { data: { create_trip_target: "Field"  }, class: "traveller-input rounded-pill", :value => "" } %>
-    <%# <%= f.input :type, :label => "Select", :collection => ["Solo","Couple", "Family", "Friends"], :selected => "" , input_html: { class: "type-input rounded-pill" } %>
-
-    <div class="traveller-detail d-flex justify-content-between" data-create-companion-target="inputfield">
-      <%= f.input :name, input_html: { class: "name-input rounded-pill" } %>
-      <%= f.input :age, input_html: { class: "age-input rounded-pill" } %>
-    </div>
-
-    <div class="add-field">
-      <p class="add-field-text" data-action="click->create-companion#addTravellerFields">
-      + Add more travellers</p>
-    </div>
-
-    <div class="com-submit-button d-flex justify-content-center">
-      <%= f.submit "Submit", class: "companion-submit btn btn-outline"  %>
-    </div>
-
-  <% end %>
+  <div class="add-field">
+    <%# <button class="add-field-text" data-action="click->create-companion#addTravellerFields">
+      + Add more travellers
+    </button> %>
+  </div>
 </div>
