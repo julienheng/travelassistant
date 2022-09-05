@@ -1,0 +1,60 @@
+// ----start of flight----
+.show-flight-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	align-content: stretch;
+  border: solid;
+  border-color: #FD5754;
+}
+
+
+.show-flight-price{
+  border-radius: 10px;
+  border: solid;
+}
+
+// ----end of flight----
+
+// ----start of accomodation----
+
+.show-accomodation-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	align-content: stretch;
+  border: solid;
+  border-color: #FD5754;
+}
+
+
+.show-accomodation-price {
+  border-radius: 10px;
+  border: solid;
+}
+
+// ----end of accomodation----
+
+// ----start of activity----
+.show-activity-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	align-content: stretch;
+  border: solid;
+  border-color: #FD5754;
+}
+
+
+.show-activity-price {
+  border-radius: 10px;
+  border: solid;
+}
+
+// ----end of activity----
