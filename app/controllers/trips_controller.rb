@@ -38,6 +38,20 @@ class TripsController < ApplicationController
   end
 
   def activities
+    @trip = Trip.find(params[:id])
+
+    @attractions = Attraction.all
+    @trip = Trip.find(params[:id])
+    @attraction = Attraction.new
+
+    @restaurants = Restaurant.all
+    @trip = Trip.find(params[:id])
+    @restaurant = Restaurant.new
+
+    # @attractions_api_data = sessions
+    # @restaurants_api_data = sessions
+
+    # render views/trips/activities
   end
 
   private

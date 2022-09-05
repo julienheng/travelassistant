@@ -9,8 +9,11 @@ Rails.application.routes.draw do
     resources :activites
     resources :flights
     resources :accommodations
-    resources :attractions
-    resources :restaurants
+    member do
+      get 'activities/new', to: 'trips#activities'
+    end
+    resources :attractions, only: [:create]
+    resources :restaurants, only: [:create]
     get "loading/", to: "pages#loading", as: :loading_page
     get "trip-generate/", to: "pages#generate", as: :generate_page
   end
