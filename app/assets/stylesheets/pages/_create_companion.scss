@@ -1,4 +1,4 @@
-.createtrip-companion {
+.createtrip-companion-container {
   width: 300px;
   height: 600px;
   border: 1px solid red;
@@ -6,6 +6,8 @@
 
   input {
     width: 300px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+
   }
 
   .name-input {

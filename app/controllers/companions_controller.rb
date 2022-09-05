@@ -13,7 +13,7 @@ class CompanionsController < ApplicationController
     @companion = Companion.new(companion_params)
     @companion.trip = @trip
     if @companion.save
-      redirect_to trip_path(@companion.trip)
+      redirect_to loading_page_path(@companion.trip)
     else
       render :new, status: :unprocessable_entity
     end
