@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
-    #raise
+    # raise
   end
 
   def loading; end
@@ -25,6 +25,7 @@ class PagesController < ApplicationController
       }
     }
     session[:trip_data] = @data
+    # raise
     unless @data
       flash[:alert] = 'Flight not found'
     end
@@ -80,8 +81,72 @@ class PagesController < ApplicationController
   end
 
   def find_accomms
-    #search place API to get entity ID
-    #url = URI("https://skyscanner50.p.rapidapi.com/api/v1/searchPlace?query=london")
+
+    # # search place for API for under entityId
+    # url = URI("https://skyscanner50.p.rapidapi.com/api/v1/searchPlace?query=london")
+
+    # http = Net::HTTP.new(url.host, url.port)
+    # http.use_ssl = true
+    # http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    # request = Net::HTTP::Get.new(url)
+    # request["X-RapidAPI-Key"] = '75b3c86115mshb9bee2c7b8ee1d8p1732dajsn9c61acf70f92'
+    # request["X-RapidAPI-Host"] = 'skyscanner50.p.rapidapi.com'
+
+    # response = http.request(request)
+    # user_accommodations_data = response.read_body
+
+    # user_accommodations_data_json = JSON.parse(user_accommodations_data)
+
+
+    # accommodations = user_accommodations_data_json["data"].first(3)
+
+    # entity_ids = []
+    # accommodations.each do |accommodation|
+    #   entity_ids << accommodation["entityId"]
+    # end
+
+    # entity_ids
+
+    # accoms_array = []
+
+    # entity_ids.each do |entity_id|
+    #   url = URI("https://skyscanner50.p.rapidapi.com/api/v1/searchHotel?entityId=#{entity_id}&checkin=2022-09-30&checkout=2022-10-30&waitTime=2000&currency=USD&countryCode=US&market=en-US")
+
+    #   http = Net::HTTP.new(url.host, url.port)
+    #   http.use_ssl = true
+    #   http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    #   request = Net::HTTP::Get.new(url)
+    #   request["X-RapidAPI-Key"] = '75b3c86115mshb9bee2c7b8ee1d8p1732dajsn9c61acf70f92'
+    #   request["X-RapidAPI-Host"] = 'skyscanner50.p.rapidapi.com'
+
+    #   response = http.request(request)
+    #   user_accommodations_v2_data = response.read_body
+
+    #   user_accommodations_v2_data_json = JSON.parse(user_accommodations_v2_data)
+    #   accoms_array << user_accommodations_v2_data_json
+    # end
+
+    # accoms = []
+
+    # accoms_array do |accom|
+    #   accoms << {
+    #               entity_id:
+    #               hotel_id:
+    #               name:
+    #               price:
+    #               latitude:
+    #               longitude:
+    #               cheapest_partner:
+    #               stars:
+    #               hero_image:
+    #               value:
+    #               description:
+    #             }
+    # end
+
+    #url = URI("https://skyscanner50.p.rapidapi.com/api/v1/searchHotel?entityId=27544008&checkin=2022-09-30&checkout=2022-10-30&waitTime=2000&currency=USD&countryCode=US&market=en-US")
 
     #http = Net::HTTP.new(url.host, url.port)
     #http.use_ssl = true
@@ -113,6 +178,7 @@ class PagesController < ApplicationController
     #user_accomms_data_json = JSON.parse(user_accomms_data)
     #user_accomms_data = user_accomms_data_json["data"].first
 
+    # user_accommodation_data_json = {}
     #user_accomms_data = {
     #  entity_id: ,
     #  hotel_id: ,
