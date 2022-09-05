@@ -28,7 +28,7 @@ class PagesController < ApplicationController
     unless @data
       flash[:alert] = 'Flight not found'
     end
-
+    sleep(6)
     redirect_to new_trip_flight_path(@trip)
   end
 
