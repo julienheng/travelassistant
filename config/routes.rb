@@ -4,12 +4,15 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :trips do
+    get 'add-companion', to: 'companions#add_field'
     resources :companions, only: %i[show new create]
     resources :activites
     resources :flights
     resources :accommodations
     resources :attractions
     resources :restaurants
+
+
   end
 
   resources :chats, only: :show do
