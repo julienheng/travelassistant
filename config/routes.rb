@@ -11,8 +11,8 @@ Rails.application.routes.draw do
     resources :accommodations
     resources :attractions
     resources :restaurants
-
-
+    get "loading/", to: "pages#loading", as: :loading_page
+    get "trip-generate/", to: "pages#generate", as: :generate_page
   end
 
   resources :chats, only: :show do
@@ -21,6 +21,4 @@ Rails.application.routes.draw do
 
   #get "pages/", to: "pages#generate", as: :generate_page
   get "pages/dashboard", to: "pages#dashboard", as: :dashboard_page
-  get "loading/", to: "pages#loading", as: :loading_page
-  get "trip-generate/", to: "pages#generate", as: :generate_page
 end
