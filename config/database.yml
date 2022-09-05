@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: howliday_production
-  username: holiday_production
+  username: holiday
   password: <%= ENV["HOWLIDAY_PRODUCTION_DATABASE_PASSWORD"] %>
