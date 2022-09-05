@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     resources :accommodations
   end
 
+  resources :chats, only: :show do
+    resources :messages, only: :create
+  end
+
   #get "pages/", to: "pages#generate", as: :generate_page
   get "pages/dashboard", to: "pages#dashboard", as: :dashboard_page
   get "loading/", to: "pages#loading", as: :loading_page

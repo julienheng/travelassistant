@@ -134,4 +134,22 @@ puts "Creating restaurants (3 API calls)"
 end
 
 end
+
+puts "Creating chatrooms"
+
+Chat.create!(
+  name: "general",
+  location: "singapore"
+)
+
+Chat.create!(
+  name: "random",
+  location: "singapore"
+)
+
+Chat.create!(
+  name: "memes",
+  location: "singapore"
+)
+
 puts "Seeds created!"

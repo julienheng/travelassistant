@@ -3,7 +3,9 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from "./application"
-import Carousel from "stimulus-carousel"
+
+import ChatSubscriptionController from "./chat_subscription_controller"
+application.register("chat-subscription", ChatSubscriptionController)
 
 import CreateTripController from "./create_trip_controller"
 application.register("create-trip", CreateTripController)
@@ -13,5 +15,3 @@ application.register("create-companion", CreateCompanionController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
-
-application.register("carousel",Carousel);
