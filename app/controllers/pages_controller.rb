@@ -33,6 +33,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+
   end
 
   def activities
