@@ -15,7 +15,7 @@ class PagesController < ApplicationController
   def generate
     # call iata code for origin and destination from location param in trip
     # pass iata code into api
-
+    @trip = Trip.find(params[:trip_id])
     @data = {
       flights: find_flight,
       accomms: find_accomms,
@@ -28,8 +28,8 @@ class PagesController < ApplicationController
     unless @data
       flash[:alert] = 'Flight not found'
     end
-
-    redirect_to new_trip_flight_path(1)
+    sleep(6)
+    redirect_to new_trip_flight_path(@trip)
   end
 
   def dashboard

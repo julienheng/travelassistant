@@ -115,15 +115,7 @@ export default class extends Controller {
     }
   }
 
-  addTravellerFields(e){
-    e.preventDefault()
-    console.log("Enter function here");
-    console.log(this.inputFieldTarget.value);
-  }
 }
-
-
-
 
       // -------- DO NOT REMOVE --------------
       // case 'companion':
