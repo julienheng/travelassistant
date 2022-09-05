@@ -21,6 +21,7 @@
     margin-bottom: 10px;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
   }
+
   h2 {
     text-align: center;
     margin-bottom: 30px
@@ -58,6 +59,7 @@
 }
 
 .main-buttons {
+
   margin-top: 40px;
   .next-button {
     margin-left: 15px;
@@ -65,10 +67,10 @@
     border: 1px solid #FE5754;
     color: #FE5754;
 
-   &:hover {
+    &:hover {
     background-color: #FE5754;
     color: white
-  }
+    }
   }
 
   .back-home-button, .back-button {
@@ -184,7 +186,6 @@
     //   background-color: green;
     // }
   }
-
 }
 
 .submit-trip:link
@@ -241,13 +242,13 @@
 }
 
 @keyframes moveInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0px);
-    }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
