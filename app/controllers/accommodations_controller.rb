@@ -1,8 +1,8 @@
 class AccommodationsController < ApplicationController
 
   def new
+    @trip = Trip.find(params[:trip_id])
     @accommodations = Accommodation.all
-    @accommodation = Accommodation.find(params[:trip_id])
     @accommodation = Accommodation.new
   end
 
