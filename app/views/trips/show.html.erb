@@ -7,30 +7,30 @@
     <div class = "show-flight-container">
       <div class = "show-flight-detail">
         <div class = "outbound_flight_details">
-          <h3>Outbound Flight</h3>
-          <%= Flight.first.outbound_carrier_name  %> <br>
-          <%= Flight.first.outbound_origin_display_code %> - <%= Flight.first.outbound_destination_display_code  %><br>
-          <p>Departure Time:<%= Flight.first.outbound_departure %></p>
-          <p>Arrival Time:<%= Flight.first.outbound_arrival %></p>
-          <h3>Departure</h3>
-          <p>This show departure details</p>
-
-          <h3>Arrival</h3>
-          <p>This show arrival details</p>
-        </div>
+          <div class="show-h3-font">
+            <h3>Outbound Flight</h3>
+          </div>
+            <div class = show-p-font>
+              <p>Outbound Departure</p>
+            </div>
+              <b> <%= Flight.first.outbound_carrier_name  %> </b><br>
+              <%= Flight.first.outbound_origin_display_code %> - <%= Flight.first.outbound_destination_display_code  %><br>
+              <p >Departure Time:<%= Flight.first.outbound_departure %></p>
+              <p>Arrival Time:<%= Flight.first.outbound_arrival %></p>
+          </div>
 
         <div class = "inbound">
-          <h3>Inbound Flight</h3>
-            <%= Flight.first.inbound_carrier_name  %>
-          <br>
-              <%= Flight.first.inbound_origin_display_code %> - <%= Flight.first.outbound_destination_display_code  %>
-          <br>
-          <p>Departure Time:<%= Flight.first.inbound_departure %></p>
-          <p>Arrival Time:<%= Flight.first.inbound_arrival %></p>
-          <h3>Departure</h3>
-          <p>This show departure details</p>
-          <h3>Arrival</h3>
-          <p>This show arrival details</p>
+          <div class="show-h3-font">
+            <h3>Inbound Flight</h3>
+          </div>
+            <div class = show-p-font>
+                <p>Inbound Departure</p>
+            </div>
+            <b><%= Flight.first.inbound_carrier_name  %></b><br>
+               <%= Flight.first.inbound_origin_display_code %> - <%= Flight.first.outbound_destination_display_code  %>
+            <br>
+            <p>Departure Time:<%= Flight.first.inbound_departure %></p>
+            <p>Arrival Time:<%= Flight.first.inbound_arrival %></p>
         </div>
       </div>
             <div class="show-flight-price">

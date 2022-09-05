@@ -6,14 +6,17 @@
 	justify-content: space-between;
 	align-items: flex-start;
 	align-content: stretch;
-  border: solid;
-  border-color: #FD5754;
+  border: solid #FD5754 5px;
+  margin: 5px;
+  border-radius: 10px;
 }
 
 
 .show-flight-price{
   border-radius: 10px;
   border: solid;
+  margin-top: 5px;
+  margin-right: 5px;
 }
 
 // ----end of flight----
@@ -27,14 +30,17 @@
 	justify-content: space-between;
 	align-items: flex-start;
 	align-content: stretch;
-  border: solid;
-  border-color: #FD5754;
+  border: solid #FD5754 5px;
+  margin: 5px;
+  border-radius: 10px;
 }
 
 
 .show-accomodation-price {
   border-radius: 10px;
   border: solid;
+  margin-top: 5px;
+  margin-right: 5px;
 }
 
 // ----end of accomodation----
@@ -47,14 +53,29 @@
 	justify-content: space-between;
 	align-items: flex-start;
 	align-content: stretch;
-  border: solid;
-  border-color: #FD5754;
+  border: solid #FD5754 5px;
+  margin: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
+  border-radius: 10px;
 }
 
 
 .show-activity-price {
   border-radius: 10px;
   border: solid;
+  margin-top: 5px;
+  margin-right: 5px;
 }
 
 // ----end of activity----
+
+.show-p-font p {
+font-size: 15px;
+font-weight:600;
+}
+
+.show-h3-font p {
+  font-size: 18px;
+  font-weight:600;
+  }
