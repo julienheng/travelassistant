@@ -8,6 +8,9 @@ import Carousel from "stimulus-carousel"
 import CreateTripController from "./create_trip_controller"
 application.register("create-trip", CreateTripController)
 
+import CreateCompanionController from "./create_companion_controller"
+application.register("create-companion", CreateCompanionController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
