@@ -8,8 +8,13 @@ Rails.application.routes.draw do
     resources :activites
     resources :flights
     resources :accommodations
-    resources :attractions
-    resources :restaurants
+
+    member do
+      get 'activities/new', to: 'trips#activities'
+    end
+
+    resources :attractions, only: [:create]
+    resources :restaurants, only: [:create]
   end
 
   resources :chats, only: :show do
