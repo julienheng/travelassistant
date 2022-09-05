@@ -1,0 +1,14 @@
+<div class="carousel-item <%= 'active' if index.zero? %>">
+  <div class="hotel-cards row px-1 mt-4 mx-0">
+      <%= image_tag "hotel.jpg", width:"100%" %>
+      <div class="hotel-card text-center">
+        <h4 class="acc-name mt-2"><strong><%= attraction.name %></strong></h4>
+        <p><%= attraction.address %></p>
+        <p>$<%= attraction.price %></p>
+        <p>Category: <%= attraction.category_name %></p>
+        <p>Rating: <%= attraction.value %>/5</p>
+        <button type="button" class="btn btn-warning">Select</button>
+      </div>
+    </div>
+  </div>
+</div>

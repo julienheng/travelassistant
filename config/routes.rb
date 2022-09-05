@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :activites
     resources :flights
     resources :accommodations
+    resources :attractions
+    resources :restaurants
   end
 
   resources :chats, only: :show do
