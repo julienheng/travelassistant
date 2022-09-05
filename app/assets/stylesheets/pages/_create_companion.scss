@@ -1,8 +1,13 @@
+body#companion {
+  background-color: #ACA7A6;
+}
+
 .createtrip-companion-container {
-  width: 300px;
+  width: 400px;
   height: 600px;
   border: 1px solid red;
   margin: 0 auto;
+  background-color: whitesmoke;
 
   input {
     width: 300px;
@@ -20,6 +25,10 @@
 
   .type-input {
     width: 300px;
+  }
+
+  .traveller-detail {
+
   }
 
   .companion-submit {
