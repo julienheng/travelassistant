@@ -36,9 +36,12 @@
             <div class="show-flight-price">
               <p>Estimating $200</p>
                 <div class="show-flight-price-button">
-                  <p>Make Payment</p>
-                  <input type="checkbox">
-                  <label for="payment_made"> Tick if payment made</label><br>
+                  <div class ="payment-button">
+                    <p>Make Payment</p>
+                  </div>
+                    <input type="checkbox">
+                    <label for="payment_made"> Tick if payment made</label><br>
+
                 </div>
             </div>
     </div>
@@ -84,3 +87,6 @@
                     </div>
               </div>
 </div>
+                <div class = "button-for-back-to-dashboard">
+                  <%= link_to "Back to Dashboard",dashboard_page_path, class: "btn btn-traveller btn-lg" %>
+                </div>
