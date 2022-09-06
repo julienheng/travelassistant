@@ -237,8 +237,6 @@ puts "Creating users"
     trip: trip1
     )
 
-
-
 end
 
 # --------------------------chatrooms -----------------------------#
