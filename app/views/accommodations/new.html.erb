@@ -2,29 +2,31 @@
   <h1><strong>We have found some cosy places for you</strong></h1>
 </div>
 
-
-<!-- carousel for hotels -->
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-
-  <!-- Slider contents -->
-  <div class="carousel-inner">
-    <% @accommodations.each_with_index do |accommodation, index| %>
-      <%= render 'accommodation', accommodation: accommodation, index: index %>
-    <% end %>
+<div class="acc-container">
+  <!-- carousel for hotels -->
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <!-- Slider contents -->
+    <div class="carousel-inner">
+      <% @accommodations.each_with_index do |accommodation, index| %>
+        <%= render 'accommodation', accommodation: accommodation, index: index %>
+      <% end %>
+    </div>
+    <!-- Slider controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-
-  <!-- Slider controls -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>      <span class="visually-hidden">Next</span>
-  </button>
 </div>
 
-<div class="text-center">
-  <button class="btn btn-danger">
-    <%= link_to "View Activities", activities_new_trip_path(@trip) %>
-  </button>
+<div>
+  <div class="text-center">
+    <button class="btn btn-red">
+      <%= link_to "View Activities", activities_new_trip_path(@trip) %>
+    </button>
+  </div>
 </div>

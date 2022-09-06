@@ -2,26 +2,32 @@
   <h1><strong>As well as these activities for you</strong></h1>
 </div>
 
-<!-- carousel for attractions & restaurants -->
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Attractions</button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Restaurants</button>
-  </li>
-</ul>
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-    <%= render 'attractions_data' %>
+<div class="acc-container">
+  <!-- carousel for attractions & restaurants -->
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Attractions</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Restaurants</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <%= render 'attractions_data' %>
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <%= render 'restaurants_data' %>
+    </div>
   </div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <%= render 'restaurants_data' %>
-  </div>
+
+
 </div>
 
-<div class="text-center">
-  <button class="btn btn-danger">
-    <%= link_to "View Trip", trip_path(@trip) %>
-  </button>
+<div>
+  <div class="text-center">
+    <button class="btn btn-red">
+      <%= link_to "Save this itinerary", trip_path(@trip) %>
+    </button>
+  </div>
 </div>
