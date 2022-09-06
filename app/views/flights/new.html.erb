@@ -1,3 +1,7 @@
+<div class="back-home-button2">
+  <%= link_to "< Back", new_trip_path, data: {turbo_method: :get, turbo_confirm: "This will bring you back to the first page of the form and require you to input all your trip information again. Are you sure?"} %>
+</div>
+
 <div class="acc-header text-center">
   <h1><strong>Here are some flights we found</strong></h1>
 </div>
@@ -24,7 +28,5 @@
 </div>
 
 <div class="text-center">
-  <button class="btn btn-red">
-    <%= link_to "View Accommodations", new_trip_accommodation_path(@trip) %>
-  </button>
+    <%= link_to "View Accommodations", new_trip_accommodation_path(@trip), class: "btn btn-red" %>
 </div>
