@@ -39,6 +39,9 @@ class PagesController < ApplicationController
   def activities
   end
 
+  def flip_card_back
+  end
+
   private
 
   def find_flight
