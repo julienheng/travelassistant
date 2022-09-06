@@ -1,8 +1,5 @@
 <%= simple_form_for([trip, companion]) do |f| %>
 
-  <%# <%= f.input :pax, :label => "Number", input_html: { data: { create_trip_target: "Field"  }, class: "traveller-input rounded-pill", :value => "" } %>
-  <%# <%= f.input :type, :label => "Select", :collection => ["Solo","Couple", "Family", "Friends"], :selected => "" , input_html: { class: "type-input rounded-pill" } %>
-
   <div class="traveller-detail d-flex justify-content-around" data-create-companion-target="inputfield" >
     <%= f.input :name, input_html: { class: "name-input" } %>
     <%= f.input :age, input_html: { class: "age-input" } %>
@@ -17,3 +14,5 @@
 <% end %>
 
  <!-- html: { data: { action: "click->create-companion#submit" } }  -->
+  <%# <%= f.input :pax, :label => "Number", input_html: { data: { create_trip_target: "Field"  }, class: "traveller-input rounded-pill", :value => "" } %>
+  <%# <%= f.input :type, :label => "Select", :collection => ["Solo","Couple", "Family", "Friends"], :selected => "" , input_html: { class: "type-input rounded-pill" } %>

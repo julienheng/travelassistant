@@ -26,15 +26,4 @@ export default class extends Controller {
 
   }
 
-  submit(e) {
-
-    // e.preventDefault()
-
-    // fetch(`/trips/${this.tripValue}/add-companion`, { headers: {'Accept': 'text/plain'} })
-    //   .then(res => res.text())
-    //   .then(data => {
-    //     this.wrapperTarget.insertAdjacentHTML('beforeend', data)
-    //   })
-
-  }
 }
