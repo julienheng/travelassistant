@@ -1,22 +1,26 @@
 // ----start of flight----
 .show-flight-container {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
+	// display: flex;
+	// flex-direction: row;
+	// flex-wrap: nowrap;
 	justify-content: space-between;
 	align-items: flex-start;
 	align-content: stretch;
   border: solid #FD5754 5px;
-  margin: 5px;
+  margin: 10px;
   border-radius: 10px;
+
 }
 
 
 .show-flight-price{
   border-radius: 10px;
-  border: solid;
+  border:dotted;
   margin-top: 5px;
   margin-right: 5px;
+  width:250px;
+
+
 }
 
 // ----end of flight----
@@ -24,58 +28,62 @@
 // ----start of accomodation----
 
 .show-accomodation-container {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
+	// display: flex;
+	// flex-direction: row;
+	// flex-wrap: nowrap;
 	justify-content: space-between;
 	align-items: flex-start;
 	align-content: stretch;
   border: solid #FD5754 5px;
-  margin: 5px;
+  margin: 10px;
   border-radius: 10px;
 }
 
 
 .show-accomodation-price {
   border-radius: 10px;
-  border: solid;
+  border: dotted;
   margin-top: 5px;
   margin-right: 5px;
+  // font-size: 14px;
+  width:250px;
+
 }
 
 // ----end of accomodation----
 
 // ----start of activity----
 .show-activity-container {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
+	// display: flex;
+	// flex-direction: row;
+	// flex-wrap: nowrap;
 	justify-content: space-between;
 	align-items: flex-start;
 	align-content: stretch;
   border: solid #FD5754 5px;
-  margin: 5px;
-  margin-top: 5px;
-  margin-right: 5px;
+  margin: 10px;
+  // margin-top: 5px;
+  // margin-right: 5px;
   border-radius: 10px;
 }
 
 
 .show-activity-price {
   border-radius: 10px;
-  border: solid;
+  border: dotted;
   margin-top: 5px;
   margin-right: 5px;
+  width:250px;
 }
 
 // ----end of activity----
 
-.show-p-font p {
+.show-p-font {
 font-size: 15px;
-font-weight:600;
+font-weight:500;
 }
 
-.show-h3-font p {
+.show-h3-font {
   font-size: 18px;
   font-weight:600;
   }
@@ -85,5 +93,37 @@ font-weight:600;
   background-color: #FD5754;
   color: white;
   padding: 1px;
-  border-radius: 2px;
+  border-radius: 5px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.show-title {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight:600;
+  text-align: center;
+  color: rgb(52, 52, 52);
+}
+
+input {
+  width: 20px;
+    height: 20px !important;
+}
+
+.show-price-font {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.button-for-back-to-dashboard {
+  border-radius: 200px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.btn-traveller {
+  border-radius: 10px;
 }
