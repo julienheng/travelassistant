@@ -21,5 +21,32 @@
   box-shadow: 0 0 8px 0 #7c7c7c;
   background-color: white;
   border-radius: 20px;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  // margin-top: 20px;
+}
+
+.hotel-cards:hover {
+  background-color: rgb(200, 200, 200);
+}
+
+.btn-red {
+  background-color: #fd5754;
+  border-radius: 40px;
+  padding: 8px 40px;
+  transition: opacity 0.3s ease;
+  margin-top: 10px;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.btn-primary {
+  padding: 8px 70px;
+  border-radius: 20px;
+}
+
+.checked {
+  color: orange;
+  margin-bottom: 12px;
 }
