@@ -1,5 +1,8 @@
 <div class="newtrip-container">
-  <div class="newtrip-second-container" data-controller="create-trip" data-create-trip-current-step-value="budget" >
+    <div class="back-home-button">
+      <%= link_to "< Home", root_path %>
+    </div>
+    <div class="newtrip-second-container" data-controller="create-trip" data-create-trip-current-step-value="budget" >
 
     <%= simple_form_for((@trip), data: { create_trip_target: "form" }) do |f| %>
 
@@ -14,7 +17,6 @@
         <%= f.input :budget, :label => 'Amount in SGD', class: "fs-3" %>
 
         <div class="main-buttons d-flex">
-          <div class="back-home-button btn btn-outline"><%= link_to "Back", root_path %></div>
           <button type="button" class="next-button btn btn-outline" data-create-trip-target="next" data-action="click->create-trip#next">Next</button>
         </div>
       </div>
@@ -69,7 +71,7 @@
         <%= f.input :end_date, :label => "Return", as: :date, html5: true %>
 
         <div class="submit-button">
-          <%= render "trips/createtrip_button"%>
+          <%= render "trips/createtrip_button" %>
           <%= f.submit "Submit",  data: { create_trip_target: "submit" } , class: "submit-trip btn btn"  %>
         </div>
       </div>

@@ -1,35 +1,69 @@
-body#companion {
-  background-color: #ACA7A6;
+#companion {
+  background-color: #F96562;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-.createtrip-companion-container {
-  width: 400px;
-  height: 600px;
-  border: 1px solid red;
-  margin: 0 auto;
-  background-color: whitesmoke;
+.home-button-companion {
+  height: 30px;
+  width:fit-content;
+  padding-top: 25px;
+  margin-left: 15px;
 
-  input {
-    width: 300px;
-    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  a {
+    //border: 1px solid red;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+
+.createtrip-companion-container {
+  top: 50px;
+  //border: 1px solid blue;
+  background-color: white;
+  border-radius: 40px;
+  width: 100%;
+  height: 80%;
+  position: relative;
+
+  h3 {
+    padding-top: 20px;
+    font-size: 30px;
   }
 
   .name-input {
     width: 200px;
+    border-radius: 15px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    height: 40px;
   }
 
   .age-input {
     width: 80px;
-  }
-
-  .type-input {
-    width: 300px;
+    border-radius: 15px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    height: 40px;
   }
 
   .companion-submit {
     margin-top: 30px;
     height: 50px;
     width: 200px;
+  }
+}
+
+.traveller-detail {
+  margin: 10px auto;
+}
+
+.wrapper-companion-field{
+
+  .add-field-button{
+    margin-left: 15px;
   }
 }
 

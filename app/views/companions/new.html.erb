@@ -1,8 +1,11 @@
-<body id="companion">
+<div id="companion">
+  <div class="home-button-companion">
+      <%= link_to "< Home", root_path %>
+    </div>
   <div class="createtrip-companion-container" data-controller="create-companion"  data-create-companion-trip-value="<%= @trip.id %>">
     <h3 class="text-center">Traveller Details</h3>
 
-    <div data-create-companion-target="wrapper">
+    <div class="wrapper-companion-field" data-create-companion-target="wrapper">
       <%= render 'add_field', trip: @trip, companion: @companion %>
     </div>
 
@@ -12,4 +15,4 @@
       </button> %>
     </div>
   </div>
-</body>
+</div>
