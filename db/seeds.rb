@@ -31,10 +31,12 @@ puts "Creating users"
   )
 
   puts "Creating trips for #{user1.name}"
+
+  #---------------------------trips--------------------------#
   trip1 = Trip.create!(
     user: user1,
-    start_date: 20220830,
-    end_date: 20220912,
+    start_date: 202_208_30,
+    end_date: 202_209_12,
     origin: "bangkok",
     destination: "singapore",
     budget: 5000,
@@ -45,6 +47,8 @@ puts "Creating users"
   )
 
   puts "trip id:#{trip1.id} created"
+
+  #--------------------------companions------------------------#
 
   puts "Creating Companions for #{user1.name}"
 
@@ -57,67 +61,149 @@ puts "Creating users"
     )
   end
 
-# Flights, Hotels, Activities
+  # ------------------  Flights -------------------- #
 
-puts "Creating flights! (2 API calls)"
-Flight.create!(
-  place_name: "London",
-  iata_code: "LON",
-  amount: 659.37,
-  outbound_origin_display_code: "LGW",
-  outbound_destination_display_code: "JFK",
-  outbound_departure: "2022-08-31T12:50:00",
-  outbound_arrival: "2022-08-31T15:45:00",
-  outbound_carrier_name: "Norse Atlantic Airways",
-  inbound_origin_display_code: "JFK",
-  inbound_destination_display_code: "LGW",
-  inbound_departure: "2022-09-09T18:25:00",
-  inbound_arrival: "2022-09-10T06:45:00",
-  inbound_carrier_name: "Norse Atlantic Airways",
-  api_flight_id: "13542-2208311250--30667-0-12712-2208311545|12712-2209091825--30667-0-13542-2209100645",
-  booked: true,
-  selected: true,
-  trip: trip1
-)
-
-puts "Creating accomodations!"
-Accommodation.create!(
-  entity_id: "27544008",
-  hotel_id: "178868522",
-  name: "Ramada by Wyndham London North M1",
-  price: "$227",
-  latitude: -0.263784,
-  longitude: 51.629313,
-  cheapest_partner: "Agoda",
-  stars: 4,
-  hero_image: "https://d2xf5gjipzd8cd.cloudfront.net/available/678584481/678584481_WxH.jpg",
-  value: "8.0",
-  description: "very good",
-  booked: true,
-  selected: true,
-  trip: trip1
-)
-
-puts "Creating attractions (3 API calls)"
-3.times do
-  attraction1 = Attraction.create!(
-  name: "Gardens by the Bay",
-  address: "18 Marina Gardens Drive Bayfront Plaza, Singapore 018953 Singapore",
-  category_name: "Sights & Landmarks",
-  price: "$14.69",
-  rating: "4.5",
-  booked: true,
-  selected: true,
-  trip: trip1,
+  puts "Creating flights! (2 API calls)"
+  Flight.create!(
+    place_name: "London",
+    iata_code: "LON",
+    amount: 659.37,
+    outbound_origin_display_code: "LGW",
+    outbound_destination_display_code: "JFK",
+    outbound_departure: "2022-08-31T12:50:00",
+    outbound_arrival: "2022-08-31T15:45:00",
+    outbound_carrier_name: "Norse Atlantic Airways",
+    inbound_origin_display_code: "JFK",
+    inbound_destination_display_code: "LGW",
+    inbound_departure: "2022-09-09T18:25:00",
+    inbound_arrival: "2022-09-10T06:45:00",
+    inbound_carrier_name: "Norse Atlantic Airways",
+    api_flight_id: "13542-2208311250--30667-0-12712-2208311545|12712-2209091825--30667-0-13542-2209100645",
+    booked: true,
+    selected: true,
+    trip: trip1
   )
-end
+
+  # -------------------- accommodations ---------------------- #
+
+  puts "Creating accomodation 1!"
+  Accommodation.create!(
+    entity_id: "27544008",
+    hotel_id: "178868522",
+    name: "Ramada by Wyndham London North M1",
+    price: "$227",
+    latitude: -0.263784,
+    longitude: 51.629313,
+    cheapest_partner: "Agoda",
+    stars: 4,
+    hero_image: "https://d2xf5gjipzd8cd.cloudfront.net/available/678584481/678584481_WxH.jpg",
+    value: "8.0",
+    description: "very good",
+    booked: true,
+    selected: true,
+    trip: trip1
+  )
+
+  puts "Creating accomodation 2!"
+  Accommodation.create!(
+    entity_id: "27544008",
+    hotel_id: "134634850",
+    name: "Safestay London Kensington Holland Park",
+    price: "$158",
+    latitude: -0.20238,
+    longitude: 51.50265,
+    cheapest_partner: "Agoda",
+    stars: 4,
+    hero_image: "https://d2xf5gjipzd8cd.cloudfront.net/available/627028555/627028555_WxH.jpg",
+    value: "8.0",
+    description: "very good",
+    booked: true,
+    selected: true,
+    trip: trip1
+  )
+
+  puts "Creating accomodation 3!"
+  Accommodation.create!(
+    entity_id: "27544008",
+    hotel_id: "47079599",
+    name: "YHA London Earl's Court",
+    price: "$84",
+    latitude: -0.18949,
+    longitude: 51.4903,
+    cheapest_partner: "Agoda",
+    stars: 4,
+    hero_image: "https://d2xf5gjipzd8cd.cloudfront.net/available/790137711/790137711_WxH.jpg",
+    value: "8.0",
+    description: "very good",
+    booked: true,
+    selected: true,
+    trip: trip1
+  )
+
+  #-----------------------------attractions---------------------------------#
+
+  puts "Creating attraction 1 "
+  attraction1 = Attraction.create!(
+    name: "Gardens by the Bay",
+    address: "18 Marina Gardens Drive Bayfront Plaza, Singapore 018953 Singapore",
+    category_name: "Sights & Landmarks",
+    price: "$14.69",
+    rating: "4.5",
+    booked: true,
+    selected: true,
+    trip: trip1
+  )
 
 
-puts "Creating restaurants (3 API calls)"
-3.times do
+  puts "Creating attraction 2 "
+  attraction2 = Attraction.create!(
+    name: "sentosa",
+    address: "18 Marina Gardens Drive Bayfront Plaza, Singapore 018953 Singapore",
+    category_name: "Sights & Landmarks",
+    price: "$14.69",
+    rating: "4.5",
+    booked: true,
+    selected: true,
+    trip: trip1
+  )
+
+  puts "Creating attraction 3"
+  attraction3 = Attraction.create!(
+    name: "Universal Studio Sigapore",
+    address: "18 Marina Gardens Drive Bayfront Plaza, Singapore 018953 Singapore",
+    category_name: "Sights & Landmarks",
+    price: "$14.69",
+    rating: "4.5",
+    booked: true,
+    selected: true,
+    trip: trip1
+  )
+
+  #------------------------------restaurants----------------------------------#
+
+  puts "Creating restaurant 1"
   restaurant1 = Restaurant.create!(
     google_place_id: "ChIJ53USP0nBhkcRjQ50xhPN_zw",
-    city_id: 348156,
+    city_id: 348_156,
+    name: "L'Alchimia",
+    street: "Viale Premuda, 34",
+    postal_code: "20129",
+    longtitude: "9.2075285",
+    latitude: "45.4658273",
+    price_range: 75,
+    rating_value: 4.5,
+    currencies_accepted: "EUR",
+    main_photo_src: "https://res.cloudinary.com/tf-lab/image/upload/restaurant/f5cdff1f-3cc7-4fba-b2ac-44c95ede85e4/b41c40e3-984e-4048-a197-5c3124b30c88.jpg",
+    booked: true,
+    selected: true,
+    trip: trip1
+    )
+
+
+  puts "Creating restaurant 2"
+  restaurant2 = Restaurant.create!(
+    google_place_id: "ChIJ53USP0nBhkcRjQ50xhPN_zw",
+    city_id: 348_156,
     name: "Misoya Milano",
     street: "Via Solferino, 41",
     postal_code: "20121",
@@ -129,11 +215,33 @@ puts "Creating restaurants (3 API calls)"
     main_photo_src: "https://res.cloudinary.com/tf-lab/image/upload/restaurant/f5cdff1f-3cc7-4fba-b2ac-44c95ede85e4/b41c40e3-984e-4048-a197-5c3124b30c88.jpg",
     booked: true,
     selected: true,
-    trip: trip1,
-  )
-end
+    trip: trip1
+    )
+
+
+  puts "Creating restaurant 3"
+  restaurant3 = Restaurant.create!(
+    google_place_id: "ChIJ53USP0nBhkcRjQ50xhPN_zw",
+    city_id: 348_156,
+    name: "Light Sushi Restaurant",
+    street: "Via Solferino, 41",
+    postal_code: "20121",
+    longtitude: "9.1877565",
+    latitude: "45.4940647",
+    price_range: 25,
+    rating_value: 4.5,
+    currencies_accepted: "EUR",
+    main_photo_src: "https://res.cloudinary.com/tf-lab/image/upload/restaurant/287bd4ba-3ef9-43f7-89fc-87f5234c6ee2/49f4b418-535a-4c7a-811e-b209619196b5.jpg",
+    booked: true,
+    selected: true,
+    trip: trip1
+    )
+
+
 
 end
+
+# --------------------------chatrooms -----------------------------#
 
 puts "Creating chatrooms"
 

@@ -6,7 +6,7 @@
         <p><%= attraction.address %></p>
         <p>$<%= attraction.price %></p>
         <p>Category: <%= attraction.category_name %></p>
-        <p>Rating: <%= attraction.value %>/5</p>
+        <p>Rating: <%= attraction.rating %>/5</p>
         <button type="button" class="btn btn-warning">Select</button>
       </div>
     </div>

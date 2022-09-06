@@ -115,7 +115,7 @@ export default class extends Controller {
     }
   }
 
-
+}
 
       // -------- DO NOT REMOVE --------------
       // case 'companion':

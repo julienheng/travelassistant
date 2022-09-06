@@ -24,6 +24,15 @@ class CompanionsController < ApplicationController
     @companion = Companion.find(params[:id])
   end
 
+  def add_field
+    @trip = Trip.find(params[:trip_id])
+    @companion = Companion.new
+
+    respond_to do |format|
+      format.text { render partial: "companions/add_field", locals: { trip: @trip, companion: @companion }, formats: [:html] }
+    end
+  end
+
   private
 
   def companion_params

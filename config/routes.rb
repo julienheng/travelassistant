@@ -4,12 +4,16 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :trips do
+    get 'add-companion', to: 'companions#add_field'
     resources :companions, only: %i[show new create]
     resources :activites
     resources :flights
     resources :accommodations
-    resources :attractions
-    resources :restaurants
+    member do
+      get 'activities/new', to: 'trips#activities'
+    end
+    resources :attractions, only: [:create]
+    resources :restaurants, only: [:create]
     get "loading/", to: "pages#loading", as: :loading_page
     get "trip-generate/", to: "pages#generate", as: :generate_page
   end
