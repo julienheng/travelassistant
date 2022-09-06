@@ -7,11 +7,14 @@ import { application } from "./application"
 import ChatSubscriptionController from "./chat_subscription_controller"
 application.register("chat-subscription", ChatSubscriptionController)
 
-import CreateTripController from "./create_trip_controller"
-application.register("create-trip", CreateTripController)
-
 import CreateCompanionController from "./create_companion_controller"
 application.register("create-companion", CreateCompanionController)
 
+import CreateTripController from "./create_trip_controller"
+application.register("create-trip", CreateTripController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import SelectFromCardsController from "./select_from_cards_controller"
+application.register("select-from-cards", SelectFromCardsController)

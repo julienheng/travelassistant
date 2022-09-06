@@ -23,7 +23,7 @@
     height: 40px;
     border-radius: 15px;
     margin-bottom: 10px;
-    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
   }
 
   h2 {
@@ -32,16 +32,14 @@
     margin-top: 20px;
   }
 
-  &.active{
+  &.active {
     transform: scale(1);
     opacity: 1;
     pointer-events: all;
   }
-
   .img-oneway{
     margin-top: 10px;
   }
-
 }
 
 .createtrip-flighttype {
@@ -103,9 +101,8 @@
       color: white;
       text-decoration: none;
       color: #F96562;
-
       &:hover {
-        color: white
+        color: white;
       }
     }
   }
@@ -163,7 +160,8 @@
   cursor: pointer;
   transition: all 0.5s;
 
-  .span1, .span2 {
+  .span1,
+  .span2 {
     cursor: pointer;
     transition: 0.5s;
     display: inline-block;
@@ -173,7 +171,7 @@
 
 .rtflight-button1 .span1:after,
 .rtflight-button2 .span2:after {
-  content: '\00bb';
+  content: "\00bb";
   position: absolute;
   opacity: 0;
   top: 5;
@@ -188,7 +186,6 @@
 
 .rtflight-button1:hover,
 .rtflight-button2:hover {
-
   .span1:after,
   .span2:after {
     opacity: 1;
@@ -229,30 +226,29 @@
   }
 }
 
-.submit-trip:link
-.submit-trip:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 15px 40px;
-    display: inline-block;
-    border-radius: 100px;
-    transition: all .2s;
-    position: absolute;
+.submit-trip:link .submit-trip:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s;
+  position: absolute;
 }
 
 .submit-trip:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .submit-trip:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-white {
-    background-color: black;
-    color: black;
+  background-color: black;
+  color: black;
 }
 
 .submit-trip::after {
@@ -273,13 +269,13 @@
 }
 
 .submit-trip:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
 }
 
 .btn-animated {
-    animation: moveInBottom 5s ease-out;
-    animation-fill-mode: backwards;
+  animation: moveInBottom 5s ease-out;
+  animation-fill-mode: backwards;
 }
 
 @keyframes moveInBottom {
