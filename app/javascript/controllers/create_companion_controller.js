@@ -8,20 +8,33 @@ export default class extends Controller {
   }
 
   connect() {
-    console.log("Controller 2");
+    console.log("Controller 3");
     console.log(this.inputfieldTarget)
     console.log(this.tripValue);
   }
 
-  addTravellerFields(e) {
-
+  addtraveller(e) {
     e.preventDefault()
 
     fetch(`/trips/${this.tripValue}/add-companion`, { headers: {'Accept': 'text/plain'} })
       .then(res => res.text())
       .then(data => {
         this.wrapperTarget.insertAdjacentHTML('beforeend', data)
+        //this.inputfieldTarget.insertAdjacentHTML('beforeend', data)
       })
+
+
+  }
+
+  submit(e) {
+
+    // e.preventDefault()
+
+    // fetch(`/trips/${this.tripValue}/add-companion`, { headers: {'Accept': 'text/plain'} })
+    //   .then(res => res.text())
+    //   .then(data => {
+    //     this.wrapperTarget.insertAdjacentHTML('beforeend', data)
+    //   })
 
   }
 }

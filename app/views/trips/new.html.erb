@@ -1,33 +1,50 @@
 <div class="newtrip-container">
-  <div class="newtrip-second-container" data-controller="create-trip" data-create-trip-current-step-value="budget" >
+    <div class="back-home-button">
+      <%= link_to "< Home", root_path %>
+    </div>
+    <div class="newtrip-second-container" data-controller="create-trip" data-create-trip-current-step-value="budget" >
 
     <%= simple_form_for((@trip), data: { create_trip_target: "form" }) do |f| %>
 
       <%# --------- BUDGET ---------   %>
       <div class="trip-step createtrip-budget active" data-create-trip-target="budget" >
-        <h2 class="text-center fs-1">What's your ideal budget?</h1>
+
+        <div class="img-budget">
+          <%= image_tag "travel1.jpeg", width: 250 %>
+        </div>
+
+        <h2 class="text-center fs-1">What's your total budget?</h1>
         <%= f.input :budget, :label => 'Amount in SGD', class: "fs-3" %>
 
         <div class="main-buttons d-flex">
-          <div class="back-home-button btn btn-outline rounded-pill"><%= link_to "Back", root_path %></div>
-          <button type="button" class="next-button btn btn-outline rounded-pill" data-create-trip-target="next" data-action="click->create-trip#next">Next</button>
+          <button type="button" class="next-button btn btn-outline" data-create-trip-target="next" data-action="click->create-trip#next">Next</button>
         </div>
       </div>
 
       <%# --------- FLIGHT ---------   %>
       <div class="trip-step createtrip-flight" data-create-trip-target="flight">
+
+        <div class="img-flight">
+          <%= image_tag "travel2.jpeg", width: 225 %>
+        </div>
+
         <h2 class="text-center fs-1">Where are you heading to?</h2>
         <%= f.input :origin %>
         <%= f.input :destination %>
 
         <div class="main-buttons d-flex">
           <%= render "trips/createtrip_button"%>
-          <button type="button" class="next-button btn btn-outline rounded-pill" data-create-trip-target="next" data-action="click->create-trip#next">Next</button>
+          <button type="button" class="next-button btn btn-outline" data-create-trip-target="next" data-action="click->create-trip#next">Next</button>
         </div>
       </div>
 
       <%# --------- TYPE OF FLIGHT ---------   %>
       <div class="trip-step createtrip-flighttype" data-create-trip-target="type">
+
+        <div class="img-type">
+          <%= image_tag "travel3.jpeg", width: 230 %>
+        </div>
+
         <h2 class="text-center fs-1">Would you like a return flight?</h2>
 
         <div class="flight-buttons">
@@ -44,18 +61,27 @@
 
       <%# ---------RT DATES---------   %>
       <div class="trip-step createtrip-flightdate" data-create-trip-target="rtdate">
+
+        <div class="img-oneway">
+          <%= image_tag "choosetrip.jpeg", width: 150 %>
+        </div>
+
         <h2 class="text-center fs-1">Select your dates</h2>
         <%= f.input :start_date, :label => "Depart", as: :date, html5: true %>
         <%= f.input :end_date, :label => "Return", as: :date, html5: true %>
 
         <div class="submit-button">
-          <%= render "trips/createtrip_button"%>
+          <%= render "trips/createtrip_button" %>
           <%= f.submit "Submit",  data: { create_trip_target: "submit" } , class: "submit-trip btn btn"  %>
         </div>
       </div>
 
       <%# ---------ONE WAY DATE ---------   %>
       <div class="trip-step createtrip-oneway" data-create-trip-target="owdate">
+
+         <div class="img-oneway">
+          <%= image_tag "accombooking.jpeg", width: 250 %>
+        </div>
         <h2 class="text-center">Select your departure date</h2>
         <%= f.input :start_date, :label => "Departure", as: :date, html5: true %>
 
@@ -63,6 +89,7 @@
           <%= render "trips/createtrip_button"%>
           <%= f.submit "Submit",  data: { create_trip_target: "submit"} , class: "submit-trip btn btn-white btn-animated"  %>
         </div>
+
       </div>
 
     <% end %>

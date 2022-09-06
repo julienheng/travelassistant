@@ -3,16 +3,17 @@
   <%# <%= f.input :pax, :label => "Number", input_html: { data: { create_trip_target: "Field"  }, class: "traveller-input rounded-pill", :value => "" } %>
   <%# <%= f.input :type, :label => "Select", :collection => ["Solo","Couple", "Family", "Friends"], :selected => "" , input_html: { class: "type-input rounded-pill" } %>
 
-  <div class="traveller-detail d-flex justify-content-between" data-create-companion-target="inputfield" >
-    <%= f.input :name, input_html: { class: "name-input rounded-pill" } %>
-    <%= f.input :age, input_html: { class: "age-input rounded-pill" } %>
+  <div class="traveller-detail d-flex justify-content-around" data-create-companion-target="inputfield" >
+    <%= f.input :name, input_html: { class: "name-input" } %>
+    <%= f.input :age, input_html: { class: "age-input" } %>
   </div>
 
+  <button class="add-field-button btn btn-outline" data-action="click->create-companion#addtraveller">Add more traveller</button>
+
   <div class="com-submit-button d-flex justify-content-center">
-    <%= f.submit "Submit", class: "companion-submit btn btn-outline", html: {
-  data: {
-    action: "click->create-companion#addTravellerFields"
-  }} %>
+    <%= f.submit "Submit", class: "companion-submit btn btn-outline"  %>
   </div>
 
 <% end %>
+
+ <!-- html: { data: { action: "click->create-companion#submit" } }  -->
