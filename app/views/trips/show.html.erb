@@ -38,23 +38,24 @@
         <p>Arrival Time: <%= Flight.first.inbound_arrival %></p>
       </div>
     </div>
-    <div class="show-flight-price">
-      <div class = show-price-font>
-          Estimating $200
-      </div>
-
-
-
-      <div class="show-flight-price-button">
-        <%= link_to "https://www.skyscanner.com.sg/transport/flights/#{session[:trip_data]['flights'][0]['outbound_origin_display_code']}/#{session[:trip_data]['flights'][0]['outbound_destination_display_code']}/#{session[:trip_data]['flights'][0]['outbound_departure'].to_date.strftime('%y%m%d')}/#{session[:trip_data]['flights'][0]['outbound_arrival'].to_date.strftime('%y%m%d')}", target: '_blank' do %>
-          <div class ="payment-button">
-            <div class = show-price-font>
-              Make Payment
+    <div class="show-card-container">
+      <div class="show-card-price">
+        <div class = "show-price-font">
+            Estimating $200
+        </div>
+        <div class="show-card-price-button">
+          <%= link_to "https://www.skyscanner.com.sg/transport/flights/#{session[:trip_data]['flights'][0]['outbound_origin_display_code']}/#{session[:trip_data]['flights'][0]['outbound_destination_display_code']}/#{session[:trip_data]['flights'][0]['outbound_departure'].to_date.strftime('%y%m%d')}/#{session[:trip_data]['flights'][0]['outbound_arrival'].to_date.strftime('%y%m%d')}", target: '_blank' do %>
+            <div class ="payment-button">
+              <div class = "show-price-font">
+                Make Payment
+              </div>
             </div>
+          <% end %>
+          <div class="show-card-checkbox">
+             <input type="checkbox">
+            <label for="payment_made"> Tick if payment made</label><br>
           </div>
-        <% end %>
-          <input type="checkbox">
-          <label for="payment_made"> Tick if payment made</label><br>
+        </div>
       </div>
     </div>
   </div>
@@ -71,19 +72,25 @@
       </div>
       <p>Hotel Name: <%= Accommodation.first.name %></p>
     </div>
-      <div class="show-accomodation-price">
-        <div class = show-price-font>
+    <div class="show-card-container">
+      <div class="show-card-price">
+        <div class = "show-price-font">
           Estimating <%= Accommodation.first.price %>
 
-          <div class="show-accomodation-price-button">
+          <div class="show-card-price-button">
             <div class ="payment-button">
-              Make Payment
+              <div class = "show-price-font">
+                Make Payment
+              </div>
             </div>
         </div>
+          <div class="show-card-checkbox">
               <input type="checkbox">
               <label for="payment_made"> Tick if payment made</label><br>
           </div>
+          </div>
       </div>
+    </div>
   </div>
 <%# ---------end of accomodation details section---------   %>
 <%# ---------start of activity details section---------   %>
@@ -113,19 +120,24 @@
         <p>Price range: USD <%= Restaurant.first.price_range %></p>
     </div>
 
+    <div class="show-card-container">
+      <div class="show-card-price">
+          <div class = "show-price-font">
+              Estimating <%= Accommodation.first.price %>
 
-    <div class="show-activity-price">
-        <div class = show-price-font>
-            Estimating <%= Accommodation.first.price %>
-
-          <div class="show-activity-price-button">
-            <div class ="payment-button">
-            Make Payment
+            <div class="show-card-price-button">
+              <div class ="payment-button">
+                <div class = "show-price-font">
+                  Make Payment
+                </div>
+              </div>
+            </div>
+            <div class="show-card-checkbox">
+              <input type="checkbox">
+              <label for="payment_made"> Tick if payment made</label><br>
             </div>
           </div>
-          <input type="checkbox">
-          <label for="payment_made"> Tick if payment made</label><br>
-        </div>
+      </div>
     </div>
   </div>
 </div>
