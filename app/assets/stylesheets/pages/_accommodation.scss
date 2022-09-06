@@ -22,11 +22,14 @@
   box-shadow: 0 0 8px 0 #7c7c7c;
   background-color: white;
   border-radius: 20px;
-  // margin-top: 20px;
 }
 
-.hotel-cards:hover {
-  background-color: rgb(200, 200, 200);
+.card-focus {
+  //background-color: blue !important
+  border-color: #34e0a1;
+  .btn-primary {
+    background-color: #34e0a1 !important;
+  }
 }
 
 .btn-red {
@@ -50,4 +53,18 @@
 .checked {
   color: orange;
   margin-bottom: 12px;
+}
+
+.back-home-button2 {
+  //border: 1px solid black;
+  height: 20px;
+  width: fit-content;
+  padding-top: 10px;
+  margin-left: 15px;
+  a {
+    //border: 1px solid red;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+  }
 }

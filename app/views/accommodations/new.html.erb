@@ -1,8 +1,12 @@
+<div class="back-home-button2">
+  <%= link_to "< Back", new_trip_flight_path(@trip) %>
+</div>
+
 <div class="acc-header text-center">
   <h1><strong>We have found some cosy places for you</strong></h1>
 </div>
 
-<div class="acc-container">
+<div class="acc-container" data-controller="select-from-cards">
   <!-- carousel for hotels -->
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <!-- Slider contents -->
