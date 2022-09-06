@@ -1,12 +1,12 @@
 <div class="text-center">
   <h2>Here are some flights we found</h2>
 </div>
-
-<div class="acc-content container">
+<%# raise %>
+<div class="acc-content container" data-controller="select-from-cards">
   <!-- carousel for flights -->
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <!-- Slider contents -->
-    <div class="carousel-inner">
+    <div class="carousel-inner" >
       <% session[:trip_data]["flights"].each_with_index do |flight, index| %>
         <%= render 'flight', flight: flight, index: index %>
       <% end %>
