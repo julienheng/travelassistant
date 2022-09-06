@@ -1,13 +1,15 @@
-<div class="createtrip-companion-container" data-controller="create-companion"  data-create-companion-trip-value="<%= @trip.id %>">
-  <h3 class="text-center">Traveller Details</h3>
+<body id="companion">
+  <div class="createtrip-companion-container" data-controller="create-companion"  data-create-companion-trip-value="<%= @trip.id %>">
+    <h3 class="text-center">Traveller Details</h3>
 
-  <div data-create-companion-target="wrapper">
-    <%= render 'add_field', trip: @trip, companion: @companion %>
-  </div>
+    <div data-create-companion-target="wrapper">
+      <%= render 'add_field', trip: @trip, companion: @companion %>
+    </div>
 
-  <div class="add-field">
-    <%# <button class="add-field-text" data-action="click->create-companion#addTravellerFields">
-      + Add more travellers
-    </button> %>
+    <div class="add-field">
+      <%# <button class="add-field-text" data-action="click->create-companion#addTravellerFields">
+        + Add more travellers
+      </button> %>
+    </div>
   </div>
-</div>
+</body>

@@ -1,7 +1,6 @@
 class MessagesController < ApplicationController
   def create
     @chat = Chat.find(params[:chat_id])
-    #raise
     @message = Message.new(message_params)
     @message.chat = @chat
     @message.user = current_user
@@ -9,10 +8,7 @@ class MessagesController < ApplicationController
     @message.save
     ChatChannel.broadcast_to(
       @chat,
-      render_to_string(
-        partial: "messages/message",
-        locals: { message: @message }
-      )
+      render_to_string(partial: "messages/message", locals: { message: @message })
     )
     head :ok
   end

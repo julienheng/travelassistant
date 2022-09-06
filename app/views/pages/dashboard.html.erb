@@ -5,19 +5,21 @@
 <div class="dashboard-content">
   <div class="container">
     <div>
-      <img src="https://cdn-icons-png.flaticon.com/128/913/913032.png" alt="" class="item">
-      <p class="trip">Create New Trip</p>
+      <%= link_to new_trip_path do%>
+        <img src="https://cdn-icons-png.flaticon.com/128/913/913032.png" alt="" class="item" >
+        <p class="trip">Create New Trip</p>
+      <% end %>
     </div>
     <div>
-      <img src="https://cdn-icons-png.flaticon.com/512/3069/3069197.png" alt="" class="item">
-      <p class="trip">View Past Trips</p>
+        <img src="https://cdn-icons-png.flaticon.com/512/3069/3069197.png" alt="" class="item" >
+        <p class="trip" >View Past Trips</p>
     </div>
   </div>
 
   <div class="container">
     <div>
-      <img src="https://cdn-icons-png.flaticon.com/128/2491/2491921.png" alt="" class="item">
-      <p class="trip mb-12">View Current Trip</p>
+        <img src="https://cdn-icons-png.flaticon.com/128/2491/2491921.png" alt="" class="item">
+        <p class="trip mb-12">View Current Trip</p>
     </div>
     <div>
       <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="" class="item">

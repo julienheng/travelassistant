@@ -1,13 +1,17 @@
+body#companion {
+  background-color: #ACA7A6;
+}
+
 .createtrip-companion-container {
-  width: 300px;
+  width: 400px;
   height: 600px;
   border: 1px solid red;
   margin: 0 auto;
+  background-color: whitesmoke;
 
   input {
     width: 300px;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
-
   }
 
   .name-input {

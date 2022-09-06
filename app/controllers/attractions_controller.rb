@@ -1,5 +1,4 @@
 class AttractionsController < ApplicationController
-
   def new
     @attractions = Attraction.all
     @trip = Trip.find(params[:trip_id])
@@ -22,5 +21,4 @@ class AttractionsController < ApplicationController
   def attraction_params
     params.require(:attraction).permit(:name, :address, :price, :rating, :category_name, :booked, :selected, :trip_id)
   end
-
 end
