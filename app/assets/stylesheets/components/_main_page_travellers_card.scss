@@ -1,3 +1,5 @@
+
+
 .traveler_card_img {
   width: 300px;
   height: 100px;
@@ -9,13 +11,20 @@
 .each_card_container {
 
   border: solid #FD5754 5px;
-  border-radius: 100px;
+
+
+  // background:url("avatar_background.jpg") center center/cover no-repeat;
+
   // width: auto;
+  // background-image: url("avatar_background.jpg")center center/cover no-repeat;
+  // background-attachment: fixed;
+  // background-position: center;
   }
 
 .each_card_container_testimonial {
   font-size: 15px;
   color: #3a3a3a;
+  margin-right: 0px;
 }
 
 .avatar {
@@ -48,6 +57,81 @@
   }
 }
 
+.traveller-button {
+  background-color:#FD5754;
+  height: 2.5rem;
+  color: white;
+  border-color: #FD5754;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 1rem;
+  padding-top: 5.2px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.image_avatar {
+  border-radius: 20px;
+}
+
+// .carousel-control-prev {
+//   color: #da4240;
+// }
+
+// .visually-hidden{
+//   color: #da4240;
+// }
+
+// .carousel-control-next {
+//   color: #da4240;
+// }
+
+// .carousel-control-prev-icon{
+//   color: #da4240;
+// }
+
+.carousel-control-next {
+  margin-right: 2px;
+  margin-left: 2px;
+  padding-left: 2px;
+  size: 2px;
+}
+
+
+
+// .carousel-control-prev-icon,
+// .carousel-control-next-icon {
+//   height: 100px;
+//   width: 100px;
+//   outline: black;
+//   background-size: 100%, 100%;
+//   border-radius: 50%;
+//   border: 1px solid black;
+//   background-image: none;
+// }
+
+.carousel-control-next-icon:after
+{
+
+  font-size: 30px;
+  color:black;
+}
+
+.carousel-control-prev-icon:after {
+
+  font-size: 30px;
+  color:black;
+}
+
+.carousel-indicators {
+  color:black;
+}
+
+.avatar {
+  width: 135px;
+  border-radius: 50%;
+}
 
   // -----start of popup----
 

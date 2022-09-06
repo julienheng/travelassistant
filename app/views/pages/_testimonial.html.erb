@@ -1,15 +1,93 @@
 <div class="carousel-item <%= 'active' if index.zero? %>">
-  <div class="row px-1 mt-4 rounded px-4 each_card_container py-4 mx-3">
+  <div class="row px-1 mt-4 rounded px-4 each_card_container py-4 mx-3 rounded-4">
     <div class="col-6">
-      <%= image_tag "male_avatar.png", width:"100%"%>
+      <div class="image_avatar">
+        <%= image_tag "julien_avatar.png", class: "avatar"%>
+      </div>
     </div>
     <div class="col-6">
       <div class="d-flex">
         <div class="each_card_container_testimonial">
-          <i>This is a testimonial, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</i>
+          <i>This app is amazing! I have a wonderful trip because of Howliday!</i>
         </div>
       </div>
-      <button class="btn btn-primary w-100 h-3" type="submit">View iternary</button>
+      <%# <button class="btn btn-primary w-100 h-3 traveller-button" type="submit">View iternary</button> %>
+      <div class="traveller-button" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <p>View iternary</p>
+      </div>
     </div>
   </div>
 </div>
+
+<%# -----start of model----- %>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Julien iternary</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%# -----start of flip card content----- %>
+
+        <%# <div class="timeline-title">
+        <h1>Julien <span>iternary</span></h1>
+        </div> %>
+
+        <div class="container">
+
+          <div class="timeline-block timeline-block-right">
+              <div class="marker"></div>
+              <div class="timeline-content">
+                <h3>Grand Palace</h3>
+                <span>Day 1</span>
+                <p>The Grand Palace and Wat Prakaew command respect from all who have walked in their sacred grounds. </p>
+              </div>
+          </div>
+
+          <div class="timeline-block timeline-block-left">
+              <div class="marker"></div>
+              <div class="timeline-content">
+                <h3>Wat Pho</h3>
+                <span>Day 2</span>
+                <p>This iconic temple harbours a fascinating collection of murals, inscriptions and sculptures that delve into various subjects, from warfare to astronomy to archaeology. </p>
+              </div>
+          </div>
+
+          <div class="timeline-block timeline-block-right">
+              <div class="marker"></div>
+              <div class="timeline-content">
+                <h3>Chinatown (Yaowarat)</h3>
+                <span>Day 3/span>
+                <p>Bangkok's Chinatown is a colourful, exotic and pleasingly chaotic area, packed with market stalls and probably the highest concentration of gold shops in the city.</p>
+              </div>
+          </div>
+
+          <div class="timeline-block timeline-block-left">
+              <div class="marker"></div>
+              <div class="timeline-content">
+                <h3>Sky Bar Bangkok</h3>
+                <span>Day 4</span>
+                <p>Sky Bar boasts sweeping views from the top of  State Tower, one of Bangkok's tallest buildings.</p>
+              </div>
+          </div>
+
+          <div class="timeline-block timeline-block-right">
+              <div class="marker"></div>
+              <div class="timeline-content">
+                <h3>Chatuchak Weekend Market</h3>
+                <span>Day 5</span>
+                <p>Once only popular among wholesalers and traders, Chatuchak Weekend Market has reached a landmark status as a must-visit place for tourists.</p>
+              </div>
+          </div>
+        </div>
+
+        <%# -----end of flip card content----- %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<%# -----end of model----- %>
