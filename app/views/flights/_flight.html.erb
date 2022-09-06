@@ -1,26 +1,31 @@
-<div class="carousel-item <%= 'active' if index.zero? %>">
-  <div class="flight-cards row px-1 mt-4 mx-0 rounded">
+<div class="carousel-item <%= 'active' if index.zero? %>" data-select-from-cards-target="card"
+data-amount=<%=session[:trip_data]["flights"][index]["amount"]%> data-outbound-origin-display-code=<%=session[:trip_data]["flights"][index]["outbound_origin_display_code"]%>
+data-outbound-destination-display-code=<%=session[:trip_data]["flights"][index]["outbound_destination_display_code"]%> data-outbound-departure=<%=session[:trip_data]["flights"][index]["outbound_departure"]%>>
+
+  <div class="flight-cards row px-1 mt-4 mx-0 rounded" id="border">
       <%= image_tag "Singapore_Airlines_Logo_2.png", width:"100%" %>
-      <div class="flight-card text-center">
-        <h5 class="card-title"><%#= session[:trip_data]["flights"]["flight1"][0] %></h5>
-        <p class="card-text">Departure</p>
-        <div class="depart-time text-center">
-          <%= session[:trip_data]["flights"][index]["outbound_departure"] %> <i class="arrow right"></i><i class="arrow right"></i><i class="arrow right"></i> <%= session[:trip_data]["flights"][index]["outbound_arrival"] %>
+      <div class="flight-card">
+        <div class="flight-info-container">
+          <h6 class="card-title">Departure</h6>
+          <div class="depart-time text-center" id="outbound-datetime">
+            <%= session[:trip_data]["flights"][index]["outbound_departure"].to_date.strftime('%d %b %H:%M') %> <i class="arrow right"></i><i class="arrow right"></i><i class="arrow right"></i> <%= session[:trip_data]["flights"][index]["outbound_arrival"].to_date.strftime('%d %b %H:%M') %>
+          </div>
+          <div class="depart-location text-center" id="outbound-displaycode">
+            <%= session[:trip_data]["flights"][index]["outbound_origin_display_code"] %>   direct     <%= session[:trip_data]["flights"][index]["outbound_destination_display_code"] %>
+          </div>
         </div>
-        <div class="depart-location text-center">
-          <%= session[:trip_data]["flights"][index]["outbound_origin_display_code"] %>   direct     <%= session[:trip_data]["flights"][index]["outbound_destination_display_code"] %>
-        </div>
+
         <p class="card-text">Arrival</p>
-        <div class="depart-time text-center">
+        <div class="depart-time text-center" id="inbound-datetime">
           <%= session[:trip_data]["flights"][index]["inbound_departure"] %> <i class="arrow right"></i><i class="arrow right"></i><i class="arrow right"></i> <%= session[:trip_data]["flights"][index]["inbound_arrival"] %>
         </div>
-        <div class="depart-location text-center">
+        <div class="depart-location text-center" id="inbound-displaycode">
           <%= session[:trip_data]["flights"][index]["inbound_origin_display_code"] %>      direct     <%= session[:trip_data]["flights"][index]["inbound_destination_display_code"] %>
         </div>
         <p class="card-text">Estimated Price: $<%= session[:trip_data]["flights"][index]["amount"] %></p>
         <div class="text-center">
-          <a href="#" class="btn btn-primary">Select</a>
+          <a href="#" class="btn btn-primary" data-action="select-from-cards#click">Select</a>
         </div>
       </div>
-    </div>
+  </div>
 </div>

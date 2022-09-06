@@ -5,9 +5,18 @@
 .flight-cards {
   width: 100%;
   padding: 12px;
-  border: 2px solid red;
+  border: solid #FD5754 5px;
   box-shadow: 0 0 8px 0 #7C7C7C;
   background-color: white;
+  border-radius: 50%;
   margin-top: 20px;
-  // display: flex;
+}
+
+
+.card-focus {
+  //background-color: blue !important
+  border-color: #34E0A1;
+  .btn-primary {
+    background-color: #34E0A1 !important;
+  }
 }
