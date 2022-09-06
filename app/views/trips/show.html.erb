@@ -1,31 +1,32 @@
-<div class = "show-container">
-  <div class = "show-nav-section">
-    <p><- Back</p>
+<div class="show-container">
+  <div class="show-title">
+  You have chosen
   </div>
-
-  <h1>You have chosen</h1>
 <%# ---------start of flight details section---------   %>
   <div class="show-flight-container">
     <div class="show-flight-detail">
-
-      <div class="outbound_flight_details">
-        <div class="show-h3-font">
-          <h3>Outbound Flight</h3>
-        </div>
-
-        <div class = show-p-font>
-          <p>Outbound Departure</p>
-        </div>
-
-        <b> <%= Flight.first.outbound_carrier_name  %> </b><br>
-        <%= Flight.first.outbound_origin_display_code %> - <%= Flight.first.outbound_destination_display_code  %><br>
-        <p >Departure Time:<%= Flight.first.outbound_departure %></p>
-        <p>Arrival Time:<%= Flight.first.outbound_arrival %></p>
+      <div class="show_image">
+        <%= image_tag ("norse_airline"), :width => "350px" %>
       </div>
+
+        <div class="outbound_flight_details">
+          <div class="show-h3-font">
+            Outbound Flight
+          </div>
+
+          <div class = "show-p-font">
+            Outbound Departure
+          </div>
+
+          <b> <%= Flight.first.outbound_carrier_name  %> </b><br>
+          <%= Flight.first.outbound_origin_display_code %> - <%= Flight.first.outbound_destination_display_code  %><br>
+          <p >Departure Time: <%= Flight.first.outbound_departure %></p>
+          <p>Arrival Time: <%= Flight.first.outbound_arrival %></p>
+        </div>
 
       <div class = "inbound">
         <div class="show-h3-font">
-          <h3>Inbound Flight</h3>
+          Inbound Flight
         </div>
         <div class = show-p-font>
           <p>Inbound Departure</p>
@@ -33,37 +34,54 @@
         <b><%= Flight.first.inbound_carrier_name  %></b><br>
         <%= Flight.first.inbound_origin_display_code %> - <%= Flight.first.outbound_destination_display_code  %>
         <br>
-        <p>Departure Time:<%= Flight.first.inbound_departure %></p>
-        <p>Arrival Time:<%= Flight.first.inbound_arrival %></p>
+        <p>Departure Time: <%= Flight.first.inbound_departure %></p>
+        <p>Arrival Time: <%= Flight.first.inbound_arrival %></p>
       </div>
     </div>
     <div class="show-flight-price">
-    <p>Estimating $200</p>
+      <div class = show-price-font>
+          Estimating $200
+      </div>
+
+
 
       <div class="show-flight-price-button">
         <%= link_to "https://www.skyscanner.com.sg/transport/flights/#{session[:trip_data]['flights'][0]['outbound_origin_display_code']}/#{session[:trip_data]['flights'][0]['outbound_destination_display_code']}/#{session[:trip_data]['flights'][0]['outbound_departure'].to_date.strftime('%y%m%d')}/#{session[:trip_data]['flights'][0]['outbound_arrival'].to_date.strftime('%y%m%d')}", target: '_blank' do %>
           <div class ="payment-button">
-            <p>Make Payment</p>
+            <div class = show-price-font>
+              Make Payment
+            </div>
           </div>
         <% end %>
           <input type="checkbox">
           <label for="payment_made"> Tick if payment made</label><br>
       </div>
+    </div>
   </div>
 </div>
 <%# ---------end of flight details section---------   %>
 <%# ---------start of accomodation details section---------   %>
   <div class = "show-accomodation-container">
     <div class="show-accomodation">
-      <h3>Accomodation</h3>
+      <div class="show-h3-font">
+          Accomodation
+        </div>
+      <div class="show_image">
+        <%= image_tag ("hotel_room"), :width => "350px" %>
+      </div>
       <p>Hotel Name: <%= Accommodation.first.name %></p>
     </div>
       <div class="show-accomodation-price">
-        <p>Estimating <%= Accommodation.first.price %></p>
+        <div class = show-price-font>
+          Estimating <%= Accommodation.first.price %>
+
           <div class="show-accomodation-price-button">
-            <p>Make Payment</p>
-            <input type="checkbox">
-            <label for="payment_made"> Tick if payment made</label><br>
+            <div class ="payment-button">
+              Make Payment
+            </div>
+        </div>
+              <input type="checkbox">
+              <label for="payment_made"> Tick if payment made</label><br>
           </div>
       </div>
   </div>
@@ -72,27 +90,46 @@
   <div class="show-activity-container">
     <%# -------accomodation---- %>
     <div class="show-activity">
-      <h3>Attraction</h3>
+      <div class="show-h3-font">
+          Attraction
+      </div>
+
+      <div class="show_image">
+        <%= image_tag ("gardenbythebay"), :width => "350px" %>
+      </div>
+
       <p>Place: <%= Attraction.first.name %></p>
       <p>Address: <%= Attraction.first.address %></p>
     </div>
+
+
       <%# -------restaurant---- %>
       <div class = "show-restaurant">
-        <h3>Restaurant</h3>
+        <div class="show-h3-font">
+          Restaurant
+        </div>
         <p>Name: <%= Restaurant.first.name %></p>
         <p>Address: <%= Restaurant.first.street %></p>
         <p>Price range: USD <%= Restaurant.first.price_range %></p>
-      </div>
-      <%# -------price---- %>
-      <div class="show-activity-price">
-      <p>Estimating <%= Accommodation.first.price %></p>
-        <div class="show-activity-price-button">
-          <p>Make Payment</p>
+    </div>
+
+
+    <div class="show-activity-price">
+        <div class = show-price-font>
+            Estimating <%= Accommodation.first.price %>
+
+          <div class="show-activity-price-button">
+            <div class ="payment-button">
+            Make Payment
+            </div>
+          </div>
           <input type="checkbox">
           <label for="payment_made"> Tick if payment made</label><br>
-      </div>
+        </div>
+    </div>
   </div>
 </div>
-                <div class = "button-for-back-to-dashboard">
-                  <%= link_to "Back to Dashboard",dashboard_page_path, class: "btn btn-traveller btn-lg" %>
-                </div>
+
+<div class = "button-for-back-to-dashboard">
+  <%= link_to "Back to Dashboard",dashboard_page_path, class: "btn btn-traveller btn-lg" %>
+</div>
