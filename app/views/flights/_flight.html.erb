@@ -2,11 +2,11 @@
 data-amount=<%=session[:trip_data]["flights"][index]["amount"]%> data-outbound-origin-display-code=<%=session[:trip_data]["flights"][index]["outbound_origin_display_code"]%>
 data-outbound-destination-display-code=<%=session[:trip_data]["flights"][index]["outbound_destination_display_code"]%> data-outbound-departure=<%=session[:trip_data]["flights"][index]["outbound_departure"]%>>
 
-  <div class="flight-cards row px-1 mt-4 mx-0 rounded" id="border">
+  <div class="flight-cards row px-1 mt-4 mx-0" id="border">
       <%= image_tag "Singapore_Airlines_Logo_2.png", width:"100%" %>
       <div class="flight-card">
         <div class="flight-info-container">
-          <h6 class="card-title">Departure</h6>
+          <h6 class="card-title"><strong>Departure</strong></h6>
           <div class="depart-time text-center" id="outbound-datetime">
             <%= session[:trip_data]["flights"][index]["outbound_departure"].to_date.strftime('%d %b %H:%M') %> <i class="arrow right"></i><i class="arrow right"></i><i class="arrow right"></i> <%= session[:trip_data]["flights"][index]["outbound_arrival"].to_date.strftime('%d %b %H:%M') %>
           </div>
@@ -15,14 +15,14 @@ data-outbound-destination-display-code=<%=session[:trip_data]["flights"][index][
           </div>
         </div>
 
-        <p class="card-text">Arrival</p>
+        <p class="card-text"><strong>Arrival</strong></p>
         <div class="depart-time text-center" id="inbound-datetime">
           <%= session[:trip_data]["flights"][index]["inbound_departure"] %> <i class="arrow right"></i><i class="arrow right"></i><i class="arrow right"></i> <%= session[:trip_data]["flights"][index]["inbound_arrival"] %>
         </div>
         <div class="depart-location text-center" id="inbound-displaycode">
           <%= session[:trip_data]["flights"][index]["inbound_origin_display_code"] %>      direct     <%= session[:trip_data]["flights"][index]["inbound_destination_display_code"] %>
         </div>
-        <p class="card-text">Estimated Price: $<%= session[:trip_data]["flights"][index]["amount"] %></p>
+        <p class="card-text"><strong>Estimated Price: $<%= session[:trip_data]["flights"][index]["amount"] %></strong></p>
         <div class="text-center">
           <a href="#" class="btn btn-primary" data-action="select-from-cards#click">Select</a>
         </div>

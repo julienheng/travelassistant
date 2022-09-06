@@ -1,8 +1,8 @@
-<div class="text-center">
-  <h2>Here are some flights we found</h2>
+<div class="acc-header text-center">
+  <h1><strong>Here are some flights we found</strong></h1>
 </div>
 <%# raise %>
-<div class="acc-content container" data-controller="select-from-cards">
+<div class="acc-container" data-controller="select-from-cards">
   <!-- carousel for flights -->
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <!-- Slider contents -->
@@ -24,7 +24,7 @@
 </div>
 
 <div class="text-center">
-  <button class="btn btn-danger">
+  <button class="btn btn-red">
     <%= link_to "View Accommodations", new_trip_accommodation_path(@trip) %>
   </button>
 </div>
