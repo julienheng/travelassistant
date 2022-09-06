@@ -8,14 +8,14 @@
 body {
   margin: 0;
   padding: 30px 0;
-  font-family: 'Roboto', sans-serif;
-  background: #F1F2F6;
+  font-family: "Poppins", sans-serif;
+  background: #f1f2f6;
 }
 
 h1 {
   text-align: center;
   font-weight: 300;
-  color: #777
+  color: #777;
 }
 
 h1 span {
@@ -31,15 +31,15 @@ h1 span {
 }
 
 .container:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 50%;
   margin-left: -1px;
   width: 2px;
   height: 100%;
-  background: #CCD1D9;
-  z-index: 1
+  background: #ccd1d9;
+  z-index: 1;
 }
 
 .timeline-block {
@@ -63,30 +63,30 @@ h1 span {
 
 .timeline-block-left {
   float: left;
-  direction: rtl
+  direction: rtl;
 }
 
 .marker {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  border: 2px solid #F5F7FA;
-  background: #4FC1E9;
+  border: 2px solid #f5f7fa;
+  background: #4fc1e9;
   margin-top: 10px;
-  z-index: 9999
+  z-index: 9999;
 }
 
 .timeline-content {
   width: 95%;
   padding: 0 15px;
-  color: #666
+  color: #666;
 }
 
 .timeline-content h3 {
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 25px;
-  font-weight: 500
+  font-weight: 500;
 }
 
 .timeline-content span {
@@ -101,23 +101,22 @@ h1 span {
   color: #888;
 }
 
-
 @media screen and (max-width: 768px) {
   .container:before {
-     left: 8px;
-     width: 2px;
+    left: 8px;
+    width: 2px;
   }
   .timeline-block {
-     width: 100%;
-     margin-bottom: 30px;
+    width: 100%;
+    margin-bottom: 30px;
   }
   .timeline-block-right {
-     float: none;
+    float: none;
   }
 
   .timeline-block-left {
-     float: none;
-     direction: ltr;
+    float: none;
+    direction: ltr;
   }
 }
 // --------additional code---
