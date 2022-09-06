@@ -157,10 +157,10 @@ puts "Creating users"
 
   puts "Creating attraction 2 "
   attraction2 = Attraction.create!(
-    name: "sentosa",
-    address: "18 Marina Gardens Drive Bayfront Plaza, Singapore 018953 Singapore",
-    category_name: "Sights & Landmarks",
-    price: "$14.69",
+    name: "ArtScience Museum",
+    address: "6 Bayfront Ave, Singapore 018974",
+    category_name: "Exhibitions",
+    price: "$50.99",
     rating: "4.5",
     booked: true,
     selected: true,
@@ -169,10 +169,10 @@ puts "Creating users"
 
   puts "Creating attraction 3"
   attraction3 = Attraction.create!(
-    name: "Universal Studio Sigapore",
-    address: "18 Marina Gardens Drive Bayfront Plaza, Singapore 018953 Singapore",
-    category_name: "Sights & Landmarks",
-    price: "$14.69",
+    name: "Universal Studio Singapore",
+    address: "8 Sentosa Gateway, 098269",
+    category_name: "Theme Parks",
+    price: "$59.90",
     rating: "4.5",
     booked: true,
     selected: true,

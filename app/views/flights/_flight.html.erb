@@ -24,7 +24,7 @@ data-outbound-destination-display-code=<%=session[:trip_data]["flights"][index][
         </div>
         <p class="card-text"><strong>Estimated Price: $<%= session[:trip_data]["flights"][index]["amount"] %></strong></p>
         <div class="text-center">
-          <a href="#" class="btn btn-primary" data-action="select-from-cards#click">Select</a>
+          <a href="#" class="btn btn-primary" data-action="select-from-cards#click" data-value=<%= index %>>Select</a>
         </div>
       </div>
   </div>
