@@ -151,7 +151,7 @@ puts "Creating users"
   puts "Creating attraction 1 "
   attraction1 = Attraction.create!(
     name: "Gardens by the Bay",
-    address: "18 Marina Gardens Drive Bayfront Plaza, Singapore 018953 Singapore",
+    address: "18 Marina Gardens Drive Bayfront Plaza, Singapore 018953",
     category_name: "Sights & Landmarks",
     price: "$14.69",
     rating: "4.5",
