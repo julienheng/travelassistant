@@ -70,7 +70,10 @@
       <div class="show_image">
         <%= image_tag ("hotel_room"), :width => "350px" %>
       </div>
-      <p>Hotel Name: <%= Accommodation.first.name %></p>
+        <div class= "show-h3-font">
+          Hotel Name
+        </div>
+        <%= Accommodation.first.name %>
     </div>
     <div class="show-card-container">
       <div class="show-card-price">
@@ -129,7 +132,7 @@
               <div class ="payment-button">
                 <div class = "show-price-font">
                   Make Payment
-                </div>
+
               </div>
             </div>
             <div class="show-card-checkbox">
