@@ -8,7 +8,6 @@ class Trip < ApplicationRecord
 
   # validates :start_date, :end_date, presence: true
   validates :origin, :destination, :budget, presence: true
-  validates :start_date, comparison: { greater_than: :end_date }
 
   has_one_attached :photo
   accepts_nested_attributes_for :companions
