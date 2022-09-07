@@ -4,6 +4,10 @@
     <p class="card-text text-center"><strong>Give us a moment to assemble your plan</strong></p>
   </div>
 
+<button class="btn btn-red" type="button" disabled>
+  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  <span class="sr-only">Loading...</span>
+</button>
 </div>
 
 <script>window.location.href="/trips/<%= params[:trip_id] %>/trip-generate"</script>

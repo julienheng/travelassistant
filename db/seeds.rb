@@ -151,7 +151,7 @@ puts "Creating users"
   puts "Creating attraction 1 "
   attraction1 = Attraction.create!(
     name: "Gardens by the Bay",
-    address: "18 Marina Gardens Drive Bayfront Plaza, Singapore 018953 Singapore",
+    address: "18 Marina Gardens Drive Bayfront Plaza, Singapore 018953",
     category_name: "Sights & Landmarks",
     price: "$14.69",
     rating: "4.5",
@@ -196,6 +196,7 @@ puts "Creating users"
     postal_code: "20129",
     longtitude: "9.2075285",
     latitude: "45.4658273",
+    serves_cuisine: "Italian",
     price_range: 75,
     rating_value: 4.5,
     currencies_accepted: "EUR",
@@ -215,6 +216,7 @@ puts "Creating users"
     postal_code: "20121",
     longtitude: "9.18867",
     latitude: "45.4796256",
+    serves_cuisine: "Japanese",
     price_range: 25,
     rating_value: 4.5,
     currencies_accepted: "EUR",
@@ -234,6 +236,7 @@ puts "Creating users"
     postal_code: "20121",
     longtitude: "9.1877565",
     latitude: "45.4940647",
+    serves_cuisine: "Japanese",
     price_range: 25,
     rating_value: 4.5,
     currencies_accepted: "EUR",
