@@ -1,0 +1,62 @@
+<div class="show-container">
+  <%# ---------start of flight details section---------   %>
+  <div class="show-flight-container">
+    <div class="show-flight-detail">
+      <div class="show_image">
+        <%= image_tag ("finnair"), :width => "350px" %>
+      </div>
+      <%# -------------inner flight content--------------- %>
+      <div class="inner-flight-content">
+        <div class="outbound_flight_details">
+          <br>
+          <div class="show-h3-font">
+            Outbound Flight
+          </div>
+          <div class = "show-p-font">
+            Outbound Departure
+          </div>
+          <br>
+          <b> Finnair</b><br>
+          SIN - LHR
+          <br>
+          <p >Departure Time: 2150hrs 2022-09-20</p>
+          <p>Arrival Time: 0910hrs 2022-09-21</p>
+        </div>
+        <div class = "inbound">
+          <div class="show-h3-font">
+            Inbound Flight
+          </div>
+          <div class = show-p-font>
+            <p>Inbound Departure</p>
+          </div>
+          <b>Finnair</b><br>
+          LHR - SIN
+          <br>
+          <p>Departure Time: 1810hrs 2022-09-30</p>
+          <p>Arrival Time: 1855hrs 2022-09-31</p>
+        </div>
+      </div>
+      <%# -------------end of inner flight content--------------- %>
+    </div>
+    <div class="show-card-container">
+      <div class="show-card-price">
+        <div class = "show-price-font">
+          Estimating $1844
+        </div>
+        <div class="show-card-price-button">
+          <%= link_to "https://www.skyscanner.com.sg/transport/flights/#{session[:trip_data]['flights'][0]['outbound_destination_display_code']}/#{session[:trip_data]['flights'][0]['outbound_origin_display_code']}/#{session[:trip_data]['flights'][0]['outbound_arrival'].to_date.strftime('%y%m%d')}/#{session[:trip_data]['flights'][0]['outbound_departure'].to_date.strftime('%y%m%d')}", target: '_blank' do %>
+          <div class ="payment-button">
+            <div class = "show-price-font">
+              Make Payment
+            </div>
+          </div>
+          <% end %>
+          <div class="show-card-checkbox">
+            <input type="checkbox">
+            <label for="payment_made"> Tick if payment made</label><br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
