@@ -1,6 +1,10 @@
 <div class="carousel-item <%= 'active' if index.zero? %>" data-select-from-cards-target="card">
+
+  <% imgacc = ["hilton.jpg", "blue_orchid.jpg", "leonardo.jpeg"] %>
+  <% imgaca = ["agoda.png", "booking.png", "agoda.png"] %>
+
   <div class="hotel-cards mt-4 mx-0 ">
-      <%= image_tag "hotel.jpg", width:"100%", class:"rounded-4" %>
+    <%= image_tag "#{imgacc[index]}", width:"100%", height:"200px", class:"rounded-4" %>
       <div class="hotel-card text-center">
         <h4 class="acc-name mt-2"><strong><%= accommodation.name %></strong></h4>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -11,7 +15,8 @@
         <span class="fa fa-star"></span>
         <br>
         <p><%= accommodation.address %></p>
-        <%= image_tag "agoda.png", width:"40%" %>
+        <% imgaca = ["agoda.png", "Booking.png", "agoda.png"] %>
+        <%= image_tag "#{imgaca[index]}", width:"40%" %>
 
         <h5><strong>Estimated Price: <%= accommodation.price %></strong></h5>
 

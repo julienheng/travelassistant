@@ -1,6 +1,9 @@
 <div class="carousel-item <%= 'active' if index.zero? %>" data-select-from-cards-target="card">
+
+  <% imgatt = ["Buckingham-Palace.jpg", "harry_potter.jpg", "westminster-abbey.jpg"] %>
+
   <div class="hotel-cards mt-4 mx-0">
-      <%= image_tag "gardens.jpg", width:"100%", class:"rounded-4" %>
+    <%= image_tag "#{imgatt[index]}", width:"100%", height:"200px", class:"rounded-4" %>
       <div class="hotel-card text-center">
         <h4 class="acc-name mt-2"><strong><%= attraction.name %></strong></h4>
         <p><em><%= attraction.category_name %></em></p>
