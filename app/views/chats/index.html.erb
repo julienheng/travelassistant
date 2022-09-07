@@ -1,0 +1,12 @@
+<div class="chat-container text-center p-3">
+  <h1>Live Feed</h1>
+  <h6>Check out what's happening live in these countries!</h6>
+
+  <% @chats.each do |chat| %>
+      <ul class="list-group">
+        <li class="message-card list-group-item d-flex justify-content-between">
+          <%= link_to "#{chat.name}", chat_path(chat) %>
+        </li>
+      </ul>
+  <% end %>
+</div>

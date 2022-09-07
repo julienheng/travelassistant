@@ -18,13 +18,13 @@ Rails.application.routes.draw do
     get "trip-generate/", to: "pages#generate", as: :generate_page
   end
 
-  resources :chats, only: :show do
+  resources :chats, only: %i[index create show] do
     resources :messages, only: :create
   end
 
   #get "pages/", to: "pages#generate", as: :generate_page
-
-  get "pages/dashboard", to: "pages#dashboard", as: :dashboard_page do
+  
+  get "dashboard", to: "pages#dashboard", as: :dashboard_page do
     get "trips/show", to: "trips#show"
   end
 
