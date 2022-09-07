@@ -2,41 +2,44 @@
   <div class="show-title">
   You have chosen
   </div>
-<%# ---------start of flight details section---------   %>
+     <%# ---------start of flight details section---------   %>
   <div class="show-flight-container">
     <div class="show-flight-detail">
       <div class="show_image">
         <%= image_tag ("norse_airline"), :width => "350px" %>
       </div>
+     <%# -------------inner flight content--------------- %>
+      <div class="inner-flight-content">
+          <div class="outbound_flight_details">
+            <div class="show-h3-font">
+              Outbound Flight
+            </div>
 
-        <div class="outbound_flight_details">
+            <div class = "show-p-font">
+              Outbound Departure
+            </div>
+
+            <b> <%= Flight.first.outbound_carrier_name  %> </b><br>
+            <%= Flight.first.outbound_origin_display_code %> - <%= Flight.first.outbound_destination_display_code  %><br>
+            <p >Departure Time: <%= Flight.first.outbound_departure %></p>
+            <p>Arrival Time: <%= Flight.first.outbound_arrival %></p>
+          </div>
+
+        <div class = "inbound">
           <div class="show-h3-font">
-            Outbound Flight
+            Inbound Flight
           </div>
-
-          <div class = "show-p-font">
-            Outbound Departure
+          <div class = show-p-font>
+            <p>Inbound Departure</p>
           </div>
-
-          <b> <%= Flight.first.outbound_carrier_name  %> </b><br>
-          <%= Flight.first.outbound_origin_display_code %> - <%= Flight.first.outbound_destination_display_code  %><br>
-          <p >Departure Time: <%= Flight.first.outbound_departure %></p>
-          <p>Arrival Time: <%= Flight.first.outbound_arrival %></p>
+          <b><%= Flight.first.inbound_carrier_name  %></b><br>
+          <%= Flight.first.inbound_origin_display_code %> - <%= Flight.first.outbound_destination_display_code  %>
+          <br>
+          <p>Departure Time: <%= Flight.first.inbound_departure %></p>
+          <p>Arrival Time: <%= Flight.first.inbound_arrival %></p>
         </div>
-
-      <div class = "inbound">
-        <div class="show-h3-font">
-          Inbound Flight
-        </div>
-        <div class = show-p-font>
-          <p>Inbound Departure</p>
-        </div>
-        <b><%= Flight.first.inbound_carrier_name  %></b><br>
-        <%= Flight.first.inbound_origin_display_code %> - <%= Flight.first.outbound_destination_display_code  %>
-        <br>
-        <p>Departure Time: <%= Flight.first.inbound_departure %></p>
-        <p>Arrival Time: <%= Flight.first.inbound_arrival %></p>
       </div>
+   <%# -------------end of inner flight content--------------- %>
     </div>
     <div class="show-card-container">
       <div class="show-card-price">
@@ -63,17 +66,19 @@
 <%# ---------end of flight details section---------   %>
 <%# ---------start of accomodation details section---------   %>
   <div class = "show-accomodation-container">
-    <div class="show-accomodation">
-      <div class="show-h3-font">
-          Accomodation
+    <div class="inner-flight-content">
+      <div class="show-accomodation">
+        <div class="show-h3-font">
+            Accomodation
         </div>
-      <div class="show_image">
-        <%= image_tag ("hotel_room"), :width => "350px" %>
-      </div>
+        <div class="show_image">
+          <%= image_tag ("hotel_room"), :width => "350px" %>
+        </div>
         <div class= "show-h3-font">
           Hotel Name
         </div>
-        <%= Accommodation.first.name %>
+          <%= Accommodation.first.name %>
+      </div>
     </div>
     <div class="show-card-container">
       <div class="show-card-price">
@@ -99,47 +104,49 @@
 <%# ---------start of activity details section---------   %>
   <div class="show-activity-container">
     <%# -------accomodation---- %>
-    <div class="show-activity">
-      <div class="show-h3-font">
-          Attraction
-      </div>
-
-      <div class="show_image">
-        <%= image_tag ("gardenbythebay"), :width => "350px" %>
-      </div>
-
-      <p>Place: <%= Attraction.first.name %></p>
-      <p>Address: <%= Attraction.first.address %></p>
-    </div>
-
-
-      <%# -------restaurant---- %>
-      <div class = "show-restaurant">
+    <div class="inner-flight-content">
+      <div class="show-activity">
         <div class="show-h3-font">
-          Restaurant
+            Attraction
         </div>
-        <p>Name: <%= Restaurant.first.name %></p>
-        <p>Address: <%= Restaurant.first.street %></p>
-        <p>Price range: USD <%= Restaurant.first.price_range %></p>
-    </div>
 
-    <div class="show-card-container">
-      <div class="show-card-price">
-          <div class = "show-price-font">
-              Estimating <%= Accommodation.first.price %>
+        <div class="show_image">
+          <%= image_tag ("gardenbythebay"), :width => "350px" %>
+        </div>
 
-            <div class="show-card-price-button">
-              <div class ="payment-button">
-                <div class = "show-price-font">
-                  Make Payment
+        <p>Place: <%= Attraction.first.name %></p>
+        <p>Address: <%= Attraction.first.address %></p>
+      </div>
 
+
+        <%# -------restaurant---- %>
+        <div class = "show-restaurant">
+          <div class="show-h3-font">
+            Restaurant
+          </div>
+          <p>Name: <%= Restaurant.first.name %></p>
+          <p>Address: <%= Restaurant.first.street %></p>
+          <p>Price range: USD <%= Restaurant.first.price_range %></p>
+        </div>
+
+      <div class="show-card-container">
+        <div class="show-card-price">
+            <div class = "show-price-font">
+                Estimating <%= Accommodation.first.price %>
+
+              <div class="show-card-price-button">
+                <div class ="payment-button">
+                  <div class = "show-price-font">
+                    Make Payment
+
+                </div>
+              </div>
+              <div class="show-card-checkbox">
+                <input type="checkbox">
+                <label for="payment_made"> Tick if payment made</label><br>
               </div>
             </div>
-            <div class="show-card-checkbox">
-              <input type="checkbox">
-              <label for="payment_made"> Tick if payment made</label><br>
-            </div>
-          </div>
+        </div>
       </div>
     </div>
   </div>
