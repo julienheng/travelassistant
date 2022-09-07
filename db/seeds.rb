@@ -130,7 +130,7 @@ puts "Creating users"
   Accommodation.create!(
     entity_id: "27544008",
     hotel_id: "47079599",
-    name: "Leonardo Royal Hotel London City",
+    name: "Leonardo Royal Hotel",
     price: "$466",
     latitude: -0.18949,
     longitude: 51.4903,
@@ -163,7 +163,7 @@ puts "Creating users"
 
   puts "Creating attraction 2 "
   attraction2 = Attraction.create!(
-    name: "Warner Bros. Studio Harry Potter Tour",
+    name: "Harry Potter Studio Tour",
     address: "Studio Tour Drive WD25 7LR Watford, UK",
     category_name: "Exhibitions",
     price: "$109.98",
@@ -179,6 +179,42 @@ puts "Creating users"
     address: "20 Deans Yd, London SW1P 3PA, UK",
     category_name: "Sights & Landmarks",
     price: "$69.90",
+    rating: "4.5",
+    booked: true,
+    selected: true,
+    trip: trip1
+  )
+
+  puts "Creating attraction 4"
+  attraction3 = Attraction.create!(
+    name: "Up at The O2 ",
+    address: "Peninsula Square, London SE10 0DX",
+    category_name: "Adventure",
+    price: "$82.50",
+    rating: "4.5",
+    booked: true,
+    selected: true,
+    trip: trip1
+  )
+
+  puts "Creating attraction 5"
+  attraction3 = Attraction.create!(
+    name: "London Eye",
+    address: "Riverside Building, County Hall, London SE1 7PB, United Kingdom",
+    category_name: "Sights & Landmarks",
+    price: "$25.50",
+    rating: "4.5",
+    booked: true,
+    selected: true,
+    trip: trip1
+  )
+
+  puts "Creating attraction 6"
+  attraction3 = Attraction.create!(
+    name: "St Paul's Cathedral",
+    address: "St. Paul's Churchyard, London EC4M 8AD, United Kingdom",
+    category_name: "Sights & Landmarks",
+    price: "$14.50",
     rating: "4.5",
     booked: true,
     selected: true,
@@ -238,6 +274,63 @@ puts "Creating users"
     latitude: "45.4940647",
     serves_cuisine: "Italian",
     price_range: "105",
+    rating_value: 4.5,
+    currencies_accepted: "EUR",
+    main_photo_src: "https://res.cloudinary.com/tf-lab/image/upload/restaurant/287bd4ba-3ef9-43f7-89fc-87f5234c6ee2/49f4b418-535a-4c7a-811e-b209619196b5.jpg",
+    booked: true,
+    selected: true,
+    trip: trip1
+    )
+
+  puts "Creating restaurant 4"
+  restaurant3 = Restaurant.create!(
+    google_place_id: "ChIJ53USP0nBhkcRjQ50xhPN_zw",
+    city_id: 348_156,
+    name: "Cafe in the Crypt",
+    street: "Trafalgar Square, London WC2N 4JJ England",
+    postal_code: "20121",
+    longtitude: "9.1877565",
+    latitude: "45.4940647",
+    serves_cuisine: "Cafe",
+    price_range: "20",
+    rating_value: 4.5,
+    currencies_accepted: "EUR",
+    main_photo_src: "https://res.cloudinary.com/tf-lab/image/upload/restaurant/287bd4ba-3ef9-43f7-89fc-87f5234c6ee2/49f4b418-535a-4c7a-811e-b209619196b5.jpg",
+    booked: true,
+    selected: true,
+    trip: trip1
+    )
+
+  puts "Creating restaurant 5"
+  restaurant3 = Restaurant.create!(
+    google_place_id: "ChIJ53USP0nBhkcRjQ50xhPN_zw",
+    city_id: 348_156,
+    name: "The Rising Sun",
+    street: "137 Marsh Lane, London NW7 4EY England",
+    postal_code: "20121",
+    longtitude: "9.1877565",
+    latitude: "45.4940647",
+    serves_cuisine: "Italian Fusion",
+    price_range: "89.90",
+    rating_value: 4.5,
+    currencies_accepted: "EUR",
+    main_photo_src: "https://res.cloudinary.com/tf-lab/image/upload/restaurant/287bd4ba-3ef9-43f7-89fc-87f5234c6ee2/49f4b418-535a-4c7a-811e-b209619196b5.jpg",
+    booked: true,
+    selected: true,
+    trip: trip1
+    )
+
+  puts "Creating restaurant 6"
+  restaurant3 = Restaurant.create!(
+    google_place_id: "ChIJ53USP0nBhkcRjQ50xhPN_zw",
+    city_id: 348_156,
+    name: "Alexander The Great",
+    street: "8 Plender Street Bayham Street, London NW1 0JT England",
+    postal_code: "20121",
+    longtitude: "9.1877565",
+    latitude: "45.4940647",
+    serves_cuisine: "Mediterranean",
+    price_range: "75",
     rating_value: 4.5,
     currencies_accepted: "EUR",
     main_photo_src: "https://res.cloudinary.com/tf-lab/image/upload/restaurant/287bd4ba-3ef9-43f7-89fc-87f5234c6ee2/49f4b418-535a-4c7a-811e-b209619196b5.jpg",
