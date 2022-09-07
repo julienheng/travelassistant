@@ -3,6 +3,7 @@
       <%= image_tag "restaurant.jpg", width:"100%", class:"rounded-4" %>
       <div class="hotel-card text-center">
         <h4 class="acc-name mt-2"><strong><%= restaurant.name %></strong></h4>
+        <p><em><%= restaurant.serves_cuisine %></em></p>
         <p><%= restaurant.street %>, <%= restaurant.postal_code %></p>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <span class="fa fa-star checked"></span>
