@@ -253,18 +253,30 @@ end
 puts "Creating chatrooms"
 
 Chat.create!(
-  name: "general",
+  name: "Singapore",
   location: "singapore"
 )
 
 Chat.create!(
-  name: "random",
-  location: "singapore"
+  name: "London",
+  location: "london"
 )
 
 Chat.create!(
-  name: "memes",
-  location: "singapore"
+  name: "Bangkok",
+  location: "bangkok"
+)
+
+# --------------------------admin user -----------------------------#
+
+puts "Creating admin user"
+
+User.create!(
+  name: "admin1",
+  phone: "12345",
+  email: "admin@email.com",
+  password: "password123",
+  role: "admin"
 )
 
 puts "Seeds created!"
