@@ -23,7 +23,11 @@ Rails.application.routes.draw do
   end
 
   #get "pages/", to: "pages#generate", as: :generate_page
-  get "pages/dashboard", to: "pages#dashboard", as: :dashboard_page
+
+  get "pages/dashboard", to: "pages#dashboard", as: :dashboard_page do
+    get "trips/show", to: "trips#show"
+  end
+
   get "pages/flip-card-back", to: "pages#flip-card-back"
   get "pages/profile", to: "pages#profile", as: :profile_page
 end
