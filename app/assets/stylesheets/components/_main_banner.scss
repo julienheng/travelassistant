@@ -3,19 +3,21 @@
   background-position: center;
   padding: 250px 0;
   background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2));
-  background-image: url(https://images.pexels.com/photos/5857863/pexels-photo-5857863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  // background-image: url(https://images.pexels.com/photos/5857863/pexels-photo-5857863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
 }
 // ----start video code 1 -----
-// .home_video {
-//   width: 100vw;
-//   height: 100vh;
-//   position: absolute;
-//   display: flex;
-//   justify-content: center;
-//   object-fit: cover;
-//   top: 0;
-//   z-index: -2;
-//  }
+.home_video {
+  width: 100vw;
+  height: 83vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  object-fit: cover;
+  top: 0;
+  z-index: -2;
+//   -webkit-filter: grayscale(100%);
+//  filter: grayscale(25%);
+ }
 // ----end video code 1 -----
 // ----start video code 2 -----
 // .home_video {
