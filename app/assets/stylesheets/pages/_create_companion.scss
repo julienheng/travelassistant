@@ -14,10 +14,31 @@
 }
 
 .created-companion {
-  border: 1px solid red;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  align-items: center;
+  margin: 0 auto;
+
+  .companion-name {
+    width: 150px;
+  }
+
+  .companion-age {
+    width: 50px;
+    margin-left: 10px;
+  }
+
+  .companion-name, .companion-age {
+    border: 1px solid red;
+    height: 40px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .home-button-companion {
@@ -82,21 +103,35 @@
   }
 }
 
-.companion-submit {
-  font-size: 24px;
-  color: black;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  padding: 5px;
-  padding-left: 13px;
-  letter-spacing: 1px;
-  transition: all .25s;
+.companion-addtraveller-button {
+ border: 1px solid red;
+ border-radius: 40px;
+ color:white;
+ background-color: #F96562;
+ margin-bottom: 30px;
+ margin-left: auto;
+margin-right: auto;
+width: 200px;
+height: 30px;
 }
 
-.companion-submit:hover{
-  letter-spacing: 15px;
-  color: #FE5754;
-  border-top: 1px solid #FE5754;
-  border-bottom: 1px solid #FE5754;
-  font-weight: bold;
+.companion-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.companion-submit-button {
+  width: 200px;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F96562;
+  height: 40px;
+  border-radius: 40px;
+  margin: 0 auto;
+  font-size: 20px;
+
 }

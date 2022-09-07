@@ -8,8 +8,9 @@
     <%= f.input :age, input_html: { class: "age-input" } %>
   </div>
 
-  <div class="com-submit-button d-flex justify-content-center">
-    <%= f.submit "Submit", class: "companion-submit btn btn-outline"%>
+  <div class="companion-buttons">
+    <%= f.submit "Add more traveller", class: "companion-addtraveller-button"%>
+    <%= link_to "Submit", trip_loading_page_path, class: 'companion-submit-button text-center' %>
   </div>
 
 <% end %>
