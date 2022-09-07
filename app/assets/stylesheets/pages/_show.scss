@@ -19,11 +19,57 @@
   margin-top: 5px;
   margin-right: 5px;
   width:250px;
+}
 
+.show-card-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 
 }
 
-// ----end of flight----
+.show-card-price {
+  border-radius: 10px;
+  border: dotted;
+  margin: 8px 0px;
+  padding: 4px 8px;
+  // font-size: 14px;
+  width:80%;
+}
+
+.show-card-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    margin-top: 0px;
+    margin-right: 8px;
+  }
+}
+
+.payment-button {
+  border-color: #FD5754;
+  background-color: #FD5754;
+  color: white;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.show-card-price-button {
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.show-price-font {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px;
+}
 
 // ----start of accomodation----
 
@@ -39,16 +85,6 @@
   border-radius: 10px;
 }
 
-
-.show-accomodation-price {
-  border-radius: 10px;
-  border: dotted;
-  margin-top: 5px;
-  margin-right: 5px;
-  // font-size: 14px;
-  width:250px;
-
-}
 
 // ----end of accomodation----
 
@@ -86,17 +122,10 @@ font-weight:500;
 .show-h3-font {
   font-size: 18px;
   font-weight:600;
+  color:#0b638f
   }
 
-.payment-button {
-  border-color: #FD5754;
-  background-color: #FD5754;
-  color: white;
-  padding: 1px;
-  border-radius: 5px;
-  font-size: 15px;
-  text-align: center;
-}
+
 
 .show-title {
   margin-top: 20px;
@@ -112,10 +141,7 @@ font-weight:500;
 //     height: 20px !important;
 // }
 
-.show-price-font {
-  font-size: 16px;
-  font-weight: 600;
-}
+
 
 .button-for-back-to-dashboard {
   border-radius: 200px;
@@ -128,3 +154,15 @@ font-weight:500;
 .btn-traveller {
   border-radius: 10px;
 }
+
+.show_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// -------------inner flight content---------------
+.inner-flight-content {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+// -------------inner flight content---------------

@@ -22,7 +22,7 @@ puts "Creating New Seeds"
 
 puts "Creating users"
 
-3.times do |index|
+1.times do |index|
   user1 = User.create!(
     name: Faker::Name.unique.name,
     phone: Faker::PhoneNumber.phone_number_with_country_code,
@@ -90,11 +90,11 @@ puts "Creating users"
   Accommodation.create!(
     entity_id: "27544008",
     hotel_id: "178868522",
-    name: "Ramada by Wyndham London North M1",
-    price: "$227",
+    name: "Hilton London Tower Bridge Hotel",
+    price: "$553",
     latitude: -0.263784,
     longitude: 51.629313,
-    address: "Jct 2-4, M1, London NW7 3HU, United Kingdom",
+    address: "5 More London Riverside, Tooley St, London SE1 2BY, UK",
     format_count: "1,406",
     cheapest_partner: "Agoda",
     stars: 4,
@@ -110,11 +110,11 @@ puts "Creating users"
   Accommodation.create!(
     entity_id: "27544008",
     hotel_id: "134634850",
-    name: "Safestay London Kensington Holland Park",
-    price: "$158",
+    name: "Tower Suites by Blue Orchid",
+    price: "$523",
     latitude: -0.20238,
     longitude: 51.50265,
-    address: "Holland Park Ave, Holland Walk, London W8 7QU, United Kingdom",
+    address: "100 Minories, London EC3N 1JY, United Kingdom",
     format_count: "1,368",
     cheapest_partner: "Agoda",
     stars: 4,
@@ -130,11 +130,11 @@ puts "Creating users"
   Accommodation.create!(
     entity_id: "27544008",
     hotel_id: "47079599",
-    name: "YHA London Earl's Court",
-    price: "$84",
+    name: "Leonardo Royal Hotel London City",
+    price: "$466",
     latitude: -0.18949,
     longitude: 51.4903,
-    address: "38 Bolton Gardens, London SW5 0AQ, United Kingdom",
+    address: "8-14 Cooper's Row, London EC3N 2BQ, United Kingdom",
     format_count: "623",
     cheapest_partner: "Agoda",
     stars: 4,
@@ -150,10 +150,10 @@ puts "Creating users"
 
   puts "Creating attraction 1 "
   attraction1 = Attraction.create!(
-    name: "Gardens by the Bay",
-    address: "18 Marina Gardens Drive Bayfront Plaza, Singapore 018953 Singapore",
+    name: "Buckingham Palace Tour",
+    address: "London SW1A 1AA, UK",
     category_name: "Sights & Landmarks",
-    price: "$14.69",
+    price: "$72.50",
     rating: "4.5",
     booked: true,
     selected: true,
@@ -163,10 +163,10 @@ puts "Creating users"
 
   puts "Creating attraction 2 "
   attraction2 = Attraction.create!(
-    name: "ArtScience Museum",
-    address: "6 Bayfront Ave, Singapore 018974",
+    name: "Warner Bros. Studio Harry Potter Tour",
+    address: "Studio Tour Drive WD25 7LR Watford, UK",
     category_name: "Exhibitions",
-    price: "$50.99",
+    price: "$109.98",
     rating: "4.5",
     booked: true,
     selected: true,
@@ -175,10 +175,10 @@ puts "Creating users"
 
   puts "Creating attraction 3"
   attraction3 = Attraction.create!(
-    name: "Universal Studio Singapore",
-    address: "8 Sentosa Gateway, 098269",
-    category_name: "Theme Parks",
-    price: "$59.90",
+    name: "Westminster Abbey",
+    address: "20 Deans Yd, London SW1P 3PA, UK",
+    category_name: "Sights & Landmarks",
+    price: "$69.90",
     rating: "4.5",
     booked: true,
     selected: true,
@@ -191,11 +191,12 @@ puts "Creating users"
   restaurant1 = Restaurant.create!(
     google_place_id: "ChIJ53USP0nBhkcRjQ50xhPN_zw",
     city_id: 348_156,
-    name: "L'Alchimia",
-    street: "Viale Premuda, 34",
+    name: "London Shell Co. Aboard The Prince Regent",
+    street: "Sheldon Square Regent's Canal, London W2 6EP England",
     postal_code: "20129",
     longtitude: "9.2075285",
     latitude: "45.4658273",
+    serves_cuisine: "British",
     price_range: 75,
     rating_value: 4.5,
     currencies_accepted: "EUR",
@@ -210,12 +211,13 @@ puts "Creating users"
   restaurant2 = Restaurant.create!(
     google_place_id: "ChIJ53USP0nBhkcRjQ50xhPN_zw",
     city_id: 348_156,
-    name: "Misoya Milano",
-    street: "Via Solferino, 41",
+    name: "Blacklock Shoreditch",
+    street: "28-30 Rivington Street, London EC2A 3DZ England",
     postal_code: "20121",
     longtitude: "9.18867",
     latitude: "45.4796256",
-    price_range: 25,
+    serves_cuisine: "Steakhouse",
+    price_range: "180",
     rating_value: 4.5,
     currencies_accepted: "EUR",
     main_photo_src: "https://res.cloudinary.com/tf-lab/image/upload/restaurant/f5cdff1f-3cc7-4fba-b2ac-44c95ede85e4/b41c40e3-984e-4048-a197-5c3124b30c88.jpg",
@@ -229,12 +231,13 @@ puts "Creating users"
   restaurant3 = Restaurant.create!(
     google_place_id: "ChIJ53USP0nBhkcRjQ50xhPN_zw",
     city_id: 348_156,
-    name: "Light Sushi Restaurant",
-    street: "Via Solferino, 41",
+    name: "Gordon Ramsay Street Pizza",
+    street: "10 Bread Street, London EC4M 9AJ England",
     postal_code: "20121",
     longtitude: "9.1877565",
     latitude: "45.4940647",
-    price_range: 25,
+    serves_cuisine: "Italian",
+    price_range: "105",
     rating_value: 4.5,
     currencies_accepted: "EUR",
     main_photo_src: "https://res.cloudinary.com/tf-lab/image/upload/restaurant/287bd4ba-3ef9-43f7-89fc-87f5234c6ee2/49f4b418-535a-4c7a-811e-b209619196b5.jpg",
