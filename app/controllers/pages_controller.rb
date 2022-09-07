@@ -9,7 +9,8 @@ class PagesController < ApplicationController
   def home
   end
 
-  def loading; end
+  def loading
+  end
 
   def generate
     # call iata code for origin and destination from location param in trip

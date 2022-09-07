@@ -1,6 +1,6 @@
 
 body#signin-page{
-  background-color: whitesmoke;
+  background-color: #A9A9A9;
 }
 
 .img-session {
@@ -22,8 +22,8 @@ body#signin-page{
 }
 .shape-session:first-child{
   background: linear-gradient(
-    #FE5754,
-  #FE5754,
+    #F96562,
+  #F96562,
 );
   left: -80px;
   top: -90px;
@@ -33,8 +33,8 @@ body#signin-page{
 .shape-session:last-child{
   background: linear-gradient(
   to right,
-  #FE5754,
-  #FE5754,
+  #F96562,
+  #F96562,
 );
   right: -60px;
   bottom: -90px;
@@ -117,7 +117,7 @@ label{
 }
 
 .fa-google:hover, .fa-facebook:hover, .fa-github:hover {
-  color: #FE5754,
+  color: #F96562,
 }
 .social-icons .git {
   margin-left: 25px;
@@ -130,7 +130,7 @@ label{
   text-align: center;
   margin-top: 20px;
   :hover {
-    color: #FE5754;
+    color: #F96562;
   }
 
 }
@@ -140,7 +140,7 @@ label{
 .form-actions {
   .button-submit-session {
     width: 150px;
-    background-color: #FE5754;
+    background-color: #F96562;
     color: white;
     padding: 0 0;
     font-size: 18px;
@@ -149,7 +149,7 @@ label{
 
     &:hover {
       background-color: white;
-      color: #FE5754
+      color: #F96562
     }
   }
 }
