@@ -2,10 +2,10 @@
 data-amount=<%=session[:trip_data]["flights"][index]["amount"]%> data-outbound-origin-display-code=<%=session[:trip_data]["flights"][index]["outbound_origin_display_code"]%>
 data-outbound-destination-display-code=<%=session[:trip_data]["flights"][index]["outbound_destination_display_code"]%> data-outbound-departure=<%=session[:trip_data]["flights"][index]["outbound_departure"]%>>
 
-<% img = ["SIA.png", "emirates.png", "qatar.png"] %>
+<% img = ["finnair.png", "emirates.png", "malaysiaair.jpg"] %>
 
   <div class="flight-cards row px-1 mt-4 mx-0" id="border">
-    <%= image_tag "#{img[index]}", width:"100px", height:"150px" %>
+    <%= image_tag "#{img[index]}", width:"100%", class:"rounded-2" %>
     <div class="flight-card mt-3">
       <div class="flight-info-container">
         <h6 class="card-title mb-3"><strong>Departure:</strong></h6>
