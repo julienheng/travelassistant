@@ -84,16 +84,17 @@ label{
   }
 }
 
-input{
-  display: block;
-  height: 50px;
-  width: 100%;
-  background-color: rgba(255,255,255,0.07);
-  padding: 0 10px;
-  margin-top: 8px;
-  font-size: 14px;
-  font-weight: 300;
-}
+// TO NEST
+// input{
+//   display: block;
+//   height: 50px;
+//   width: 100%;
+//   background-color: rgba(255,255,255,0.07);
+//   padding: 0 10px;
+//   margin-top: 8px;
+//   font-size: 14px;
+//   font-weight: 300;
+// }
 
 ::placeholder{
   color: #e5e5e5;
