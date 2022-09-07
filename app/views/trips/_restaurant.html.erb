@@ -1,4 +1,4 @@
-<div class="carousel-item <%= 'active' if index.zero? %>" data-value=<%=index%> data-select-from-cards-target="card">
+<div class="carousel-item <%= 'active' if index.zero? %>" data-value=<%=index + count%> data-select-from-cards-target="card">
 
   <% imgres = ["fish-chips.jpeg", "Blacklock-Shoreditch.jpg", "pizza.jpeg", "cafe.png", "italianfusion.jpg", "medit.jpg"] %>
 
@@ -17,7 +17,7 @@
         <h5><strong>Estimated Price: $<%= restaurant.price_range %></strong></h5>
         <br>
         <div class="text-center">
-          <a href="#" class="btn btn-primary" data-action="select-from-cards#click" data-value=<%= index %>>Select</a>
+          <a href="#" class="btn btn-primary" data-action="select-from-cards#select" data-value=<%= index + count %>>Select</a>
         </div>
       </div>
   </div>
