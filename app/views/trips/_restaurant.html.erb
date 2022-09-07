@@ -1,6 +1,9 @@
-<div class="carousel-item <%= 'active' if index.zero? %>" data-select-from-cards-target="card">
+<div class="carousel-item <%= 'active' if index.zero? %>" data-value=<%=index + count%> data-select-from-cards-target="card">
+
+  <% imgres = ["fish-chips.jpeg", "Blacklock-Shoreditch.jpg", "pizza.jpeg", "cafe.png", "italianfusion.jpg", "medit.jpg"] %>
+
   <div class="hotel-cards mt-4 mx-0">
-      <%= image_tag "restaurant.jpg", width:"100%", class:"rounded-4" %>
+      <%= image_tag "#{imgres[index]}", width:"100%", height:"200px", class:"rounded-4" %>
       <div class="hotel-card text-center">
         <h4 class="acc-name mt-2"><strong><%= restaurant.name %></strong></h4>
         <p><em><%= restaurant.serves_cuisine %></em></p>
@@ -14,7 +17,7 @@
         <h5><strong>Estimated Price: $<%= restaurant.price_range %></strong></h5>
         <br>
         <div class="text-center">
-          <a href="#" class="btn btn-primary" data-action="select-from-cards#click" data-value=<%= index %>>Select</a>
+          <a href="#" class="btn btn-primary" data-action="select-from-cards#select" data-value=<%= index + count %>>Select</a>
         </div>
       </div>
   </div>

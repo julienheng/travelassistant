@@ -9,7 +9,8 @@ class PagesController < ApplicationController
   def home
   end
 
-  def loading; end
+  def loading
+  end
 
   def generate
     # call iata code for origin and destination from location param in trip
@@ -33,7 +34,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-
+    @user = current_user
+    @trip = Trip.where(user: current_user).where("start_date > ?", Date.today).sort_by { |trip| trip.start_date}.first
   end
 
   def profile

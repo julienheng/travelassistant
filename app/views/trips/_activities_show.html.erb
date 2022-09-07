@@ -1,0 +1,60 @@
+<div class="show-activity-container">
+  <%# -------accomodation---- %>
+  <div class="inner-flight-content">
+    <div class="show-activity">
+      <div class="show-h3-font">
+        Attraction
+      </div>
+      <div class="show_image">
+        <%= image_tag ("Buckingham-Palace"), :width => "350px" %>
+      </div>
+      <br>
+      <div class="show-h3-font">
+        Name:
+      </div>
+      <p><%= Attraction.first.name %></p>
+      <div class="show-h3-font">
+        Address:
+      </div>
+      <p> <%= Attraction.first.address %></p>
+    </div>
+    <%# -------restaurant---- %>
+    <div class = "show-restaurant">
+      <div class="show-h3-font">
+        Restaurant
+      </div>
+      <div class="show_image">
+        <%= image_tag ("Blacklock-Shoreditch"), :width => "350px" %>
+      </div>
+      <br>
+      <div class="show-h3-font">
+        Name:
+      </div>
+      <p><%= Restaurant.first.name %></p>
+      </p>
+      <div class="show-h3-font">
+        Address:
+      </div>
+      <p><%= Restaurant.first.street %></p>
+      <p>Price range: $180</p>
+    </div>
+    <div class="show-card-container">
+      <div class="show-card-price">
+        <div class = "show-price-font">
+          Estimating <%= Accommodation.first.price %>
+          <div class="show-card-price-button">
+            <div class ="payment-button">
+              <div class = "show-price-font">
+                Make Payment
+              </div>
+            </div>
+            <div class="show-card-checkbox">
+              <input type="checkbox">
+              <label for="payment_made"> Tick if payment made</label><br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

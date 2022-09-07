@@ -47,21 +47,20 @@
     margin-top: 50px;
     width: 100px;
     height: 40px;
-    border: 1px solid #F96562;
-    color: #F96562;
-    border-radius: 15px;
+    background-color: #F96562;
+    color: white;
+    border-radius: 40px;
 
     &:hover {
-    background-color: #F96562;
-    color: white
+    background-color: white;
+    color: #F96562;
     }
   }
 
   .rtflight-button1, .rtflight-button2 {
     background-color: #F96562;
-    border-radius: 15px;
+    border-radius: 40px;
     color: white;
-    border-radius: 15px;
     width: 120px;
     height: 50px;
     margin: 0 15px;
@@ -71,16 +70,16 @@
 .main-buttons {
   margin-top: 40px;
   .next-button {
-    border-radius: 15px;
+    border-radius: 40px;
     margin-left: 15px;
     width: 100px;
     height: 40px;
-    border: 1px solid #F96562;
-    color: #F96562;
+    background-color: #F96562;
+    color: white;
 
     &:hover {
-    background-color: #F96562;
-    color: white
+    background-color: white;
+    color: #F96562
     }
   }
 
@@ -88,13 +87,13 @@
     margin-right: 15px;
     width: 100px;
     height: 40px;
-    color:#F96562;
-    border: 1px solid #F96562;
-    border-radius: 15px;
+    background-color: #F96562;
+    color: white;
+    border-radius: 40px;
 
     &:hover {
-      background-color: #F96562;
-      color: white
+      background-color: white;
+    color: #F96562
     }
 
     a {
@@ -205,10 +204,10 @@
 
   .back-button {
     width: 110px;
-    color:#F96562;
-    border: 1px solid #F96562;
+    background-color: #F96562;
+    color: white;
     margin: 20px 15px;
-    border-radius: 15px;
+    border-radius: 40px;
   }
 
   .submit-trip {
@@ -217,7 +216,7 @@
     border: none;
     width: 150px;
     height: 50px;
-    border-radius: 15px;
+    border-radius: 40px;
   }
 }
 

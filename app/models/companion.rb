@@ -3,5 +3,4 @@ class Companion < ApplicationRecord
 
   validates :name, :age, presence: true
   has_one_attached :photo
-
 end

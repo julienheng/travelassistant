@@ -1,149 +1,38 @@
-<div class="show-container">
-  <div class="show-title">
-  You have chosen
-  </div>
-<%# ---------start of flight details section---------   %>
-  <div class="show-flight-container">
-    <div class="show-flight-detail">
-      <div class="show_image">
-        <%= image_tag ("norse_airline"), :width => "350px" %>
-      </div>
-
-        <div class="outbound_flight_details">
-          <div class="show-h3-font">
-            Outbound Flight
-          </div>
-
-          <div class = "show-p-font">
-            Outbound Departure
-          </div>
-
-          <b> <%= Flight.first.outbound_carrier_name  %> </b><br>
-          <%= Flight.first.outbound_origin_display_code %> - <%= Flight.first.outbound_destination_display_code  %><br>
-          <p >Departure Time: <%= Flight.first.outbound_departure %></p>
-          <p>Arrival Time: <%= Flight.first.outbound_arrival %></p>
-        </div>
-
-      <div class = "inbound">
-        <div class="show-h3-font">
-          Inbound Flight
-        </div>
-        <div class = show-p-font>
-          <p>Inbound Departure</p>
-        </div>
-        <b><%= Flight.first.inbound_carrier_name  %></b><br>
-        <%= Flight.first.inbound_origin_display_code %> - <%= Flight.first.outbound_destination_display_code  %>
-        <br>
-        <p>Departure Time: <%= Flight.first.inbound_departure %></p>
-        <p>Arrival Time: <%= Flight.first.inbound_arrival %></p>
-      </div>
-    </div>
-    <div class="show-card-container">
-      <div class="show-card-price">
-        <div class = "show-price-font">
-            Estimating $200
-        </div>
-        <div class="show-card-price-button">
-          <%= link_to "https://www.skyscanner.com.sg/transport/flights/#{session[:trip_data]['flights'][0]['outbound_origin_display_code']}/#{session[:trip_data]['flights'][0]['outbound_destination_display_code']}/#{session[:trip_data]['flights'][0]['outbound_departure'].to_date.strftime('%y%m%d')}/#{session[:trip_data]['flights'][0]['outbound_arrival'].to_date.strftime('%y%m%d')}", target: '_blank' do %>
-            <div class ="payment-button">
-              <div class = "show-price-font">
-                Make Payment
-              </div>
-            </div>
-          <% end %>
-          <div class="show-card-checkbox">
-             <input type="checkbox">
-            <label for="payment_made"> Tick if payment made</label><br>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="show-title">
+    You have chosen
 </div>
-<%# ---------end of flight details section---------   %>
-<%# ---------start of accomodation details section---------   %>
-  <div class = "show-accomodation-container">
-    <div class="show-accomodation">
-      <div class="show-h3-font">
-          Accomodation
-        </div>
-      <div class="show_image">
-        <%= image_tag ("hotel_room"), :width => "350px" %>
-      </div>
-        <div class= "show-h3-font">
-          Hotel Name
-        </div>
-        <%= Accommodation.first.name %>
-    </div>
-    <div class="show-card-container">
-      <div class="show-card-price">
-        <div class = "show-price-font">
-          Estimating <%= Accommodation.first.price %>
 
-          <div class="show-card-price-button">
-            <div class ="payment-button">
-              <div class = "show-price-font">
-                Make Payment
-              </div>
-            </div>
-        </div>
-          <div class="show-card-checkbox">
-              <input type="checkbox">
-              <label for="payment_made"> Tick if payment made</label><br>
-          </div>
-          </div>
-      </div>
-    </div>
+<%# ------------------------------------ %>
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fa-solid fa-plane-up"></i> </button>
+    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="fa-solid fa-bed"></i></button>
+    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><i class="fa-solid fa-camera-retro"></i></button>
   </div>
-<%# ---------end of accomodation details section---------   %>
-<%# ---------start of activity details section---------   %>
-  <div class="show-activity-container">
-    <%# -------accomodation---- %>
-    <div class="show-activity">
-      <div class="show-h3-font">
-          Attraction
-      </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
-      <div class="show_image">
-        <%= image_tag ("gardenbythebay"), :width => "350px" %>
-      </div>
+  <%= render 'flights_show' %>
 
-      <p>Place: <%= Attraction.first.name %></p>
-      <p>Address: <%= Attraction.first.address %></p>
-    </div>
-
-
-      <%# -------restaurant---- %>
-      <div class = "show-restaurant">
-        <div class="show-h3-font">
-          Restaurant
-        </div>
-        <p>Name: <%= Restaurant.first.name %></p>
-        <p>Address: <%= Restaurant.first.street %></p>
-        <p>Price range: USD <%= Restaurant.first.price_range %></p>
-    </div>
-
-    <div class="show-card-container">
-      <div class="show-card-price">
-          <div class = "show-price-font">
-              Estimating <%= Accommodation.first.price %>
-
-            <div class="show-card-price-button">
-              <div class ="payment-button">
-                <div class = "show-price-font">
-                  Make Payment
-
-              </div>
-            </div>
-            <div class="show-card-checkbox">
-              <input type="checkbox">
-              <label for="payment_made"> Tick if payment made</label><br>
-            </div>
-          </div>
-      </div>
-    </div>
   </div>
+
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+  <%= render 'accommodations_show' %>
+
+  </div>
+
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+  <%= render 'activities_show' %>
+
+  </div>
+
 </div>
+
 
 <div class = "button-for-back-to-dashboard">
   <%= link_to "Back to Dashboard",dashboard_page_path, class: "btn btn-traveller btn-lg" %>

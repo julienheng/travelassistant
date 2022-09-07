@@ -4,8 +4,8 @@ data-outbound-destination-display-code=<%=session[:trip_data]["flights"][index][
 
 <% img = ["finnair.png", "emirates.png", "malaysiaair.jpg"] %>
 
-  <div class="flight-cards row px-1 mt-4 mx-0" id="border">
-    <%= image_tag "#{img[index]}", width:"100%", class:"rounded-2" %>
+  <div class="flight-cards mt-4 mx-0">
+    <%= image_tag "#{img[index]}", width:"100%", height:"200px", class:"rounded-4" %>
     <div class="flight-card mt-3">
       <div class="flight-info-container">
         <h6 class="card-title mb-3"><strong>Departure:</strong></h6>
@@ -25,7 +25,8 @@ data-outbound-destination-display-code=<%=session[:trip_data]["flights"][index][
         <div class="depart-location text-center mt-2" id="inbound-displaycode">
           <%= session[:trip_data]["flights"][index]["inbound_origin_display_code"] %>      to     <%= session[:trip_data]["flights"][index]["inbound_destination_display_code"] %>
         </div>
-        <p class="card-text mt-3"><strong>Estimated Price: $<%= session[:trip_data]["flights"][index]["amount"] %></strong></p>
+        <h5 class="card-text mt-3 text-center"><strong>Estimated Price: $<%= session[:trip_data]["flights"][index]["amount"] %></strong></h5>
+        <br>
         <div class="text-center">
           <a href="#" class="btn btn-primary" data-action="select-from-cards#click" data-value=<%= index %>>Select</a>
         </div>
