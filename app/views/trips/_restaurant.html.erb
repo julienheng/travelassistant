@@ -1,6 +1,6 @@
 <div class="carousel-item <%= 'active' if index.zero? %>" data-select-from-cards-target="card">
-  <div class="hotel-cards px-1 mt-4 mx-0">
-      <%= image_tag "restaurant.jpg", width:"100%" %>
+  <div class="hotel-cards mt-4 mx-0">
+      <%= image_tag "restaurant.jpg", width:"100%", class:"rounded-4" %>
       <div class="hotel-card text-center">
         <h4 class="acc-name mt-2"><strong><%= restaurant.name %></strong></h4>
         <p><%= restaurant.street %>, <%= restaurant.postal_code %></p>
