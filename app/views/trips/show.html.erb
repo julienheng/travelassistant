@@ -72,7 +72,7 @@
             Accomodation
         </div>
         <div class="show_image">
-          <%= image_tag ("hotel_room"), :width => "350px" %>
+          <%= image_tag ("hilton"), :width => "350px" %>
         </div>
         <div class= "show-h3-font">
           Hotel Name
@@ -106,15 +106,16 @@
     <%# -------accomodation---- %>
     <div class="inner-flight-content">
       <div class="show-activity">
+
         <div class="show-h3-font">
             Attraction
         </div>
 
         <div class="show_image">
-          <%= image_tag ("gardenbythebay"), :width => "350px" %>
+          <%= image_tag ("Buckingham-Palace"), :width => "350px" %>
         </div>
 
-        <p>Place: <%= Attraction.first.name %></p>
+        <p>Name: <%= Attraction.first.name %></p>
         <p>Address: <%= Attraction.first.address %></p>
       </div>
 
@@ -122,11 +123,14 @@
         <%# -------restaurant---- %>
         <div class = "show-restaurant">
           <div class="show-h3-font">
-            Restaurant
-          </div>
-          <p>Name: <%= Restaurant.first.name %></p>
-          <p>Address: <%= Restaurant.first.street %></p>
-          <p>Price range: USD <%= Restaurant.first.price_range %></p>
+              Restaurant
+            </div>
+          <div class="show_image">
+            <%= image_tag ("Blacklock-Shoreditch"), :width => "350px" %>
+           </div>
+            <p>Name: <%= Restaurant.first.name %></p></p>
+            <p>Address: <%= Restaurant.first.street %></p>
+            <p>Price range: $180</p>
         </div>
 
       <div class="show-card-container">
