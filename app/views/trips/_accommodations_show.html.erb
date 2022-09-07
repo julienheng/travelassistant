@@ -1,0 +1,35 @@
+<div class = "show-accomodation-container">
+  <div class="inner-flight-content">
+    <div class="show-accomodation">
+      <div class="show-h3-font">
+        Accomodation
+      </div>
+      <div class="show_image">
+        <%= image_tag ("hilton"), :width => "350px" %>
+      </div>
+      <br>
+      <div class= "show-h3-font">
+        Hotel Name
+      </div>
+      <%= Accommodation.first.name %>
+    </div>
+  </div>
+  <div class="show-card-container">
+    <div class="show-card-price">
+      <div class = "show-price-font">
+        Estimating <%= Accommodation.first.price %>
+        <div class="show-card-price-button">
+          <div class ="payment-button">
+            <div class = "show-price-font">
+              Make Payment
+            </div>
+          </div>
+        </div>
+        <div class="show-card-checkbox">
+          <input type="checkbox">
+          <label for="payment_made"> Tick if payment made</label><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
