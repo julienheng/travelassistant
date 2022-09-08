@@ -1,31 +1,42 @@
 <div class="dashboard">
-  <h1><strong>Your Howliday Dashboard</strong></h1>
+  <h2><strong>Your Howliday Dashboard</strong></h2>
 </div>
 
 <div class="dashboard-content">
   <div class="content">
-    <div>
-      <%= link_to new_trip_path do%>
+    <div class="row-content">
         <img src="https://cdn-icons-png.flaticon.com/128/913/913032.png" alt="" class="item" >
-        <p class="trip" >Create New Trip</p>
-      <% end %>
+        <%= link_to new_trip_path, class: 'dashboard-createtrip' do %>
+          <p class="trip m-0">Create New Trip</p>
+        <% end %>
     </div>
 
     <div>
         <img src="https://cdn-icons-png.flaticon.com/512/3069/3069197.png" alt="" class="item" >
         <p class="trip" >View Past Trips</p>
     </div>
+
+    <div>
+      <img src="https://cdn-icons-png.flaticon.com/512/81/81460.png" alt="" class="item" >
+      <%= link_to "Live Feed", chats_path, class: 'dashboard-createtrip' %>
+      <%# <p class="trip" >Live Feed</p> %>
+    </div>
   </div>
 
   <div class="content">
     <div>
-      <%# <%= #link_to trip_path(@trip) %>
+
         <img src="https://cdn-icons-png.flaticon.com/128/2491/2491921.png" alt="" class="item">
-        <p class="trip mb-12">View Current Trip</p>
+        <%= link_to "View current trip", trip_path(@trip), class: 'dashboard-currenttrip' %>
+
     </div>
     <div>
       <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="" class="item">
       <p class="trip">Update Profile</p>
+    </div>
+    <div>
+      <img src="https://cdn-icons-png.flaticon.com/512/3033/3033222.png" alt="" class="item">
+      <p class="trip">Coming Soon</p>
     </div>
   </div>
 

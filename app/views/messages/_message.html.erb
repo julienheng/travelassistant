@@ -3,5 +3,16 @@
     <strong><%= message.user.name %></strong>
     <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
   </small>
-  <p><%= message.content %></p>
+    <div class="w-100 bg-dark rounded-4 overflow-hidden text-justify">
+      <div class="w-100 bg-warning shadow" style="height: 240px;"><%= cl_image_tag message.photo.key, crop: :fill %><%#= image_tag "sale.jpg", width:"100%", class:"rounded-2" %></div>
+      <div class="text-white bg-dark px-4">
+        <h4 class="pt-4 pb-2"><u><%= message.title %></u></h4>
+        <% unless message.start_date.nil? || message.end_date.nil?%>
+          <p><strong><%= message.start_date.strftime("%d %b %y")%> to <%= message.end_date.strftime("%d %b %y") %></strong></p>
+        <% end %>
+        <p><%= message.content %></p>
+      </div>
+
+    </div>
+
 </div>
