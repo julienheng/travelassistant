@@ -10,7 +10,7 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
     @trip.user = current_user
-    raise
+
     if @trip.save
       redirect_to new_trip_companion_path(@trip)
     else

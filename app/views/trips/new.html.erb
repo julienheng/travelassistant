@@ -41,58 +41,57 @@
       <%# --------- TYPE OF FLIGHT ---------   %>
       <div class="trip-step createtrip-flighttype" data-create-trip-target="type">
 
-        <div class="img-type">
+        <%# <div class="img-type">
           <%= image_tag "travel3.jpg", width: 230 %>
-        </div>
+        <%#/div> %>
 
-        <h2 class="text-center fs-1">Would you like a return flight?</h2>
+        <h2 class="text-center fs-1">Let the journey begin</h2>
 
         <div class="flight-buttons">
-          <button type="button" class="rtflight-button1 btn btn" data-bs-toggle="button" data-create-trip-target="rtflight" data-action="click->create-trip#flightYes" data-create-trip-flight-step-value="yes">
-            <span class="span1">Round Trip</span>
+          <button type="button" class="rtflight-button1 btn btn" data-bs-toggle="button" data-action="click->create-trip#flightYes" data-create-trip-flight-step-value="yes">
+            <span class="span1">Round trip</span>
           </button>
-          <button type="button" class="rtflight-button2 btn btn" data-bs-toggle="button" data-create-trip-target="owflight" data-action="click->create-trip#flightNo">
+          <button type="button" class="rtflight-button2 btn btn" data-bs-toggle="button" data-action="click->create-trip#flightNo">
             <span class="span2">One Way</span>
           </button>
         </div>
 
-        <%= render "trips/createtrip_button"%>
-      </div>
-
-      <%# ---------RT DATES---------   %>
-      <div class="trip-step createtrip-flightdate" data-create-trip-target="rtdate">
-
-        <div class="img-oneway">
-          <%= image_tag "choosetrip.jpg", width: 150 %>
-        </div>
-
-        <h2 class="text-center fs-1">Select your dates</h2>
-
-        <%= f.input :start_date , label: "Depart", as: :date %>
-        <%= f.input :end_date, label: "Return", as: :date %>
-
-        <div class="submit-button">
-          <%= render "trips/createtrip_button" %>
-          <%= f.submit "Submit",  data: { create_trip_target: "submit" } , class: "submit-trip btn btn"  %>
-        </div>
-      </div>
-
-      <%# ---------ONE WAY DATE ---------   %>
-      <div class="trip-step createtrip-oneway" data-create-trip-target="owdate">
-
-         <div class="img-oneway">
-          <%= image_tag "accombooking.jpg", width: 250 %>
-        </div>
-        <h2 class="text-center">Select your departure date</h2>
-        <%= f.input :start_date, label: "Departure", as: :date %>
+          <%= f.input :start_date, label: "Depart", as: :date %>
+          <%= f.input :end_date, label: "Return", wrapper_html: { data: { create_trip_target: "owdate" }}, as: :date %>
 
         <div class="submit-button">
           <%= render "trips/createtrip_button"%>
           <%= f.submit "Submit",  data: { create_trip_target: "submit"} , class: "submit-trip btn btn-white btn-animated"  %>
         </div>
-
       </div>
 
     <% end %>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+  <%# ---------RT DATES---------   %>
+      <%#div class="trip-step createtrip-flightdate" data-create-trip-target="rtdate">
+
+        <%# <div class="img-oneway">
+          <%= image_tag "choosetrip.jpg", width: 150 %>
+        <%#/div> %>
+
+        <%#h2 class="text-center fs-1">Select your dates</h2>
+
+        <%#%= f.input :start_date, label: "Depart", as: :date %>
+        <%#%= f.input :end_date, label: "Return", data: { create_trip_target: "owdate" }, as: :date %>
+
+
+        <%#div class="submit-button">
+          <%= render "trips/createtrip_button" %>
+          <%#%= f.submit "Submit",  data: { create_trip_target: "submit" } , class: "submit-trip btn btn"  %>
+        <%#/div>
+      </div>
