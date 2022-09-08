@@ -3,7 +3,7 @@
   <div class="show-flight-container">
     <div class="show-flight-detail">
       <div class="show_image">
-        <%= image_tag ("finnair"), :width => "350px" %>
+        <%= image_tag "finnair.png", :width => "350px" %>
       </div>
       <%# -------------inner flight content--------------- %>
       <div class="inner-flight-content">
@@ -44,13 +44,24 @@
           Estimating $1844
         </div>
         <div class="show-card-price-button">
-          <%= link_to "https://www.skyscanner.com.sg/transport/flights/#{session[:trip_data]['flights'][0]['outbound_destination_display_code']}/#{session[:trip_data]['flights'][0]['outbound_origin_display_code']}/#{session[:trip_data]['flights'][0]['outbound_arrival'].to_date.strftime('%y%m%d')}/#{session[:trip_data]['flights'][0]['outbound_departure'].to_date.strftime('%y%m%d')}", target: '_blank' do %>
-          <div class ="payment-button">
-            <div class = "show-price-font">
-              Make Payment
+          <% if session[:trip_data].nil? %>
+            <%= link_to "#", target: '_blank' do %>
+              <div class ="payment-button">
+              <div class = "show-price-font">
+                Make Payment
+              </div>
             </div>
-          </div>
+            <% end %>
+          <% else %>
+            <%= link_to "https://www.skyscanner.com.sg/transport/flights/#{session[:trip_data]['flights'][0]['outbound_destination_display_code']}/#{session[:trip_data]['flights'][0]['outbound_origin_display_code']}/#{session[:trip_data]['flights'][0]['outbound_arrival'].to_date.strftime('%y%m%d')}/#{session[:trip_data]['flights'][0]['outbound_departure'].to_date.strftime('%y%m%d')}", target: '_blank' do %>
+              <div class ="payment-button">
+              <div class = "show-price-font">
+                Make Payment
+              </div>
+            </div>
+            <% end %>
           <% end %>
+
           <div class="show-card-checkbox">
             <input type="checkbox">
             <label for="payment_made"> Tick if payment made</label><br>

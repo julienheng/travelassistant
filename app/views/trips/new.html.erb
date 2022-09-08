@@ -10,7 +10,7 @@
       <div class="trip-step createtrip-budget active" data-create-trip-target="budget" >
 
         <div class="img-budget">
-          <%= image_tag "travel1.jpeg", width: 250 %>
+          <%= image_tag "travel1.jpg", width: 250 %>
         </div>
 
         <h2 class="text-center fs-1">What's your total budget?</h1>
@@ -25,7 +25,7 @@
       <div class="trip-step createtrip-flight" data-create-trip-target="flight">
 
         <div class="img-flight">
-          <%= image_tag "travel2.jpeg", width: 225 %>
+          <%= image_tag "travel2.jpg", width: 225 %>
         </div>
 
         <h2 class="text-center fs-1">Where are you heading to?</h2>
@@ -42,7 +42,7 @@
       <div class="trip-step createtrip-flighttype" data-create-trip-target="type">
 
         <div class="img-type">
-          <%= image_tag "travel3.jpeg", width: 230 %>
+          <%= image_tag "travel3.jpg", width: 230 %>
         </div>
 
         <h2 class="text-center fs-1">Would you like a return flight?</h2>
@@ -63,12 +63,12 @@
       <div class="trip-step createtrip-flightdate" data-create-trip-target="rtdate">
 
         <div class="img-oneway">
-          <%= image_tag "choosetrip.jpeg", width: 150 %>
+          <%= image_tag "choosetrip.jpg", width: 150 %>
         </div>
 
         <h2 class="text-center fs-1">Select your dates</h2>
-        <%= f.input :start_date, :label => "Depart", as: :date, html5: true %>
-        <%= f.input :end_date, :label => "Return", as: :date, html5: true %>
+        <%= f.input :start_date, label: "Depart", as: :date %>
+        <%= f.input :end_date, label: "Return", as: :date %>
 
         <div class="submit-button">
           <%= render "trips/createtrip_button" %>
@@ -80,10 +80,10 @@
       <div class="trip-step createtrip-oneway" data-create-trip-target="owdate">
 
          <div class="img-oneway">
-          <%= image_tag "accombooking.jpeg", width: 250 %>
+          <%= image_tag "accombooking.jpg", width: 250 %>
         </div>
         <h2 class="text-center">Select your departure date</h2>
-        <%= f.input :start_date, :label => "Departure", as: :date, html5: true %>
+        <%= f.input :start_date, label: "Departure", as: :date %>
 
         <div class="submit-button">
           <%= render "trips/createtrip_button"%>
