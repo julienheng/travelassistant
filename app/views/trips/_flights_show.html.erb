@@ -12,28 +12,33 @@
           <div class="show-h3-font">
             Outbound Flight
           </div>
-          <div class = "show-p-font">
+          <%# <div class = "show-p-font">
             Outbound Departure
-          </div>
+          </div> %>
           <br>
-          <b> Finnair</b><br>
-          SIN - LHR
+          <b> Finnair</b>
           <br>
-          <p >Departure Time: 2150hrs 2022-09-20</p>
-          <p>Arrival Time: 0910hrs 2022-09-21</p>
+          <p>SIN - LHR</p>
+          <i class="fa-solid fa-plane-departure"></i>
+          <p >Departure: 20 Sept 2022 21:50</p>
+          <i class="fa-solid fa-plane-arrival"></i>
+          <p>Arrival: 21 Sept 2022 09:10</p>
         </div>
         <div class = "inbound">
           <div class="show-h3-font">
             Inbound Flight
           </div>
-          <div class = show-p-font>
-            <p>Inbound Departure</p>
-          </div>
-          <b>Finnair</b><br>
-          LHR - SIN
           <br>
-          <p>Departure Time: 1810hrs 2022-09-30</p>
-          <p>Arrival Time: 1855hrs 2022-09-31</p>
+          <%# <div class = show-p-font>
+            <p>Inbound Departure</p>
+          </div> %>
+          <b>Finnair</b>
+          <br>
+          <p>LHR - SIN</p>
+          <i class="fa-solid fa-plane-departure"></i>
+          <p>Departure: 30 Sept 2022 18:10</p>
+          <i class="fa-solid fa-plane-arrival"></i>
+          <p>Arrival: 31 Sept 2022 18:55</p>
         </div>
       </div>
       <%# -------------end of inner flight content--------------- %>
@@ -41,7 +46,7 @@
     <div class="show-card-container">
       <div class="show-card-price">
         <div class = "show-price-font">
-          Estimating $1844
+          Estimated $1844
         </div>
         <div class="show-card-price-button">
           <% if session[:trip_data].nil? %>

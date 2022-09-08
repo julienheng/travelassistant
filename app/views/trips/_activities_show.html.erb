@@ -1,60 +1,296 @@
-<div class="show-activity-container">
-  <%# -------accomodation---- %>
-  <div class="inner-flight-content">
-    <div class="show-activity">
-      <div class="show-h3-font">
-        Attraction
-      </div>
-      <div class="show_image">
-        <%= image_tag "Buckingham-Palace.jpg", :width => "350px" %>
-      </div>
-      <br>
-      <div class="show-h3-font">
-        Name:
-      </div>
-      <p><%= Attraction.first.name %></p>
-      <div class="show-h3-font">
-        Address:
-      </div>
-      <p> <%= Attraction.first.address %></p>
-    </div>
-    <%# -------restaurant---- %>
-    <div class = "show-restaurant">
-      <div class="show-h3-font">
-        Restaurant
-      </div>
-      <div class="show_image">
-        <%= image_tag "Blacklock-Shoreditch.jpg", :width => "350px" %>
-      </div>
-      <br>
-      <div class="show-h3-font">
-        Name:
-      </div>
-      <p><%= Restaurant.first.name %></p>
-      </p>
-      <div class="show-h3-font">
-        Address:
-      </div>
-      <p><%= Restaurant.first.street %></p>
-      <p>Price range: $180</p>
-    </div>
-    <div class="show-card-container">
-      <div class="show-card-price">
-        <div class = "show-price-font">
-          Estimating <%= Accommodation.first.price %>
-          <div class="show-card-price-button">
-            <div class ="payment-button">
+
+<%# ---------------carousel-attraction------------- %>
+<div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="true">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%# -------attraction 1---- %>
+      <div class="show-activity-container">
+        <div class="inner-flight-content">
+          <div class="show-activity">
+            <div class="show-h3-font">
+              Attraction
+            </div>
+            <div class="show_image">
+              <%= image_tag "Buckingham-Palace.jpg", :width => "350px" %>
+            </div>
+            <br>
+            <div class="show-h3-font">
+              Name:
+            </div>
+            <p><%= Attraction.first.name %></p>
+            <div class="show-h3-font">
+              Address:
+            </div>
+            <p> <%= Attraction.first.address %></p>
+          </div>
+          <div class="show-card-container">
+            <div class="show-card-price-activity">
               <div class = "show-price-font">
-                Make Payment
+                Estimated <%= Attraction.first.price %>
+                <div class="show-card-price-button">
+                  <div class ="payment-button">
+                    <div class = "show-price-font">
+                      Make Payment
+                    </div>
+                  </div>
+                  <div class="show-card-checkbox">
+                    <input type="checkbox">
+                    <label for="payment_made"> Tick if payment made</label><br>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="show-card-checkbox">
-              <input type="checkbox">
-              <label for="payment_made"> Tick if payment made</label><br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <%# -------attraction 2----------------- %>
+      <div class="show-activity-container">
+        <div class="inner-flight-content">
+          <div class="show-activity">
+            <div class="show-h3-font">
+              Attraction
+            </div>
+            <div class="show_image">
+              <%= image_tag "harry_potter.jpg", :width => "350px" %>
+            </div>
+            <br>
+            <div class="show-h3-font">
+              Name:
+            </div>
+            <p><%= Attraction.second.name %></p>
+            <div class="show-h3-font">
+              Address:
+            </div>
+            <p> <%= Attraction.second.address %></p>
+          </div>
+          <div class="show-card-container">
+            <div class="show-card-price-activity">
+              <div class = "show-price-font">
+                Estimated <%= Attraction.second.price %>
+                <div class="show-card-price-button">
+                  <div class ="payment-button">
+                    <div class = "show-price-font">
+                      Make Payment
+                    </div>
+                  </div>
+                  <div class="show-card-checkbox">
+                    <input type="checkbox">
+                    <label for="payment_made"> Tick if payment made</label><br>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   <div class="carousel-item">
+   
+      <%# -------attraction 3----------------- %>
+      <div class="show-activity-container">
+        <div class="inner-flight-content">
+          <div class="show-activity">
+            <div class="show-h3-font">
+              Attraction
+            </div>
+            <div class="show_image">
+              <%= image_tag "westminster-abbey.jpg", :width => "350px" %>
+            </div>
+            <br>
+            <div class="show-h3-font">
+              Name:
+            </div>
+            <p><%= Attraction.third.name %></p>
+            <div class="show-h3-font">
+              Address:
+            </div>
+            <p> <%= Attraction.third.address %></p>
+          </div>
+          <div class="show-card-container">
+            <div class="show-card-price-activity">
+              <div class = "show-price-font">
+                Estimated <%= Attraction.third.price %>
+                <div class="show-card-price-button">
+                  <div class ="payment-button">
+                    <div class = "show-price-font">
+                      Make Payment
+                    </div>
+                  </div>
+                  <div class="show-card-checkbox">
+                    <input type="checkbox">
+                    <label for="payment_made"> Tick if payment made</label><br>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Next</span>
+  </button>
 </div>
+<%# ---------------end of carousel - attraction------------- %>
+<%# ---------------start of carousel - restaurant------------- %>
+<div id="carouselRestaurantIndicators" class="carousel carousel-dark slide" data-bs-ride="true">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselRestaurantIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselRestaurantIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselRestaurantIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%# ------- start of restaurant 1---- %>
+      <div class="show-activity-container">
+        <div class = "show-restaurant">
+          <div class="show-h3-font">
+            Restaurant
+          </div>
+          <div class="show_image">
+            <%= image_tag "fish-chips.jpg", :width => "350px" %>
+          </div>
+          <br>
+          <div class="show-h3-font">
+            Name:
+          </div>
+          <p><%= Restaurant.first.name %></p>
+          </p>
+          <div class="show-h3-font">
+            Address:
+          </div>
+          <p><%= Restaurant.first.street %></p>
+          <p>Price range: $180</p>
+        </div>
+        <div class="show-card-container">
+          <div class="show-card-price-activity">
+            <div class = "show-price-font">
+              Estimated <%= Restaurant.first.price_range %>
+              <div class="show-card-price-button">
+                <div class ="payment-button">
+                  <div class = "show-price-font">
+                    Make Payment
+                  </div>
+                </div>
+                <div class="show-card-checkbox">
+                  <input type="checkbox">
+                  <label for="payment_made"> Tick if payment made</label><br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%# ------- end of restaurant 1---- %>
+    <div class="carousel-item">
+      <%# -------attraction 2----------------- %>
+      <%# ------- start of restaurant 2---- %>
+      <div class="show-activity-container">
+        <div class = "show-restaurant">
+          <div class="show-h3-font">
+            Restaurant
+          </div>
+          <div class="show_image">
+            <%= image_tag "Blacklock-Shoreditch.jpg", :width => "350px" %>
+          </div>
+          <br>
+          <div class="show-h3-font">
+            Name:
+          </div>
+          <p><%= Restaurant.second.name %></p>
+          </p>
+          <div class="show-h3-font">
+            Address:
+          </div>
+          <p><%= Restaurant.second.street %></p>
+          <p>Price range: $180</p>
+        </div>
+        <div class="show-card-container">
+          <div class="show-card-price-activity">
+            <div class = "show-price-font">
+              Estimated <%= Restaurant.second.price_range %>
+              <div class="show-card-price-button">
+                <div class ="payment-button">
+                  <div class = "show-price-font">
+                    Make Payment
+                  </div>
+                </div>
+                <div class="show-card-checkbox">
+                  <input type="checkbox">
+                  <label for="payment_made"> Tick if payment made</label><br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%# ------- end of restaurant 2---- %>
+    <div class="carousel-item">
+      <%# ------- start of restaurant 3---- %>
+      <div class="show-activity-container">
+        <div class = "show-restaurant">
+          <div class="show-h3-font">
+            Restaurant
+          </div>
+          <div class="show_image">
+            <%= image_tag "pizza.jpeg", :width => "350px" %>
+          </div>
+          <br>
+          <div class="show-h3-font">
+            Name:
+          </div>
+          <p><%= Restaurant.third.name %></p>
+          </p>
+          <div class="show-h3-font">
+            Address:
+          </div>
+          <p><%= Restaurant.third.street %></p>
+          <p>Price range: $180</p>
+        </div>
+        <div class="show-card-container">
+          <div class="show-card-price-activity">
+            <div class = "show-price-font">
+              Estimated <%= Restaurant.third.price_range %>
+              <div class="show-card-price-button">
+                <div class ="payment-button">
+                  <div class = "show-price-font">
+                    Make Payment
+                  </div>
+                </div>
+                <div class="show-card-checkbox">
+                  <input type="checkbox">
+                  <label for="payment_made"> Tick if payment made</label><br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselRestaurantIndicators" data-bs-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselRestaurantIndicators" data-bs-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<%# ---------------end of carousel - restaurant------------- %>
