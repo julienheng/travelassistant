@@ -1,35 +1,34 @@
-<div class="back-home-button2">
-  <%= link_to "< Back", new_trip_accommodation_path(@trip) %>
-</div>
+<div class="acc-body">
+  <div class="acc-header text-center">
+    <h1><strong>Let's have fun</strong></h1>
+    <%= image_tag "greyy-wave.jpg"%>
+  </div>
 
-<div class="acc-header text-center">
-  <h1><strong>As well as these activities for you</strong></h1>
-</div>
-
-<div class="acc-container" data-controller="select-from-cards">
   <!-- carousel for attractions & restaurants -->
-  <ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Attractions</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Restaurants</button>
-    </li>
-  </ul>
-  <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-      <%= render 'attractions_data' %>
-    </div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      <%= render 'restaurants_data' %>
+  <div class="acc-container mx-2" data-controller="select-from-cards">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Attractions</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Restaurants</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <%= render 'attractions_data' %>
+      </div>
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <%= render 'restaurants_data' %>
+      </div>
     </div>
   </div>
-</div>
 
-<div>
-  <div class="text-center">
-    <button class="btn btn-red">
-      <i class="fa-regular fa-floppy-disk"></i> <%= link_to "Save this itinerary", trip_path(@trip) %>
-    </button>
+  <div>
+    <div class="text-center">
+      <button class="btn btn-red">
+        <i class="fa-regular fa-floppy-disk"></i> <%= link_to "Save this itinerary", trip_path(@trip) %>
+      </button>
+    </div>
   </div>
 </div>

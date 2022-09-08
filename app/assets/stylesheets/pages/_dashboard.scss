@@ -1,11 +1,11 @@
 .dashboard {
   width: 100%;
-  height: 200px;
+  height: 140px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-size: cover;
-  h1 {
+  h2 {
     color: black;
     font-weight: bold;
   }
@@ -30,7 +30,7 @@
 
 .trip {
   width: 180px;
-  height: 50px;
+  height: 40px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -41,9 +41,10 @@
   color: white;
 }
 
-.dashboard-createtrip, .dashboard-currenttrip {
+.dashboard-createtrip,
+.dashboard-currenttrip {
   width: 180px;
-  height: 50px;
+  height: 40px;
   display: flex;
   justify-content: space-around;
   align-items: center;

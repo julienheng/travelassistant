@@ -1,32 +1,31 @@
-<div class="back-home-button2">
-  <%= link_to "< Back", new_trip_path, data: {turbo_method: :get, turbo_confirm: "This will bring you back to the first page of the form and require you to input all your trip information again. Are you sure?"} %>
-</div>
-
-<div class="acc-header text-center">
-  <h1><strong>Here are some flights we found</strong></h1>
-</div>
-<%# raise %>
-<div class="acc-container" data-controller="select-from-cards">
-  <!-- carousel for flights -->
-  <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
-    <!-- Slider contents -->
-    <div class="carousel-inner" >
-      <% session[:trip_data]["flights"].each_with_index do |flight, index| %>
-        <%= render 'flight', flight: flight, index: index %>
-      <% end %>
-    </div>
-    <!-- Slider controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+<div class="acc-body">
+  <div class="acc-header text-center">
+    <h1><strong>Here are some flights we found</strong></h1>
+    <%= image_tag "greyy-wave.jpg" %>
   </div>
-</div>
+  <%# raise %>
+  <div class="acc-container mx-2" data-controller="select-from-cards">
+    <!-- carousel for flights -->
+    <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <!-- Slider contents -->
+      <div class="carousel-inner" >
+        <% session[:trip_data]["flights"].each_with_index do |flight, index| %>
+          <%= render 'flight', flight: flight, index: index %>
+        <% end %>
+      </div>
+      <!-- Slider controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
 
-<div class="text-center">
-    <%= link_to "View Accommodations", new_trip_accommodation_path(@trip), class: "btn btn-red" %>
+  <div class="text-center">
+      <%= link_to "View Accommodations", new_trip_accommodation_path(@trip), class: "btn btn-red" %>
+  </div>
 </div>
