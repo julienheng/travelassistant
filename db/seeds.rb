@@ -15,8 +15,9 @@ Flight.destroy_all
 Accommodation.destroy_all
 
 # Activity.destroy_all
-# Restaurant.destroy_all
+Restaurant.destroy_all
 Attraction.destroy_all
+Chat.destroy_all
 
 puts "Creating New Seeds"
 
@@ -358,6 +359,41 @@ Chat.create!(
 Chat.create!(
   name: "Bangkok",
   location: "bangkok"
+)
+
+Chat.create!(
+  name: "Bali",
+  location: "indonesia"
+)
+
+Chat.create!(
+  name: "Copenhagen",
+  location: "denmark"
+)
+
+Chat.create!(
+  name: "Shanghai",
+  location: "china"
+)
+
+Chat.create!(
+  name: "Madrid",
+  location: "Spain"
+)
+
+Chat.create!(
+  name: "New York",
+  location: "usa"
+)
+
+Chat.create!(
+  name: "Lima",
+  location: "peru"
+)
+
+Chat.create!(
+  name: "Dubai",
+  location: "uae"
 )
 
 # --------------------------admin user -----------------------------#
