@@ -17,7 +17,8 @@
 
   <body>
     <% unless current_page?(new_user_session_path) || current_page?(new_user_registration_path) || current_page?(new_user_password_path) || current_page?(new_trip_path) %>
-      <%= render "shared/navbar" %>
+      <%# <%= render "shared/navbar2" %>
+      <%= render "shared/navbar2" %>
     <% end %>
       <%= render "shared/flashes" %>
 
