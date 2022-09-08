@@ -6,11 +6,6 @@
   <div class="createtrip-companion-container" data-controller="create-companion"  data-create-companion-trip-value="<%= @trip.id %>">
     <h2 class="text-center">Travellers' Details</h2>
 
-     <%# <div class="class-details d-flex justify-content-around">
-      <h4 class="text-center">Traveller</h4>
-      <h4 class="text-center">Age</h4>
-    </div> %>
-
     <div class="wrapper-companion-field" data-create-companion-target="wrapper">
       <%= render 'add_field', trip: @trip, companion: @companion %>
     </div>
