@@ -4,7 +4,11 @@
     <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
   </small>
     <div class="w-100 bg-dark rounded-4 overflow-hidden text-justify">
-      <div class="w-100 bg-warning shadow" style="height: 240px;"><%= image_tag "sale.jpg", width:"100%", class:"rounded-2" %></div>
+      <div class="w-100 bg-warning shadow" style="height: 240px;"><%# if @message.photo.attached? %>
+      <%#= cl_image_tag @message.photo.key, height: 240 %><%= image_tag "sale.jpg", width:"100%", class:"rounded-2" %></div>
+      <%# else %>
+        <%#= image_tag "sale.jpg", width:"100%", class:"rounded-2" %>
+      <%# end %>
       <div class="text-white bg-dark px-4">
         <h4 class="pt-4 pb-2"><u><%= message.title %></u></h4>
         <% unless message.start_date.nil? || message.end_date.nil?%>
